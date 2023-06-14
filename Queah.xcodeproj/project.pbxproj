@@ -24,6 +24,23 @@
 		DCEEE99F2A393F4600291AD8 /* QueahApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE99E2A393F4600291AD8 /* QueahApp.swift */; };
 		DCEEE9A12A393F4600291AD8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE9A02A393F4600291AD8 /* ContentView.swift */; };
 		DCEEE9A32A393F4600291AD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCEEE9A22A393F4600291AD8 /* Assets.xcassets */; };
+		DCEEE9B52A3A274500291AD8 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE9AE2A3A274500291AD8 /* GameScene.swift */; };
+		DCEEE9B62A3A274500291AD8 /* BoardLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE9AF2A3A274500291AD8 /* BoardLocation.swift */; };
+		DCEEE9B72A3A274500291AD8 /* GamePiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE9B02A3A274500291AD8 /* GamePiece.swift */; };
+		DCEEE9B82A3A274500291AD8 /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE9B12A3A274500291AD8 /* GameBoard.swift */; };
+		DCEEE9B92A3A274500291AD8 /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE9B22A3A274500291AD8 /* GameEngine.swift */; };
+		DCEEE9BA2A3A274500291AD8 /* BoardSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE9B32A3A274500291AD8 /* BoardSpace.swift */; };
+		DCEEE9BB2A3A274500291AD8 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE9B42A3A274500291AD8 /* Button.swift */; };
+		DCEEE9BD2A3A28AB00291AD8 /* libQueahEngine-MacOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE634982A39092B0094B03D /* libQueahEngine-MacOS.a */; platformFilters = (macos, ); };
+		DCEEE9C02A3A292200291AD8 /* queah.dat in Resources */ = {isa = PBXBuildFile; fileRef = DCE634AA2A3909D40094B03D /* queah.dat */; };
+		DCEEE9CE2A3A298E00291AD8 /* GameModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634AC2A390A1A0094B03D /* GameModel.cpp */; };
+		DCEEE9CF2A3A298E00291AD8 /* QueahEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634CC2A390A480094B03D /* QueahEngine.cpp */; };
+		DCEEE9D02A3A298E00291AD8 /* GamePosition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634B72A390A1A0094B03D /* GamePosition.cpp */; };
+		DCEEE9D12A3A298E00291AD8 /* PositionTracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634B62A390A1A0094B03D /* PositionTracker.cpp */; };
+		DCEEE9D22A3A298F00291AD8 /* ToString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634AD2A390A1A0094B03D /* ToString.cpp */; };
+		DCEEE9D32A3A298F00291AD8 /* PlayerPosition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634AB2A390A1A0094B03D /* PlayerPosition.cpp */; };
+		DCEEE9D42A3A298F00291AD8 /* PositionEvaluator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634B92A390A1A0094B03D /* PositionEvaluator.cpp */; };
+		DCEEE9D52A3A29B300291AD8 /* libQueahEngine-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCEEE9C52A3A297800291AD8 /* libQueahEngine-iOS.a */; platformFilter = ios; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +57,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = DCE634972A39092B0094B03D;
 			remoteInfo = "QueahEngine-MacOS";
+		};
+		DCEEE9BE2A3A28AB00291AD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCE634902A39092B0094B03D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCE634972A39092B0094B03D;
+			remoteInfo = "QueahEngine-MacOS";
+		};
+		DCEEE9D62A3A29B300291AD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCE634902A39092B0094B03D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCEEE9C42A3A297800291AD8;
+			remoteInfo = "QueahEngine-iOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -60,6 +91,15 @@
 			dstSubfolderSpec = 16;
 			files = (
 				DCE634F42A390C320094B03D /* queah.dat in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCEEE9C32A3A297800291AD8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +138,15 @@
 		DCEEE9A22A393F4600291AD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCEEE9A42A393F4600291AD8 /* Queah.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Queah.entitlements; sourceTree = "<group>"; };
 		DCEEE9AC2A39473900291AD8 /* artwork.afdesign */ = {isa = PBXFileReference; lastKnownFileType = file; path = artwork.afdesign; sourceTree = "<group>"; };
+		DCEEE9AE2A3A274500291AD8 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		DCEEE9AF2A3A274500291AD8 /* BoardLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardLocation.swift; sourceTree = "<group>"; };
+		DCEEE9B02A3A274500291AD8 /* GamePiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePiece.swift; sourceTree = "<group>"; };
+		DCEEE9B12A3A274500291AD8 /* GameBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
+		DCEEE9B22A3A274500291AD8 /* GameEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameEngine.swift; sourceTree = "<group>"; };
+		DCEEE9B32A3A274500291AD8 /* BoardSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardSpace.swift; sourceTree = "<group>"; };
+		DCEEE9B42A3A274500291AD8 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		DCEEE9BC2A3A278E00291AD8 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		DCEEE9C52A3A297800291AD8 /* libQueahEngine-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libQueahEngine-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +177,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCEEE9D52A3A29B300291AD8 /* libQueahEngine-iOS.a in Frameworks */,
+				DCEEE9BD2A3A28AB00291AD8 /* libQueahEngine-MacOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCEEE9C22A3A297800291AD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +209,7 @@
 				DCE634D32A390A6C0094B03D /* QueahSolver */,
 				DCE634E62A390AB20094B03D /* QueahSelfPlay */,
 				DCEEE99C2A393F4600291AD8 /* Queah.app */,
+				DCEEE9C52A3A297800291AD8 /* libQueahEngine-iOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,8 +230,8 @@
 		DCE634A62A3909450094B03D /* Engine */ = {
 			isa = PBXGroup;
 			children = (
-				DCE634B22A390A1A0094B03D /* Board.h */,
 				DCE634F82A390F6C0094B03D /* BinaryIo.h */,
+				DCE634B22A390A1A0094B03D /* Board.h */,
 				DCE634AC2A390A1A0094B03D /* GameModel.cpp */,
 				DCE634B82A390A1A0094B03D /* GameModel.h */,
 				DCE634B72A390A1A0094B03D /* GamePosition.cpp */,
@@ -231,6 +290,8 @@
 			children = (
 				DCEEE9AC2A39473900291AD8 /* artwork.afdesign */,
 				DCEEE9A22A393F4600291AD8 /* Assets.xcassets */,
+				DCEEE9AD2A3A271200291AD8 /* GameScene */,
+				DCEEE9BC2A3A278E00291AD8 /* module.modulemap */,
 				DCEEE9A42A393F4600291AD8 /* Queah.entitlements */,
 				DCEEE9AB2A3940AA00291AD8 /* Views */,
 			);
@@ -240,10 +301,24 @@
 		DCEEE9AB2A3940AA00291AD8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DCEEE99E2A393F4600291AD8 /* QueahApp.swift */,
 				DCEEE9A02A393F4600291AD8 /* ContentView.swift */,
+				DCEEE99E2A393F4600291AD8 /* QueahApp.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DCEEE9AD2A3A271200291AD8 /* GameScene */ = {
+			isa = PBXGroup;
+			children = (
+				DCEEE9AF2A3A274500291AD8 /* BoardLocation.swift */,
+				DCEEE9B32A3A274500291AD8 /* BoardSpace.swift */,
+				DCEEE9B42A3A274500291AD8 /* Button.swift */,
+				DCEEE9B12A3A274500291AD8 /* GameBoard.swift */,
+				DCEEE9B22A3A274500291AD8 /* GameEngine.swift */,
+				DCEEE9B02A3A274500291AD8 /* GamePiece.swift */,
+				DCEEE9AE2A3A274500291AD8 /* GameScene.swift */,
+			);
+			path = GameScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,11 +398,30 @@
 			buildRules = (
 			);
 			dependencies = (
+				DCEEE9BF2A3A28AB00291AD8 /* PBXTargetDependency */,
+				DCEEE9D72A3A29B300291AD8 /* PBXTargetDependency */,
 			);
 			name = Queah;
 			productName = Queah;
 			productReference = DCEEE99C2A393F4600291AD8 /* Queah.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DCEEE9C42A3A297800291AD8 /* QueahEngine-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCEEE9CB2A3A297800291AD8 /* Build configuration list for PBXNativeTarget "QueahEngine-iOS" */;
+			buildPhases = (
+				DCEEE9C12A3A297800291AD8 /* Sources */,
+				DCEEE9C22A3A297800291AD8 /* Frameworks */,
+				DCEEE9C32A3A297800291AD8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "QueahEngine-iOS";
+			productName = "QueahEngine-iOS";
+			productReference = DCEEE9C52A3A297800291AD8 /* libQueahEngine-iOS.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -351,6 +445,9 @@
 					DCEEE99B2A393F4600291AD8 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
+					DCEEE9C42A3A297800291AD8 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
 				};
 			};
 			buildConfigurationList = DCE634932A39092B0094B03D /* Build configuration list for PBXProject "Queah" */;
@@ -367,6 +464,7 @@
 			projectRoot = "";
 			targets = (
 				DCEEE99B2A393F4600291AD8 /* Queah */,
+				DCEEE9C42A3A297800291AD8 /* QueahEngine-iOS */,
 				DCE634972A39092B0094B03D /* QueahEngine-MacOS */,
 				DCE634E52A390AB20094B03D /* QueahSelfPlay */,
 				DCE634D22A390A6C0094B03D /* QueahSolver */,
@@ -379,6 +477,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCEEE9C02A3A292200291AD8 /* queah.dat in Resources */,
 				DCEEE9A32A393F4600291AD8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,7 +522,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCEEE9A12A393F4600291AD8 /* ContentView.swift in Sources */,
+				DCEEE9B52A3A274500291AD8 /* GameScene.swift in Sources */,
+				DCEEE9B92A3A274500291AD8 /* GameEngine.swift in Sources */,
+				DCEEE9B72A3A274500291AD8 /* GamePiece.swift in Sources */,
 				DCEEE99F2A393F4600291AD8 /* QueahApp.swift in Sources */,
+				DCEEE9B82A3A274500291AD8 /* GameBoard.swift in Sources */,
+				DCEEE9B62A3A274500291AD8 /* BoardLocation.swift in Sources */,
+				DCEEE9BB2A3A274500291AD8 /* Button.swift in Sources */,
+				DCEEE9BA2A3A274500291AD8 /* BoardSpace.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCEEE9C12A3A297800291AD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCEEE9D22A3A298F00291AD8 /* ToString.cpp in Sources */,
+				DCEEE9D32A3A298F00291AD8 /* PlayerPosition.cpp in Sources */,
+				DCEEE9CF2A3A298E00291AD8 /* QueahEngine.cpp in Sources */,
+				DCEEE9D12A3A298E00291AD8 /* PositionTracker.cpp in Sources */,
+				DCEEE9CE2A3A298E00291AD8 /* GameModel.cpp in Sources */,
+				DCEEE9D42A3A298F00291AD8 /* PositionEvaluator.cpp in Sources */,
+				DCEEE9D02A3A298E00291AD8 /* GamePosition.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +559,20 @@
 			isa = PBXTargetDependency;
 			target = DCE634972A39092B0094B03D /* QueahEngine-MacOS */;
 			targetProxy = DCE634F62A390CF40094B03D /* PBXContainerItemProxy */;
+		};
+		DCEEE9BF2A3A28AB00291AD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilters = (
+				macos,
+			);
+			target = DCE634972A39092B0094B03D /* QueahEngine-MacOS */;
+			targetProxy = DCEEE9BE2A3A28AB00291AD8 /* PBXContainerItemProxy */;
+		};
+		DCEEE9D72A3A29B300291AD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = DCEEE9C42A3A297800291AD8 /* QueahEngine-iOS */;
+			targetProxy = DCEEE9D62A3A29B300291AD8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -667,6 +801,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INCLUDE_PATHS = ./QueahApp;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -707,9 +842,39 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INCLUDE_PATHS = ./QueahApp;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DCEEE9CC2A3A297800291AD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X2P4HJBQW;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DCEEE9CD2A3A297800291AD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X2P4HJBQW;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -757,6 +922,15 @@
 			buildConfigurations = (
 				DCEEE9A82A393F4600291AD8 /* Debug */,
 				DCEEE9A92A393F4600291AD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCEEE9CB2A3A297800291AD8 /* Build configuration list for PBXNativeTarget "QueahEngine-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCEEE9CC2A3A297800291AD8 /* Debug */,
+				DCEEE9CD2A3A297800291AD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
