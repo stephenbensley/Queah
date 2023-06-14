@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DCE634BB2A390A1A0094B03D /* PlayerPosition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634AB2A390A1A0094B03D /* PlayerPosition.cpp */; };
+		DCE634BC2A390A1A0094B03D /* GameModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634AC2A390A1A0094B03D /* GameModel.cpp */; };
+		DCE634BD2A390A1A0094B03D /* ToString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634AD2A390A1A0094B03D /* ToString.cpp */; };
+		DCE634C62A390A1A0094B03D /* PositionTracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634B62A390A1A0094B03D /* PositionTracker.cpp */; };
+		DCE634C72A390A1A0094B03D /* GamePosition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634B72A390A1A0094B03D /* GamePosition.cpp */; };
+		DCE634C92A390A1A0094B03D /* PositionEvaluator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634B92A390A1A0094B03D /* PositionEvaluator.cpp */; };
+		DCE634CE2A390A480094B03D /* QueahEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634CC2A390A480094B03D /* QueahEngine.cpp */; };
+		DCE634DF2A390A910094B03D /* GameNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634DA2A390A910094B03D /* GameNode.cpp */; };
+		DCE634E02A390A910094B03D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634DB2A390A910094B03D /* main.cpp */; };
+		DCE634E12A390A910094B03D /* Solve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634DC2A390A910094B03D /* Solve.cpp */; };
+		DCE634EF2A390BED0094B03D /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = DCE634ED2A390ACA0094B03D /* main.c */; };
+		DCE634F12A390C040094B03D /* libQueahEngine-MacOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE634982A39092B0094B03D /* libQueahEngine-MacOS.a */; };
+		DCE634F42A390C320094B03D /* queah.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCE634AA2A3909D40094B03D /* queah.dat */; };
+		DCE634F52A390CF40094B03D /* libQueahEngine-MacOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE634982A39092B0094B03D /* libQueahEngine-MacOS.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DCE634F22A390C040094B03D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCE634902A39092B0094B03D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCE634972A39092B0094B03D;
+			remoteInfo = "QueahEngine-MacOS";
+		};
+		DCE634F62A390CF40094B03D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCE634902A39092B0094B03D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCE634972A39092B0094B03D;
+			remoteInfo = "QueahEngine-MacOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DCE634D12A390A6C0094B03D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		DCE634E42A390AB20094B03D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				DCE634F42A390C320094B03D /* queah.dat in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DCE634982A39092B0094B03D /* libQueahEngine-MacOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libQueahEngine-MacOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCE634AA2A3909D40094B03D /* queah.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = queah.dat; sourceTree = "<group>"; };
+		DCE634AB2A390A1A0094B03D /* PlayerPosition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerPosition.cpp; sourceTree = "<group>"; };
+		DCE634AC2A390A1A0094B03D /* GameModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameModel.cpp; sourceTree = "<group>"; };
+		DCE634AD2A390A1A0094B03D /* ToString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ToString.cpp; sourceTree = "<group>"; };
+		DCE634AE2A390A1A0094B03D /* PositionTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositionTracker.h; sourceTree = "<group>"; };
+		DCE634AF2A390A1A0094B03D /* PlayerPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerPosition.h; sourceTree = "<group>"; };
+		DCE634B12A390A1A0094B03D /* GamePosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePosition.h; sourceTree = "<group>"; };
+		DCE634B22A390A1A0094B03D /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
+		DCE634B42A390A1A0094B03D /* ToString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToString.h; sourceTree = "<group>"; };
+		DCE634B62A390A1A0094B03D /* PositionTracker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PositionTracker.cpp; sourceTree = "<group>"; };
+		DCE634B72A390A1A0094B03D /* GamePosition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GamePosition.cpp; sourceTree = "<group>"; };
+		DCE634B82A390A1A0094B03D /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
+		DCE634B92A390A1A0094B03D /* PositionEvaluator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PositionEvaluator.cpp; sourceTree = "<group>"; };
+		DCE634BA2A390A1A0094B03D /* PositionEvaluator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositionEvaluator.h; sourceTree = "<group>"; };
+		DCE634CB2A390A480094B03D /* QueahEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueahEngine.h; sourceTree = "<group>"; };
+		DCE634CC2A390A480094B03D /* QueahEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QueahEngine.cpp; sourceTree = "<group>"; };
+		DCE634D32A390A6C0094B03D /* QueahSolver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = QueahSolver; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCE634DA2A390A910094B03D /* GameNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameNode.cpp; sourceTree = "<group>"; };
+		DCE634DB2A390A910094B03D /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		DCE634DC2A390A910094B03D /* Solve.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Solve.cpp; sourceTree = "<group>"; };
+		DCE634DD2A390A910094B03D /* GameNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameNode.h; sourceTree = "<group>"; };
+		DCE634DE2A390A910094B03D /* Solve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Solve.h; sourceTree = "<group>"; };
+		DCE634E62A390AB20094B03D /* QueahSelfPlay */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = QueahSelfPlay; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCE634ED2A390ACA0094B03D /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		DCE634F82A390F6C0094B03D /* BinaryIo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinaryIo.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DCE634962A39092B0094B03D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCE634D02A390A6C0094B03D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCE634F52A390CF40094B03D /* libQueahEngine-MacOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCE634E32A390AB20094B03D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCE634F12A390C040094B03D /* libQueahEngine-MacOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DCE6348F2A39092B0094B03D = {
+			isa = PBXGroup;
+			children = (
+				DCE6349A2A39092B0094B03D /* QueahEngine */,
+				DCE634992A39092B0094B03D /* Products */,
+				DCE634F02A390C040094B03D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DCE634992A39092B0094B03D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DCE634982A39092B0094B03D /* libQueahEngine-MacOS.a */,
+				DCE634D32A390A6C0094B03D /* QueahSolver */,
+				DCE634E62A390AB20094B03D /* QueahSelfPlay */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DCE6349A2A39092B0094B03D /* QueahEngine */ = {
+			isa = PBXGroup;
+			children = (
+				DCE634A82A3909510094B03D /* Data */,
+				DCE634A62A3909450094B03D /* Engine */,
+				DCE634A92A3909580094B03D /* Sample */,
+				DCE634A72A39094B0094B03D /* Solver */,
+			);
+			path = QueahEngine;
+			sourceTree = "<group>";
+		};
+		DCE634A62A3909450094B03D /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				DCE634B22A390A1A0094B03D /* Board.h */,
+				DCE634F82A390F6C0094B03D /* BinaryIo.h */,
+				DCE634AC2A390A1A0094B03D /* GameModel.cpp */,
+				DCE634B82A390A1A0094B03D /* GameModel.h */,
+				DCE634B72A390A1A0094B03D /* GamePosition.cpp */,
+				DCE634B12A390A1A0094B03D /* GamePosition.h */,
+				DCE634AB2A390A1A0094B03D /* PlayerPosition.cpp */,
+				DCE634AF2A390A1A0094B03D /* PlayerPosition.h */,
+				DCE634B92A390A1A0094B03D /* PositionEvaluator.cpp */,
+				DCE634BA2A390A1A0094B03D /* PositionEvaluator.h */,
+				DCE634B62A390A1A0094B03D /* PositionTracker.cpp */,
+				DCE634AE2A390A1A0094B03D /* PositionTracker.h */,
+				DCE634CC2A390A480094B03D /* QueahEngine.cpp */,
+				DCE634CB2A390A480094B03D /* QueahEngine.h */,
+				DCE634AD2A390A1A0094B03D /* ToString.cpp */,
+				DCE634B42A390A1A0094B03D /* ToString.h */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		DCE634A72A39094B0094B03D /* Solver */ = {
+			isa = PBXGroup;
+			children = (
+				DCE634DA2A390A910094B03D /* GameNode.cpp */,
+				DCE634DD2A390A910094B03D /* GameNode.h */,
+				DCE634DB2A390A910094B03D /* main.cpp */,
+				DCE634DC2A390A910094B03D /* Solve.cpp */,
+				DCE634DE2A390A910094B03D /* Solve.h */,
+			);
+			path = Solver;
+			sourceTree = "<group>";
+		};
+		DCE634A82A3909510094B03D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DCE634AA2A3909D40094B03D /* queah.dat */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		DCE634A92A3909580094B03D /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				DCE634ED2A390ACA0094B03D /* main.c */,
+			);
+			path = Sample;
+			sourceTree = "<group>";
+		};
+		DCE634F02A390C040094B03D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		DCE634942A39092B0094B03D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		DCE634972A39092B0094B03D /* QueahEngine-MacOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCE634A32A39092B0094B03D /* Build configuration list for PBXNativeTarget "QueahEngine-MacOS" */;
+			buildPhases = (
+				DCE634942A39092B0094B03D /* Headers */,
+				DCE634952A39092B0094B03D /* Sources */,
+				DCE634962A39092B0094B03D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "QueahEngine-MacOS";
+			productName = Queah;
+			productReference = DCE634982A39092B0094B03D /* libQueahEngine-MacOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		DCE634D22A390A6C0094B03D /* QueahSolver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCE634D72A390A6C0094B03D /* Build configuration list for PBXNativeTarget "QueahSolver" */;
+			buildPhases = (
+				DCE634CF2A390A6C0094B03D /* Sources */,
+				DCE634D02A390A6C0094B03D /* Frameworks */,
+				DCE634D12A390A6C0094B03D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCE634F72A390CF40094B03D /* PBXTargetDependency */,
+			);
+			name = QueahSolver;
+			productName = QueahSolver;
+			productReference = DCE634D32A390A6C0094B03D /* QueahSolver */;
+			productType = "com.apple.product-type.tool";
+		};
+		DCE634E52A390AB20094B03D /* QueahSelfPlay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCE634EA2A390AB20094B03D /* Build configuration list for PBXNativeTarget "QueahSelfPlay" */;
+			buildPhases = (
+				DCE634E22A390AB20094B03D /* Sources */,
+				DCE634E32A390AB20094B03D /* Frameworks */,
+				DCE634E42A390AB20094B03D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCE634F32A390C040094B03D /* PBXTargetDependency */,
+			);
+			name = QueahSelfPlay;
+			productName = QueahSelfPlay;
+			productReference = DCE634E62A390AB20094B03D /* QueahSelfPlay */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DCE634902A39092B0094B03D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					DCE634972A39092B0094B03D = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					DCE634D22A390A6C0094B03D = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					DCE634E52A390AB20094B03D = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = DCE634932A39092B0094B03D /* Build configuration list for PBXProject "Queah" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DCE6348F2A39092B0094B03D;
+			productRefGroup = DCE634992A39092B0094B03D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DCE634972A39092B0094B03D /* QueahEngine-MacOS */,
+				DCE634E52A390AB20094B03D /* QueahSelfPlay */,
+				DCE634D22A390A6C0094B03D /* QueahSolver */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DCE634952A39092B0094B03D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCE634BB2A390A1A0094B03D /* PlayerPosition.cpp in Sources */,
+				DCE634CE2A390A480094B03D /* QueahEngine.cpp in Sources */,
+				DCE634C62A390A1A0094B03D /* PositionTracker.cpp in Sources */,
+				DCE634C72A390A1A0094B03D /* GamePosition.cpp in Sources */,
+				DCE634BD2A390A1A0094B03D /* ToString.cpp in Sources */,
+				DCE634C92A390A1A0094B03D /* PositionEvaluator.cpp in Sources */,
+				DCE634BC2A390A1A0094B03D /* GameModel.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCE634CF2A390A6C0094B03D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCE634E02A390A910094B03D /* main.cpp in Sources */,
+				DCE634DF2A390A910094B03D /* GameNode.cpp in Sources */,
+				DCE634E12A390A910094B03D /* Solve.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCE634E22A390AB20094B03D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCE634EF2A390BED0094B03D /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DCE634F32A390C040094B03D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCE634972A39092B0094B03D /* QueahEngine-MacOS */;
+			targetProxy = DCE634F22A390C040094B03D /* PBXContainerItemProxy */;
+		};
+		DCE634F72A390CF40094B03D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCE634972A39092B0094B03D /* QueahEngine-MacOS */;
+			targetProxy = DCE634F62A390CF40094B03D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DCE634A12A39092B0094B03D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lc++";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DCE634A22A39092B0094B03D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-lc++";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DCE634A42A39092B0094B03D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X2P4HJBQW;
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DCE634A52A39092B0094B03D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X2P4HJBQW;
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		DCE634D82A390A6C0094B03D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X2P4HJBQW;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		DCE634D92A390A6C0094B03D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X2P4HJBQW;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		DCE634EB2A390AB20094B03D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X2P4HJBQW;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		DCE634EC2A390AB20094B03D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X2P4HJBQW;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DCE634932A39092B0094B03D /* Build configuration list for PBXProject "Queah" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCE634A12A39092B0094B03D /* Debug */,
+				DCE634A22A39092B0094B03D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCE634A32A39092B0094B03D /* Build configuration list for PBXNativeTarget "QueahEngine-MacOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCE634A42A39092B0094B03D /* Debug */,
+				DCE634A52A39092B0094B03D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCE634D72A390A6C0094B03D /* Build configuration list for PBXNativeTarget "QueahSolver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCE634D82A390A6C0094B03D /* Debug */,
+				DCE634D92A390A6C0094B03D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCE634EA2A390AB20094B03D /* Build configuration list for PBXNativeTarget "QueahSelfPlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCE634EB2A390AB20094B03D /* Debug */,
+				DCE634EC2A390AB20094B03D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DCE634902A39092B0094B03D /* Project object */;
+}
