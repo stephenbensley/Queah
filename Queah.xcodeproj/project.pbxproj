@@ -97,6 +97,7 @@
 		DCEEE9A02A393F4600291AD8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DCEEE9A22A393F4600291AD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCEEE9A42A393F4600291AD8 /* Queah.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Queah.entitlements; sourceTree = "<group>"; };
+		DCEEE9AC2A39473900291AD8 /* artwork.afdesign */ = {isa = PBXFileReference; lastKnownFileType = file; path = artwork.afdesign; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +229,7 @@
 		DCEEE99D2A393F4600291AD8 /* QueahApp */ = {
 			isa = PBXGroup;
 			children = (
+				DCEEE9AC2A39473900291AD8 /* artwork.afdesign */,
 				DCEEE9A22A393F4600291AD8 /* Assets.xcassets */,
 				DCEEE9A42A393F4600291AD8 /* Queah.entitlements */,
 				DCEEE9AB2A3940AA00291AD8 /* Views */,
