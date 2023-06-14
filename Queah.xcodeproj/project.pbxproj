@@ -21,6 +21,9 @@
 		DCE634F12A390C040094B03D /* libQueahEngine-MacOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE634982A39092B0094B03D /* libQueahEngine-MacOS.a */; };
 		DCE634F42A390C320094B03D /* queah.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCE634AA2A3909D40094B03D /* queah.dat */; };
 		DCE634F52A390CF40094B03D /* libQueahEngine-MacOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE634982A39092B0094B03D /* libQueahEngine-MacOS.a */; };
+		DCEEE99F2A393F4600291AD8 /* QueahApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE99E2A393F4600291AD8 /* QueahApp.swift */; };
+		DCEEE9A12A393F4600291AD8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE9A02A393F4600291AD8 /* ContentView.swift */; };
+		DCEEE9A32A393F4600291AD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCEEE9A22A393F4600291AD8 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +92,11 @@
 		DCE634E62A390AB20094B03D /* QueahSelfPlay */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = QueahSelfPlay; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE634ED2A390ACA0094B03D /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		DCE634F82A390F6C0094B03D /* BinaryIo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinaryIo.h; sourceTree = "<group>"; };
+		DCEEE99C2A393F4600291AD8 /* Queah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Queah.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCEEE99E2A393F4600291AD8 /* QueahApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueahApp.swift; sourceTree = "<group>"; };
+		DCEEE9A02A393F4600291AD8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DCEEE9A22A393F4600291AD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DCEEE9A42A393F4600291AD8 /* Queah.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Queah.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,15 +123,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DCEEE9992A393F4600291AD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		DCE6348F2A39092B0094B03D = {
 			isa = PBXGroup;
 			children = (
-				DCE6349A2A39092B0094B03D /* QueahEngine */,
-				DCE634992A39092B0094B03D /* Products */,
 				DCE634F02A390C040094B03D /* Frameworks */,
+				DCE634992A39092B0094B03D /* Products */,
+				DCEEE99D2A393F4600291AD8 /* QueahApp */,
+				DCE6349A2A39092B0094B03D /* QueahEngine */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +149,7 @@
 				DCE634982A39092B0094B03D /* libQueahEngine-MacOS.a */,
 				DCE634D32A390A6C0094B03D /* QueahSolver */,
 				DCE634E62A390AB20094B03D /* QueahSelfPlay */,
+				DCEEE99C2A393F4600291AD8 /* Queah.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,8 +162,10 @@
 				DCE634A92A3909580094B03D /* Sample */,
 				DCE634A72A39094B0094B03D /* Solver */,
 			);
+			indentWidth = 3;
 			path = QueahEngine;
 			sourceTree = "<group>";
+			tabWidth = 3;
 		};
 		DCE634A62A3909450094B03D /* Engine */ = {
 			isa = PBXGroup;
@@ -204,6 +223,25 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DCEEE99D2A393F4600291AD8 /* QueahApp */ = {
+			isa = PBXGroup;
+			children = (
+				DCEEE9A22A393F4600291AD8 /* Assets.xcassets */,
+				DCEEE9A42A393F4600291AD8 /* Queah.entitlements */,
+				DCEEE9AB2A3940AA00291AD8 /* Views */,
+			);
+			path = QueahApp;
+			sourceTree = "<group>";
+		};
+		DCEEE9AB2A3940AA00291AD8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DCEEE99E2A393F4600291AD8 /* QueahApp.swift */,
+				DCEEE9A02A393F4600291AD8 /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +310,23 @@
 			productReference = DCE634E62A390AB20094B03D /* QueahSelfPlay */;
 			productType = "com.apple.product-type.tool";
 		};
+		DCEEE99B2A393F4600291AD8 /* Queah */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCEEE9AA2A393F4600291AD8 /* Build configuration list for PBXNativeTarget "Queah" */;
+			buildPhases = (
+				DCEEE9982A393F4600291AD8 /* Sources */,
+				DCEEE9992A393F4600291AD8 /* Frameworks */,
+				DCEEE99A2A393F4600291AD8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Queah;
+			productName = Queah;
+			productReference = DCEEE99C2A393F4600291AD8 /* Queah.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -291,6 +346,9 @@
 					DCE634E52A390AB20094B03D = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
+					DCEEE99B2A393F4600291AD8 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
 				};
 			};
 			buildConfigurationList = DCE634932A39092B0094B03D /* Build configuration list for PBXProject "Queah" */;
@@ -306,12 +364,24 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				DCEEE99B2A393F4600291AD8 /* Queah */,
 				DCE634972A39092B0094B03D /* QueahEngine-MacOS */,
 				DCE634E52A390AB20094B03D /* QueahSelfPlay */,
 				DCE634D22A390A6C0094B03D /* QueahSolver */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DCEEE99A2A393F4600291AD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCEEE9A32A393F4600291AD8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DCE634952A39092B0094B03D /* Sources */ = {
@@ -343,6 +413,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCE634EF2A390BED0094B03D /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCEEE9982A393F4600291AD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCEEE9A12A393F4600291AD8 /* ContentView.swift in Sources */,
+				DCEEE99F2A393F4600291AD8 /* QueahApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +631,86 @@
 			};
 			name = Release;
 		};
+		DCEEE9A82A393F4600291AD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = QueahApp/Queah.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 6X2P4HJBQW;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stephenbensley.Queah;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DCEEE9A92A393F4600291AD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = QueahApp/Queah.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 6X2P4HJBQW;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stephenbensley.Queah;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -587,6 +746,15 @@
 			buildConfigurations = (
 				DCE634EB2A390AB20094B03D /* Debug */,
 				DCE634EC2A390AB20094B03D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCEEE9AA2A393F4600291AD8 /* Build configuration list for PBXNativeTarget "Queah" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCEEE9A82A393F4600291AD8 /* Debug */,
+				DCEEE9A92A393F4600291AD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
