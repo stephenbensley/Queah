@@ -190,7 +190,7 @@ int queah_game_encode(const QueahGame* game, char* buf, int* buflen)
    
    try
    {
-      std::ostringstream ostrm(std::stringstream::binary);
+      std::ostringstream ostrm;
       model->save(ostrm);
       auto len = ostrm.str().copy(buf, *buflen);
       *buflen = static_cast<int>(len);
