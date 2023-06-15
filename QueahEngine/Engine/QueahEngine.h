@@ -71,7 +71,7 @@ void queah_game_to_string(const QueahGame* game, char* buf, int buflen);
 // Encodes the game state to a buffer.
 int queah_game_encode(const QueahGame* game, char* buf, int* buflen);
 // Decodes the game state from a buffer.
-int queah_game_decode(QueahGame* game, char* buf, int buflen);
+int queah_game_decode(QueahGame* game, const char* buf, int buflen);
 
 // Create/destroy an AI that plays a perfect game of Queah
 typedef void QueahAI;

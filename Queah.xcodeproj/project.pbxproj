@@ -22,15 +22,13 @@
 		DCE634F42A390C320094B03D /* queah.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCE634AA2A3909D40094B03D /* queah.dat */; };
 		DCE634F52A390CF40094B03D /* libQueahEngine-MacOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE634982A39092B0094B03D /* libQueahEngine-MacOS.a */; };
 		DCEEE99F2A393F4600291AD8 /* QueahApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE99E2A393F4600291AD8 /* QueahApp.swift */; };
-		DCEEE9A12A393F4600291AD8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE9A02A393F4600291AD8 /* ContentView.swift */; };
 		DCEEE9A32A393F4600291AD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCEEE9A22A393F4600291AD8 /* Assets.xcassets */; };
 		DCEEE9B52A3A274500291AD8 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE9AE2A3A274500291AD8 /* GameScene.swift */; };
 		DCEEE9B62A3A274500291AD8 /* BoardLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE9AF2A3A274500291AD8 /* BoardLocation.swift */; };
 		DCEEE9B72A3A274500291AD8 /* GamePiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE9B02A3A274500291AD8 /* GamePiece.swift */; };
 		DCEEE9B82A3A274500291AD8 /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE9B12A3A274500291AD8 /* GameBoard.swift */; };
-		DCEEE9B92A3A274500291AD8 /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE9B22A3A274500291AD8 /* GameEngine.swift */; };
+		DCEEE9B92A3A274500291AD8 /* QueahEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE9B22A3A274500291AD8 /* QueahEngine.swift */; };
 		DCEEE9BA2A3A274500291AD8 /* BoardSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE9B32A3A274500291AD8 /* BoardSpace.swift */; };
-		DCEEE9BB2A3A274500291AD8 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE9B42A3A274500291AD8 /* Button.swift */; };
 		DCEEE9BD2A3A28AB00291AD8 /* libQueahEngine-MacOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE634982A39092B0094B03D /* libQueahEngine-MacOS.a */; platformFilters = (macos, ); };
 		DCEEE9C02A3A292200291AD8 /* queah.dat in Resources */ = {isa = PBXBuildFile; fileRef = DCE634AA2A3909D40094B03D /* queah.dat */; };
 		DCEEE9CE2A3A298E00291AD8 /* GameModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634AC2A390A1A0094B03D /* GameModel.cpp */; };
@@ -41,6 +39,11 @@
 		DCEEE9D32A3A298F00291AD8 /* PlayerPosition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634AB2A390A1A0094B03D /* PlayerPosition.cpp */; };
 		DCEEE9D42A3A298F00291AD8 /* PositionEvaluator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634B92A390A1A0094B03D /* PositionEvaluator.cpp */; };
 		DCEEE9D52A3A29B300291AD8 /* libQueahEngine-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCEEE9C52A3A297800291AD8 /* libQueahEngine-iOS.a */; platformFilter = ios; };
+		DCF609C72A3A933800C28BAE /* QueahModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF609C62A3A933800C28BAE /* QueahModel.swift */; };
+		DCF609CB2A3B472200C28BAE /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF609CA2A3B472100C28BAE /* GameView.swift */; };
+		DCF609CD2A3B472E00C28BAE /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF609CC2A3B472E00C28BAE /* RulesView.swift */; };
+		DCF609CF2A3B474600C28BAE /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF609CE2A3B474600C28BAE /* MenuView.swift */; };
+		DCF609D42A3B503800C28BAE /* rules.rtf in Resources */ = {isa = PBXBuildFile; fileRef = DCF609D32A3B501C00C28BAE /* rules.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,7 +137,6 @@
 		DCE634F82A390F6C0094B03D /* BinaryIo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinaryIo.h; sourceTree = "<group>"; };
 		DCEEE99C2A393F4600291AD8 /* Queah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Queah.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCEEE99E2A393F4600291AD8 /* QueahApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueahApp.swift; sourceTree = "<group>"; };
-		DCEEE9A02A393F4600291AD8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DCEEE9A22A393F4600291AD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCEEE9A42A393F4600291AD8 /* Queah.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Queah.entitlements; sourceTree = "<group>"; };
 		DCEEE9AC2A39473900291AD8 /* artwork.afdesign */ = {isa = PBXFileReference; lastKnownFileType = file; path = artwork.afdesign; sourceTree = "<group>"; };
@@ -142,11 +144,15 @@
 		DCEEE9AF2A3A274500291AD8 /* BoardLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardLocation.swift; sourceTree = "<group>"; };
 		DCEEE9B02A3A274500291AD8 /* GamePiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePiece.swift; sourceTree = "<group>"; };
 		DCEEE9B12A3A274500291AD8 /* GameBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
-		DCEEE9B22A3A274500291AD8 /* GameEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameEngine.swift; sourceTree = "<group>"; };
+		DCEEE9B22A3A274500291AD8 /* QueahEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueahEngine.swift; sourceTree = "<group>"; };
 		DCEEE9B32A3A274500291AD8 /* BoardSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardSpace.swift; sourceTree = "<group>"; };
-		DCEEE9B42A3A274500291AD8 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		DCEEE9BC2A3A278E00291AD8 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		DCEEE9C52A3A297800291AD8 /* libQueahEngine-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libQueahEngine-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCF609C62A3A933800C28BAE /* QueahModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueahModel.swift; sourceTree = "<group>"; };
+		DCF609CA2A3B472100C28BAE /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		DCF609CC2A3B472E00C28BAE /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
+		DCF609CE2A3B474600C28BAE /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		DCF609D32A3B501C00C28BAE /* rules.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = rules.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,36 +295,55 @@
 			isa = PBXGroup;
 			children = (
 				DCEEE9AC2A39473900291AD8 /* artwork.afdesign */,
-				DCEEE9A22A393F4600291AD8 /* Assets.xcassets */,
-				DCEEE9AD2A3A271200291AD8 /* GameScene */,
-				DCEEE9BC2A3A278E00291AD8 /* module.modulemap */,
 				DCEEE9A42A393F4600291AD8 /* Queah.entitlements */,
-				DCEEE9AB2A3940AA00291AD8 /* Views */,
+				DCEEE9BC2A3A278E00291AD8 /* module.modulemap */,
+				DCEEE9A22A393F4600291AD8 /* Assets.xcassets */,
+				DCF609C82A3B403700C28BAE /* Model */,
+				DCF609D02A3B4C7700C28BAE /* Resources */,
+				DCEEE9AD2A3A271200291AD8 /* Scene */,
+				DCEEE9AB2A3940AA00291AD8 /* View */,
 			);
 			path = QueahApp;
 			sourceTree = "<group>";
 		};
-		DCEEE9AB2A3940AA00291AD8 /* Views */ = {
+		DCEEE9AB2A3940AA00291AD8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DCEEE9A02A393F4600291AD8 /* ContentView.swift */,
+				DCF609CA2A3B472100C28BAE /* GameView.swift */,
+				DCF609CE2A3B474600C28BAE /* MenuView.swift */,
 				DCEEE99E2A393F4600291AD8 /* QueahApp.swift */,
+				DCF609CC2A3B472E00C28BAE /* RulesView.swift */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
-		DCEEE9AD2A3A271200291AD8 /* GameScene */ = {
+		DCEEE9AD2A3A271200291AD8 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
 				DCEEE9AF2A3A274500291AD8 /* BoardLocation.swift */,
 				DCEEE9B32A3A274500291AD8 /* BoardSpace.swift */,
-				DCEEE9B42A3A274500291AD8 /* Button.swift */,
 				DCEEE9B12A3A274500291AD8 /* GameBoard.swift */,
-				DCEEE9B22A3A274500291AD8 /* GameEngine.swift */,
 				DCEEE9B02A3A274500291AD8 /* GamePiece.swift */,
 				DCEEE9AE2A3A274500291AD8 /* GameScene.swift */,
 			);
-			path = GameScene;
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		DCF609C82A3B403700C28BAE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DCEEE9B22A3A274500291AD8 /* QueahEngine.swift */,
+				DCF609C62A3A933800C28BAE /* QueahModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DCF609D02A3B4C7700C28BAE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DCF609D32A3B501C00C28BAE /* rules.rtf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -477,6 +502,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCF609D42A3B503800C28BAE /* rules.rtf in Resources */,
 				DCEEE9C02A3A292200291AD8 /* queah.dat in Resources */,
 				DCEEE9A32A393F4600291AD8 /* Assets.xcassets in Resources */,
 			);
@@ -521,15 +547,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCEEE9A12A393F4600291AD8 /* ContentView.swift in Sources */,
+				DCF609CF2A3B474600C28BAE /* MenuView.swift in Sources */,
 				DCEEE9B52A3A274500291AD8 /* GameScene.swift in Sources */,
-				DCEEE9B92A3A274500291AD8 /* GameEngine.swift in Sources */,
+				DCEEE9B92A3A274500291AD8 /* QueahEngine.swift in Sources */,
 				DCEEE9B72A3A274500291AD8 /* GamePiece.swift in Sources */,
+				DCF609CB2A3B472200C28BAE /* GameView.swift in Sources */,
+				DCF609CD2A3B472E00C28BAE /* RulesView.swift in Sources */,
 				DCEEE99F2A393F4600291AD8 /* QueahApp.swift in Sources */,
 				DCEEE9B82A3A274500291AD8 /* GameBoard.swift in Sources */,
 				DCEEE9B62A3A274500291AD8 /* BoardLocation.swift in Sources */,
-				DCEEE9BB2A3A274500291AD8 /* Button.swift in Sources */,
 				DCEEE9BA2A3A274500291AD8 /* BoardSpace.swift in Sources */,
+				DCF609C72A3A933800C28BAE /* QueahModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

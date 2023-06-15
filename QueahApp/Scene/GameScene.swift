@@ -2,10 +2,11 @@
 // Copyright 2023 Stephen E. Bensley
 //
 // This file is licensed under the MIT License. You may obtain a copy of the
-// license at https://github.com/stephenbensley/obatgonu/blob/main/LICENSE.
+// license at https://github.com/stephenbensley/Queah/blob/main/LICENSE.
 //
 
 import SpriteKit
+import QueahEngine
 
 #if os(iOS)
 typealias QColor = UIColor
@@ -20,24 +21,20 @@ enum Layer: CGFloat {
     case gamePieceMoving
 }
 
-enum PlayerType: Int {
-    case human = 0
-    case computer
-}
-
 class GameScene: SKScene {
-    private let game = GameModel()
-    private let ai = GameAI()
+    private let game: QueahGame
+    private let ai: QueahAI
+    private var playerType: [PlayerType]
     private let status = SKLabelNode()
     private let board = GameBoard()
-    private let newGameButton = Button(text: "New Game")
-    private var playerType: [PlayerType] = [ .computer, .computer]
     private var acceptInput: Bool = false
     private var selected: GamePiece? = nil
-    private var legalMoves: [GameMove] = []
+    private var legalMoves: [QueahMove] = []
     
-    init(playerColor: PlayerColor) {
-        self.playerType[playerColor.rawValue] = .human
+    init(model: QueahModel) {
+        self.game = model.game
+        self.ai = model.ai
+        self.playerType = model.playerType
         super.init(size: CGSize(width: 390, height: 844))
         
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -51,7 +48,10 @@ class GameScene: SKScene {
         status.fontName = "Helvetica-Bold"
         status.fontSize = 24
         
-        newGameButton.position = CGPoint(x: 0, y: -310)
+        board.setupPieces(model: game)
+        
+        addChild(status)
+        addChild(board)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -59,11 +59,9 @@ class GameScene: SKScene {
     }
     
     override func didMove(to view: SKView) {
-        addChild(status)
-        addChild(board)
-        addChild(newGameButton)
-        
-        nextMove()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            self?.nextMove()
+        }
     }
     
     private func nextMove() -> Void {
@@ -126,7 +124,7 @@ class GameScene: SKScene {
     }
     
     private func makeMove(from: BoardLocation, to: BoardLocation) -> Void {
-        let captured = game.makeMove(move: GameMove(from: from.engineIndex, to: to.engineIndex))
+        let captured = game.makeMove(move: QueahMove(from: from.engineIndex, to: to.engineIndex))
         board.makeMove(from: from, to: to) { [unowned self] in
             self.nextMove()
         }
@@ -152,7 +150,7 @@ class GameScene: SKScene {
         piece.select(selected: true)
         legalMoves.forEach {
             if $0.from == piece.location.engineIndex {
-                board.selectSpace(index: $0.to)
+                board.selectSpace(index: Int($0.to))
             }
         }
     }
@@ -175,20 +173,7 @@ class GameScene: SKScene {
         }
     }
     
-    private func newGame() -> Void {
-        game.newGame()
-        status.text = ""
-        board.reset()
-        acceptInput = false
-        selected = nil
-        legalMoves = []
-        nextMove()
-    }
-    
     func touchDown(atPoint pos: CGPoint) {
-        if newGameButton.contains(pos) {
-            newGame()
-        }
         guard acceptInput else {
             return
         }

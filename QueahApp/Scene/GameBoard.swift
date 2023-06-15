@@ -2,7 +2,7 @@
 // Copyright 2023 Stephen E. Bensley
 //
 // This file is licensed under the MIT License. You may obtain a copy of the
-// license at https://github.com/stephenbensley/obatgonu/blob/main/LICENSE.
+// license at https://github.com/stephenbensley/Queah/blob/main/LICENSE.
 //
 
 import Foundation
@@ -10,9 +10,6 @@ import SpriteKit
 
 class GameBoard: SKSpriteNode {
     private var spaces: [BoardSpace] = []
-    
-    static private let whiteStart: [Int] = [ 0,  1,  3,  4]
-    static private let blackStart: [Int] = [ 8,  9, 11, 12]
     
     init() {
         let texture = SKTexture(imageNamed: "board")
@@ -24,18 +21,10 @@ class GameBoard: SKSpriteNode {
             spaces.append(space)
             addChild(space)
         }
-        
-        setupPieces()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    func reset() -> Void {
-        deselectAllSpaces()
-        clearPieces()
-        setupPieces()
     }
     
     private func clearPieces() -> Void {
@@ -46,17 +35,18 @@ class GameBoard: SKSpriteNode {
         }
     }
     
-    private func setupPieces() -> Void {
-        for index in GameBoard.whiteStart {
+    func setupPieces(model: QueahGame) -> Void {
+        clearPieces()
+        for index in model.getPieces(player: .white) {
             addChild(GamePiece(player: .white, location: BoardLocation(.inPlay, index)))
         }
-        for index in GameBoard.blackStart {
+        for index in model.getPieces(player: .black) {
             addChild(GamePiece(player: .black, location: BoardLocation(.inPlay, index)))
         }
-        for index in 0..<maxPiecesInReserve {
+        for index in 0 ..< model.reserveCount(player: .white) {
             addChild(GamePiece(player: .white, location: BoardLocation(.whiteReserve, index)))
         }
-        for index in 0..<maxPiecesInReserve {
+        for index in 0 ..< model.reserveCount(player: .black) {
             addChild(GamePiece(player: .black, location: BoardLocation(.blackReserve, index)))
         }
     }
