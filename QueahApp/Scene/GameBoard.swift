@@ -27,16 +27,7 @@ class GameBoard: SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func clearPieces() -> Void {
-        for child in children {
-            if let piece = child as? GamePiece {
-                piece.remove()
-            }
-        }
-    }
-    
     func setupPieces(model: QueahGame) -> Void {
-        clearPieces()
         for index in model.getPieces(player: .white) {
             addChild(GamePiece(player: .white, location: BoardLocation(.inPlay, index)))
         }

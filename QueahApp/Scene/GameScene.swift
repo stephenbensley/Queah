@@ -40,6 +40,7 @@ enum Layer: CGFloat {
     case boardSpace
     case gamePiece
     case gamePieceMoving
+    case gameOver
 }
 
 class GameScene: SKScene {
@@ -47,7 +48,6 @@ class GameScene: SKScene {
     private let game: QueahGame
     private let ai: QueahAI
     private var playerType: [PlayerType]
-    private let status = SKLabelNode()
     private let board = GameBoard()
     private let menuButton = MenuButton(text: "Main Menu")
     private var acceptInput: Bool = false
@@ -60,7 +60,7 @@ class GameScene: SKScene {
         self.ai = model.ai
         self.playerType = model.playerType
         super.init(size: GameScene.adjustAspect(frame: size))
-
+        
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.backgroundColor = QColor(red: 105/255,
                                       green: 157/255,
@@ -68,15 +68,10 @@ class GameScene: SKScene {
                                       alpha: 1.0)
         self.scaleMode = .aspectFit
         
-        status.position = CGPoint(x: 0, y: 290)
-        status.fontName = "Helvetica-Bold"
-        status.fontSize = 24
-        
         board.setupPieces(model: game)
-        menuButton.position = CGPoint(x: 0, y: -310)
-
-        addChild(status)
         addChild(board)
+        
+        menuButton.position = CGPoint(x: 0, y: -310)
         addChild(menuButton)
     }
     
@@ -122,7 +117,7 @@ class GameScene: SKScene {
     }
     
     private func gameOver() -> Void {
-        status.text = {
+        let text = {
             if game.isOver() {
                 switch game.playertoMove() {
                 case .white:
@@ -134,6 +129,44 @@ class GameScene: SKScene {
                 return "Draw by repetition."
             }
         }()
+        
+        let background = SKShapeNode(rectOf: CGSize(width: 300, height: 100), cornerRadius: 10)
+        background.alpha = 0.0
+        background.fillColor = QColor(red: 105/255,
+                                      green: 157/255,
+                                      blue: 181/255,
+                                      alpha: 1.0)
+        background.lineWidth = 1.5
+        background.zPosition = Layer.gameOver.rawValue
+        addChild(background)
+        
+        let movingText = SKLabelNode(text: text)
+        movingText.fontName = "Helvetica-Bold"
+        movingText.fontSize = 24
+        movingText.verticalAlignmentMode = .center
+        background.addChild(movingText)
+        
+        let stationaryText = SKLabelNode(text: text)
+        stationaryText.fontName = movingText.fontName
+        stationaryText.fontSize = movingText.fontSize
+        stationaryText.isHidden = true
+        stationaryText.position = CGPoint(x: 0, y: 290)
+        stationaryText.verticalAlignmentMode = .center
+        stationaryText.zPosition = (background.zPosition + 1)
+        addChild(stationaryText)
+        
+        background.run(SKAction.sequence([
+            SKAction.fadeIn(withDuration: 0.25),
+            SKAction.wait(forDuration: 2.0),
+            SKAction.moveTo(y: 290, duration: 0.35),
+            SKAction.fadeOut(withDuration: 0.75),
+            SKAction.removeFromParent()
+        ]))
+        
+        stationaryText.run(SKAction.sequence([
+            SKAction.wait(forDuration: 2.6),
+            SKAction.unhide()
+        ]))
     }
     
     private func nextHumanMove() -> Void {
@@ -216,11 +249,11 @@ class GameScene: SKScene {
     }
     
     func touchDown(atPoint pos: CGPoint) {
-        guard acceptInput else {
-            return
-        }
         if menuButton.contains(pos) {
             mainView = .menu
+            return
+        }
+        guard acceptInput else {
             return
         }
         let node = atPoint(pos)
