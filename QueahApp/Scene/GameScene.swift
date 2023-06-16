@@ -6,6 +6,7 @@
 //
 
 import SpriteKit
+import SwiftUI
 import QueahEngine
 
 #if os(iOS)
@@ -13,6 +14,26 @@ typealias QColor = UIColor
 #elseif os(macOS)
 typealias QColor = NSColor
 #endif
+
+class MenuButton: SKNode {
+    init(text: String) {
+        super.init()
+        
+        let bg = SKShapeNode(rectOf: CGSize(width: 125, height: 50), cornerRadius: 10)
+        bg.lineWidth = 1.5
+        addChild(bg)
+        
+        let text = SKLabelNode(text: text)
+        text.fontName = "Helvetica-Bold"
+        text.fontSize = 20
+        text.verticalAlignmentMode = .center
+        bg.addChild(text)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
 
 enum Layer: CGFloat {
     case gameBoard
@@ -22,16 +43,19 @@ enum Layer: CGFloat {
 }
 
 class GameScene: SKScene {
+    @Binding var mainView: ViewType
     private let game: QueahGame
     private let ai: QueahAI
     private var playerType: [PlayerType]
     private let status = SKLabelNode()
     private let board = GameBoard()
+    private let menuButton = MenuButton(text: "Main Menu")
     private var acceptInput: Bool = false
     private var selected: GamePiece? = nil
     private var legalMoves: [QueahMove] = []
     
-    init(size: CGSize, model: QueahModel) {
+    init(viewType: Binding<ViewType>, size: CGSize, model: QueahModel) {
+        self._mainView = viewType
         self.game = model.game
         self.ai = model.ai
         self.playerType = model.playerType
@@ -49,9 +73,11 @@ class GameScene: SKScene {
         status.fontSize = 24
         
         board.setupPieces(model: game)
-        
+        menuButton.position = CGPoint(x: 0, y: -310)
+
         addChild(status)
         addChild(board)
+        addChild(menuButton)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -191,6 +217,10 @@ class GameScene: SKScene {
     
     func touchDown(atPoint pos: CGPoint) {
         guard acceptInput else {
+            return
+        }
+        if menuButton.contains(pos) {
+            mainView = .menu
             return
         }
         let node = atPoint(pos)

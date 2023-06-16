@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct QueahApp: App {
+    let model = QueahModel.load() ?? QueahModel()
+    @Environment(\.scenePhase) private var scenePhase
+
     var body: some Scene {
         WindowGroup {
-            MenuView()
+            ContentView(model: model)
+        }
+        .onChange(of: scenePhase) { phase in
+            if phase == .inactive {
+                model.save()
+            }
         }
     }
 }

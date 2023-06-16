@@ -8,13 +8,24 @@
 import SwiftUI
 
 struct RulesView: View {
-    var contents = load()
+    @Binding var mainView: ViewType
+    let contents = load()
     
     var body: some View {
-        ScrollView {
-            Text(contents)
+        VStack {
+            HStack(spacing: 15) {
+                Spacer()
+                
+                Button("Done") {
+                    mainView = .menu
+                }
+                .padding()
+            }
+            ScrollView {
+                Text(contents)
+            }
+            .padding()
         }
-        .padding()
     }
     
     static func load() -> AttributedString {
@@ -22,18 +33,16 @@ struct RulesView: View {
             fatalError("Failed to locate rules.rtf in bundle.")
         }
         
+        let options: [NSAttributedString.DocumentReadingOptionKey : Any] = [
+            .documentType: NSAttributedString.DocumentType.rtf
+        ]
+        
         guard let contents = try? NSAttributedString(url: url,
-                                                     options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.rtf],
+                                                     options: options,
                                                      documentAttributes: nil) else {
             fatalError("Failed to load rules.rtf from bundle.")
         }
         
         return AttributedString(contents)
-    }
-}
-
-struct RulesView_Previews: PreviewProvider {
-    static var previews: some View {
-        RulesView()
     }
 }

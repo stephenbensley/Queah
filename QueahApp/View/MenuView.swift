@@ -26,62 +26,36 @@ struct MenuItem: View {
     }
 }
 
-enum ViewType {
-    case game
-    case rules
-}
-
 struct MenuView: View {
-    let model = QueahModel.load() ?? QueahModel()
-    @State var path: [ViewType] = []
+    @Binding var mainView: ViewType
+    var model: QueahModel
     @Environment(\.openURL) var openURL
     
     var body: some View {
-        NavigationStack(path: $path) {
-            List {
-                MenuItem(text: "Play as White vs. Computer") {
-                    model.newGame(white: .human, black: .computer)
-                    navigate(to: .game)
-                }
-                MenuItem(text: "Play as Black vs. Computer") {
-                    model.newGame(white: .computer, black: .human)
-                    navigate(to: .game)
-                }
-                MenuItem(text: "Player vs. Player") {
-                    model.newGame(white: .human, black: .human)
-                    navigate(to: .game)
-                }
-                MenuItem(text: "Resume Game") {
-                    navigate(to: .game)
-                }
-                MenuItem(text: "How to Play") {
-                    navigate(to: .rules)
-                }
-                MenuItem(text: "Privacy Policy", symbol: "link") {
-                    if let url = URL(string: "http://www.daddario.com") {
-                        openURL(url)
-                    }
-                }
+        List {
+            MenuItem(text: "Play as White vs. Computer") {
+                model.newGame(white: .human, black: .computer)
+                mainView = .game
             }
-            .navigationDestination(for: ViewType.self) { type in
-                switch type {
-                case .game:
-                    GameView(model: model)
-                case .rules:
-                    RulesView()
+            MenuItem(text: "Play as Black vs. Computer") {
+                model.newGame(white: .computer, black: .human)
+                mainView = .game
+            }
+            MenuItem(text: "Player vs. Player") {
+                model.newGame(white: .human, black: .human)
+                mainView = .game
+            }
+            MenuItem(text: "Resume Game") {
+                mainView = .game
+            }
+            MenuItem(text: "How to Play") {
+                mainView = .rules
+            }
+            MenuItem(text: "Privacy Policy", symbol: "link") {
+                if let url = URL(string: "http://www.daddario.com") {
+                    openURL(url)
                 }
             }
         }
-        .accentColor(.white)
-    }
-    
-    func navigate(to viewType: ViewType) -> Void {
-        path.append(viewType)
-    }
-}
-
-struct MenuView_Previews: PreviewProvider {
-    static var previews: some View {
-        MenuView()
     }
 }
