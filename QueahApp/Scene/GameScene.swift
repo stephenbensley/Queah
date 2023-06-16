@@ -31,12 +31,12 @@ class GameScene: SKScene {
     private var selected: GamePiece? = nil
     private var legalMoves: [QueahMove] = []
     
-    init(model: QueahModel) {
+    init(size: CGSize, model: QueahModel) {
         self.game = model.game
         self.ai = model.ai
         self.playerType = model.playerType
-        super.init(size: CGSize(width: 390, height: 844))
-        
+        super.init(size: GameScene.adjustAspect(frame: size))
+
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.backgroundColor = QColor(red: 105/255,
                                       green: 157/255,
@@ -56,6 +56,22 @@ class GameScene: SKScene {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private static func adjustAspect(frame: CGSize) -> CGSize {
+        var width = CGFloat(390)
+        var height = CGFloat(700)
+        let idealAspect = height / width
+        
+        let actualAspect = frame.height / frame.width
+        
+        if actualAspect > idealAspect {
+            height = width * actualAspect
+        } else {
+            width = height / actualAspect
+        }
+        
+        return CGSize(width: width, height: height)
     }
     
     override func didMove(to view: SKView) {

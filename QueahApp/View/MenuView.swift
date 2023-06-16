@@ -72,6 +72,7 @@ struct MenuView: View {
                 }
             }
         }
+        .accentColor(.white)
     }
     
     func navigate(to viewType: ViewType) -> Void {

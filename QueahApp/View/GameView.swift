@@ -11,13 +11,13 @@ import SwiftUI
 struct GameView: View {
     var model: QueahModel
     @Environment(\.scenePhase) private var scenePhase
-
     var body: some View {
-        VStack {
-            SpriteView(scene: GameScene(model: model))
-                .frame(width: 390, height: 700)
-                .ignoresSafeArea()
+        GeometryReader { geo in
+            SpriteView(scene: GameScene(size: CGSize(width: geo.size.width,
+                                                     height: geo.size.height),
+                                        model: model))
         }
+        .edgesIgnoringSafeArea(.all)
         .onChange(of: scenePhase) { phase in
             if phase == .inactive {
                 model.save()
