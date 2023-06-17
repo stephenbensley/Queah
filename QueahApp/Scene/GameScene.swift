@@ -229,10 +229,6 @@ class GameScene: SKScene {
     }
     
     func touchDown(atPoint pos: CGPoint) {
-        if menuButton.contains(pos) {
-            mainView = .menu
-            return
-        }
         guard acceptInput else {
             return
         }
@@ -244,13 +240,29 @@ class GameScene: SKScene {
         }
     }
     
+    func touchUp(atPoint pos: CGPoint) {
+        if menuButton.contains(pos) {
+            mainView = .menu
+            return
+        }
+    }
+    
 #if os(iOS)
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches { self.touchDown(atPoint: t.location(in: self))}
     }
+
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches { self.touchUp(atPoint: t.location(in: self))}
+    }
+
 #elseif os(macOS)
     override func mouseDown(with event: NSEvent) {
         self.touchDown(atPoint: event.location(in: self))
+    }
+
+    override func mouseUp(with event: NSEvent) {
+        self.touchUp(atPoint: event.location(in: self))
     }
 #endif
 }

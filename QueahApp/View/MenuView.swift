@@ -12,19 +12,19 @@ struct MenuItem: View {
     var action: () -> Void
     
     var body: some View {
-        Text(text)
-            .font(.custom("Helvetica", fixedSize: 20))
-            .frame(width: 250)
-            .padding()
-            .background(QueahColor.boardBackground)
-            .cornerRadius(20)
-            .overlay(RoundedRectangle(cornerRadius: 20)
-                .stroke(QueahColor.border, lineWidth: 5)
-            )
-            .padding(2)
-            .onTapGesture {
-                action()
-            }
+        Button(action: action) {
+            Text(text)
+                .font(.custom("Helvetica", fixedSize: 20))
+                .frame(width: 250)
+                .padding()
+                .background(QueahColor.boardBackground)
+                .cornerRadius(20)
+                .overlay(RoundedRectangle(cornerRadius: 20)
+                    .stroke(QueahColor.border, lineWidth: 5)
+                )
+        }
+        .buttonStyle(PlainButtonStyle())
+        .padding(2)
     }
 }
 
