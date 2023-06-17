@@ -15,7 +15,6 @@ struct RulesView: View {
         VStack {
             HStack(spacing: 15) {
                 Spacer()
-                
                 Button("Done") {
                     mainView = .menu
                 }
@@ -23,8 +22,9 @@ struct RulesView: View {
             }
             ScrollView {
                 Text(contents)
+                    .foregroundStyle(.white)
             }
-            .padding()
+            .padding(.horizontal, 20)
         }
     }
     
