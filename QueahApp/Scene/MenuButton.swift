@@ -8,6 +8,12 @@
 import SpriteKit
 
 class MenuButton: SKNode {
+    var highlighted: Bool = false {
+        didSet {
+            alpha = highlighted ? 0.6 : 1.0
+        }
+    }
+    
     override init() {
         super.init()
         

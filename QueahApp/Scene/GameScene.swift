@@ -229,9 +229,15 @@ class GameScene: SKScene {
     }
     
     func touchDown(atPoint pos: CGPoint) {
+        if menuButton.contains(pos) {
+            assert(!menuButton.highlighted)
+            menuButton.highlighted = true
+        }
+        
         guard acceptInput else {
             return
         }
+        
         let node = atPoint(pos)
         if let piece = node as? GamePiece {
             onPieceTouched(piece: piece)
@@ -240,10 +246,16 @@ class GameScene: SKScene {
         }
     }
     
+    func touchMoved(atPoint pos: CGPoint) {
+        if menuButton.highlighted && !menuButton.contains(pos) {
+            menuButton.highlighted = false
+        }
+    }
+    
     func touchUp(atPoint pos: CGPoint) {
-        if menuButton.contains(pos) {
+        if menuButton.highlighted && menuButton.contains(pos) {
+            menuButton.highlighted = false
             mainView = .menu
-            return
         }
     }
     
@@ -251,16 +263,23 @@ class GameScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches { self.touchDown(atPoint: t.location(in: self))}
     }
-
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches { self.touchMoved(atPoint: t.location(in: self))}
+    }
+    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches { self.touchUp(atPoint: t.location(in: self))}
     }
-
 #elseif os(macOS)
     override func mouseDown(with event: NSEvent) {
         self.touchDown(atPoint: event.location(in: self))
     }
-
+    
+    override func mouseDragged(with event: NSEvent) {
+        self.touchMoved(atPoint: event.location(in: self))
+    }
+    
     override func mouseUp(with event: NSEvent) {
         self.touchUp(atPoint: event.location(in: self))
     }
