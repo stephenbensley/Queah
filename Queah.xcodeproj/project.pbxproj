@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DC6350B62A3C9FE000364B16 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6350B52A3C9FE000364B16 /* ContentView.swift */; };
+		DC84DEE92A3E47D4009368A3 /* rules.txt in Resources */ = {isa = PBXBuildFile; fileRef = DC84DEE82A3E47D4009368A3 /* rules.txt */; };
 		DCE634BB2A390A1A0094B03D /* PlayerPosition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634AB2A390A1A0094B03D /* PlayerPosition.cpp */; };
 		DCE634BC2A390A1A0094B03D /* GameModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634AC2A390A1A0094B03D /* GameModel.cpp */; };
 		DCE634BD2A390A1A0094B03D /* ToString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634AD2A390A1A0094B03D /* ToString.cpp */; };
@@ -44,7 +45,6 @@
 		DCF609CB2A3B472200C28BAE /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF609CA2A3B472100C28BAE /* GameView.swift */; };
 		DCF609CD2A3B472E00C28BAE /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF609CC2A3B472E00C28BAE /* RulesView.swift */; };
 		DCF609CF2A3B474600C28BAE /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF609CE2A3B474600C28BAE /* MenuView.swift */; };
-		DCF609D42A3B503800C28BAE /* rules.rtf in Resources */ = {isa = PBXBuildFile; fileRef = DCF609D32A3B501C00C28BAE /* rules.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +111,7 @@
 
 /* Begin PBXFileReference section */
 		DC6350B52A3C9FE000364B16 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DC84DEE82A3E47D4009368A3 /* rules.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rules.txt; sourceTree = "<group>"; };
 		DCE634982A39092B0094B03D /* libQueahEngine-MacOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libQueahEngine-MacOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE634AA2A3909D40094B03D /* queah.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = queah.dat; sourceTree = "<group>"; };
 		DCE634AB2A390A1A0094B03D /* PlayerPosition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerPosition.cpp; sourceTree = "<group>"; };
@@ -154,7 +155,6 @@
 		DCF609CA2A3B472100C28BAE /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		DCF609CC2A3B472E00C28BAE /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
 		DCF609CE2A3B474600C28BAE /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
-		DCF609D32A3B501C00C28BAE /* rules.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = rules.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,7 +344,7 @@
 		DCF609D02A3B4C7700C28BAE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				DCF609D32A3B501C00C28BAE /* rules.rtf */,
+				DC84DEE82A3E47D4009368A3 /* rules.txt */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -505,7 +505,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCF609D42A3B503800C28BAE /* rules.rtf in Resources */,
+				DC84DEE92A3E47D4009368A3 /* rules.txt in Resources */,
 				DCEEE9C02A3A292200291AD8 /* queah.dat in Resources */,
 				DCEEE9A32A393F4600291AD8 /* Assets.xcassets in Resources */,
 			);

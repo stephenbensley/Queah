@@ -39,8 +39,8 @@ struct MenuView: View {
             Text("Queah")
                 .font(.custom("Helvetica-Bold", fixedSize: 40))
                 .foregroundStyle(.white)
-            Text("An abstract strategy game from Liberia")
-                .font(.custom("Helvetica", fixedSize: 15))
+            Text("A strategy game from Liberia")
+                .font(.custom("Helvetica", fixedSize: 18))
                 .foregroundStyle(.white)
                 .padding(.bottom)
             Group {

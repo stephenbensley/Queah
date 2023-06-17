@@ -19,12 +19,12 @@ class MenuButton: SKNode {
     init(text: String) {
         super.init()
         
-        let bg = SKShapeNode(rectOf: CGSize(width: 125, height: 50), cornerRadius: 10)
-        bg.lineWidth = 1.5
+        let bg = SKShapeNode(rectOf: CGSize(width: 150, height: 55), cornerRadius: 20)
+        bg.lineWidth = 5
         addChild(bg)
         
         let text = SKLabelNode(text: text)
-        text.fontName = "Helvetica-Bold"
+        text.fontName = "Helvetica"
         text.fontSize = 20
         text.verticalAlignmentMode = .center
         bg.addChild(text)

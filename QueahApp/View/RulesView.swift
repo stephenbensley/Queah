@@ -21,28 +21,29 @@ struct RulesView: View {
                 .padding()
             }
             ScrollView {
+                HStack {
+                    Text("Rules of Queah")
+                        .font(.custom("Helvetica-Bold", fixedSize: 28))
+                        .padding(.bottom, 20)
+                    Spacer()
+                }
                 Text(contents)
-                    .foregroundStyle(.white)
+                    .font(.custom("Helvetica", fixedSize: 18))
             }
+            .foregroundStyle(.white)
             .padding(.horizontal, 20)
         }
     }
     
-    static func load() -> AttributedString {
-        guard let url = Bundle.main.url(forResource: "rules", withExtension: "rtf") else {
-            fatalError("Failed to locate rules.rtf in bundle.")
+    static func load() -> String {
+        guard let path = Bundle.main.path(forResource: "rules", ofType: "txt") else {
+            fatalError("Failed to locate rules.txt in bundle.")
         }
         
-        let options: [NSAttributedString.DocumentReadingOptionKey : Any] = [
-            .documentType: NSAttributedString.DocumentType.rtf
-        ]
-        
-        guard let contents = try? NSAttributedString(url: url,
-                                                     options: options,
-                                                     documentAttributes: nil) else {
+        guard let contents = try? String(contentsOfFile: path) else {
             fatalError("Failed to load rules.rtf from bundle.")
         }
         
-        return AttributedString(contents)
+        return contents
     }
 }
