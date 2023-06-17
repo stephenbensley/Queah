@@ -114,6 +114,7 @@
 		DC6350B52A3C9FE000364B16 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DC84DEE82A3E47D4009368A3 /* rules.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rules.txt; sourceTree = "<group>"; };
 		DC84DEEA2A3E4A0D009368A3 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		DC84DEEC2A3E7EDA009368A3 /* icon.afdesign */ = {isa = PBXFileReference; lastKnownFileType = file; path = icon.afdesign; sourceTree = "<group>"; };
 		DCE634982A39092B0094B03D /* libQueahEngine-MacOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libQueahEngine-MacOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE634AA2A3909D40094B03D /* queah.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = queah.dat; sourceTree = "<group>"; };
 		DCE634AB2A390A1A0094B03D /* PlayerPosition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerPosition.cpp; sourceTree = "<group>"; };
@@ -299,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				DCEEE9AC2A39473900291AD8 /* artwork.afdesign */,
+				DC84DEEC2A3E7EDA009368A3 /* icon.afdesign */,
 				DCEEE9A42A393F4600291AD8 /* Queah.entitlements */,
 				DCEEE9BC2A3A278E00291AD8 /* module.modulemap */,
 				DCEEE9A22A393F4600291AD8 /* Assets.xcassets */,
