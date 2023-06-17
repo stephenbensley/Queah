@@ -7,10 +7,27 @@
 
 import SwiftUI
 
+#if os(macOS)
+class AppDelegate: NSObject, NSApplicationDelegate {
+    var model: QueahModel?
+    
+    func applicationWillTerminate(_ aNotification: Notification) {
+        model?.save()
+    }
+}
+#endif
+
 @main
 struct QueahApp: App {
     let model = QueahModel.load() ?? QueahModel()
     @Environment(\.scenePhase) private var scenePhase
+#if os(macOS)
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
+    init() {
+        appDelegate.model = model
+    }
+#endif
 
     var body: some Scene {
         WindowGroup {
