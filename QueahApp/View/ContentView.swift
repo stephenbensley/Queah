@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+struct QueahColor {
+    static let mainBackground = Color("main-background")
+    static let boardBackground = Color("board-background")
+    static let border = Color("border")
+}
+
 enum ViewType {
     case menu
     case game
@@ -16,15 +22,19 @@ enum ViewType {
 struct ContentView: View {
     var model: QueahModel
     @State var mainView = ViewType.menu
-     
+    
     var body: some View {
-        switch mainView {
-        case .menu:
-            MenuView(mainView: $mainView.animation(), model: model)
-        case .game:
-            GameView(mainView: $mainView.animation(), model: model)
-        case .rules:
-            RulesView(mainView: $mainView.animation())
+        ZStack {
+            QueahColor.mainBackground
+                .edgesIgnoringSafeArea(.all)
+            switch mainView {
+            case .menu:
+                MenuView(mainView: $mainView.animation(), model: model)
+            case .game:
+                GameView(mainView: $mainView.animation(), model: model)
+            case .rules:
+                RulesView(mainView: $mainView.animation())
+            }
         }
     }
 }
