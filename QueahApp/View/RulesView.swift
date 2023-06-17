@@ -18,21 +18,22 @@ struct RulesView: View {
                 Button("Done") {
                     mainView = .menu
                 }
-                .padding()
+                .padding(5)
+            }
+            HStack {
+                Text("Rules of Queah")
+                    .font(.custom("Helvetica-Bold", fixedSize: 28))
+                    .padding(.bottom, 20)
+                Spacer()
             }
             ScrollView {
-                HStack {
-                    Text("Rules of Queah")
-                        .font(.custom("Helvetica-Bold", fixedSize: 28))
-                        .padding(.bottom, 20)
-                    Spacer()
-                }
                 Text(contents)
                     .font(.custom("Helvetica", fixedSize: 18))
             }
-            .foregroundStyle(.white)
-            .padding(.horizontal, 20)
         }
+        .foregroundStyle(.white)
+        .padding(.horizontal, 20)
+        
     }
     
     static func load() -> String {
