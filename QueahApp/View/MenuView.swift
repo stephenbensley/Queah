@@ -17,10 +17,10 @@ struct MenuItem: View {
                 .font(.custom("Helvetica", fixedSize: 20))
                 .frame(width: 250)
                 .padding()
-                .background(QueahColor.boardBackground)
+                .background(QueahColor.boardFill)
                 .cornerRadius(20)
                 .overlay(RoundedRectangle(cornerRadius: 20)
-                    .stroke(QueahColor.border, lineWidth: 5)
+                    .stroke(QueahColor.boardStroke, lineWidth: 5)
                 )
         }
         .buttonStyle(PlainButtonStyle())

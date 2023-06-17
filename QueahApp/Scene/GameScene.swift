@@ -42,10 +42,7 @@ class GameScene: SKScene {
         super.init(size: GameScene.adjustAspect(frame: size))
         
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        self.backgroundColor = QColor(red: 105/255,
-                                      green: 157/255,
-                                      blue: 181/255,
-                                      alpha: 1.0)
+        self.backgroundColor = QColor(QueahColor.background)
         self.scaleMode = .aspectFit
         
         board.setupPieces(model: game)

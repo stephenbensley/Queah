@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct QueahColor {
-    static let mainBackground = Color("main-background")
-    static let boardBackground = Color("board-background")
-    static let border = Color("border")
+    static let background  = QueahColor.fromHex(0x699DB5)
+    static let boardFill   = QueahColor.fromHex(0xE7CB7E)
+    static let boardStroke = QueahColor.fromHex(0x4E3524)
+    
+    static func fromHex(_ hex: UInt) -> Color {
+        let r = Double((hex & 0xff0000) >> 16) / 255
+        let g = Double((hex & 0x00ff00) >>  8) / 255
+        let b = Double((hex & 0x0000ff)      ) / 255
+        return Color(red: r, green: g, blue: b)
+    }
 }
 
 enum ViewType {
@@ -25,7 +32,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            QueahColor.mainBackground
+            QueahColor.background
                 .edgesIgnoringSafeArea(.all)
             switch mainView {
             case .menu:
