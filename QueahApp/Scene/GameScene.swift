@@ -15,26 +15,6 @@ typealias QColor = UIColor
 typealias QColor = NSColor
 #endif
 
-class MenuButton: SKNode {
-    init(text: String) {
-        super.init()
-        
-        let bg = SKShapeNode(rectOf: CGSize(width: 150, height: 55), cornerRadius: 20)
-        bg.lineWidth = 5
-        addChild(bg)
-        
-        let text = SKLabelNode(text: text)
-        text.fontName = "Helvetica"
-        text.fontSize = 20
-        text.verticalAlignmentMode = .center
-        bg.addChild(text)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
 enum Layer: CGFloat {
     case gameBoard
     case boardSpace
@@ -49,7 +29,7 @@ class GameScene: SKScene {
     private let ai: QueahAI
     private var playerType: [PlayerType]
     private let board = GameBoard()
-    private let menuButton = MenuButton(text: "Main Menu")
+    private let menuButton = MenuButton()
     private var acceptInput: Bool = false
     private var selected: GamePiece? = nil
     private var legalMoves: [QueahMove] = []
@@ -130,13 +110,13 @@ class GameScene: SKScene {
             }
         }()
         
-        let background = SKShapeNode(rectOf: CGSize(width: 300, height: 100), cornerRadius: 10)
+        let background = SKShapeNode(rectOf: CGSize(width: 300, height: 100), cornerRadius: 20)
         background.alpha = 0.0
         background.fillColor = QColor(red: 105/255,
                                       green: 157/255,
                                       blue: 181/255,
                                       alpha: 1.0)
-        background.lineWidth = 1.5
+        background.lineWidth = 5
         background.zPosition = Layer.gameOver.rawValue
         addChild(background)
         
@@ -159,7 +139,7 @@ class GameScene: SKScene {
             SKAction.fadeIn(withDuration: 0.25),
             SKAction.wait(forDuration: 2.0),
             SKAction.moveTo(y: 290, duration: 0.35),
-            SKAction.fadeOut(withDuration: 0.75),
+            SKAction.fadeOut(withDuration: 0.50),
             SKAction.removeFromParent()
         ]))
         

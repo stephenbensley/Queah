@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DC6350B62A3C9FE000364B16 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6350B52A3C9FE000364B16 /* ContentView.swift */; };
 		DC84DEE92A3E47D4009368A3 /* rules.txt in Resources */ = {isa = PBXBuildFile; fileRef = DC84DEE82A3E47D4009368A3 /* rules.txt */; };
+		DC84DEEB2A3E4A0D009368A3 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84DEEA2A3E4A0D009368A3 /* MenuButton.swift */; };
 		DCE634BB2A390A1A0094B03D /* PlayerPosition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634AB2A390A1A0094B03D /* PlayerPosition.cpp */; };
 		DCE634BC2A390A1A0094B03D /* GameModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634AC2A390A1A0094B03D /* GameModel.cpp */; };
 		DCE634BD2A390A1A0094B03D /* ToString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634AD2A390A1A0094B03D /* ToString.cpp */; };
@@ -112,6 +113,7 @@
 /* Begin PBXFileReference section */
 		DC6350B52A3C9FE000364B16 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DC84DEE82A3E47D4009368A3 /* rules.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rules.txt; sourceTree = "<group>"; };
+		DC84DEEA2A3E4A0D009368A3 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		DCE634982A39092B0094B03D /* libQueahEngine-MacOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libQueahEngine-MacOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE634AA2A3909D40094B03D /* queah.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = queah.dat; sourceTree = "<group>"; };
 		DCE634AB2A390A1A0094B03D /* PlayerPosition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerPosition.cpp; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				DCEEE9B12A3A274500291AD8 /* GameBoard.swift */,
 				DCEEE9B02A3A274500291AD8 /* GamePiece.swift */,
 				DCEEE9AE2A3A274500291AD8 /* GameScene.swift */,
+				DC84DEEA2A3E4A0D009368A3 /* MenuButton.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 				DCEEE9B82A3A274500291AD8 /* GameBoard.swift in Sources */,
 				DCEEE9B62A3A274500291AD8 /* BoardLocation.swift in Sources */,
 				DCEEE9BA2A3A274500291AD8 /* BoardSpace.swift in Sources */,
+				DC84DEEB2A3E4A0D009368A3 /* MenuButton.swift in Sources */,
 				DCF609C72A3A933800C28BAE /* QueahModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
