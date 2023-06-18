@@ -33,9 +33,9 @@ PositionEvaluator::PositionEvaluator(const PositionValues& data)
    // Coalesce all the entries with the same BitBoard combination.
    std::unordered_map<uint32_t, Element> by_key;
    for (const auto& d : data) {
-      const auto key = get_key(d.position);
-      const auto idx1 = d.position.attacker().reserve_count();
-      const auto idx2 = d.position.defender().reserve_count();
+      auto key = get_key(d.position);
+      auto idx1 = d.position.attacker().reserve_count();
+      auto idx2 = d.position.defender().reserve_count();
       auto& entry = by_key[key];
       entry.key = key;
       entry.value[idx1][idx2] = d.value;
@@ -57,14 +57,14 @@ PositionEvaluator::PositionEvaluator(const PositionValues& data)
 
 Move PositionEvaluator::get_best_move(const GameModel& model) const noexcept
 {
-   const auto other = other_player(model.to_move());
+   auto other = other_player(model.to_move());
    
    // Collect & evaluate all the candidate moves.
    Candidates candidates;
-   for (auto m : model.position().moves()) {
-      auto next_pos = model.position().try_move(m);
+   for (auto move : model.position().moves()) {
+      auto next_pos = model.position().try_move(move);
       candidates.push_back({
-         m,
+         move,
          evaluate(next_pos),
          model.repetitions(next_pos, other)
       });
@@ -110,9 +110,9 @@ void PositionEvaluator::save(const char* datafile) const noexcept
 
 ValueType PositionEvaluator::evaluate(GamePosition position) const noexcept
 {
-   const auto key = get_key(position.canonical());
-   const auto idx1 = position.attacker().reserve_count();
-   const auto idx2 = position.defender().reserve_count();
+   auto key = get_key(position.canonical());
+   auto idx1 = position.attacker().reserve_count();
+   auto idx2 = position.defender().reserve_count();
    
    // Find the matching entry.
    auto i = std::lower_bound(elements_.begin(),
@@ -130,6 +130,7 @@ ValueType PositionEvaluator::evaluate(GamePosition position) const noexcept
 
 uint32_t PositionEvaluator::get_key(GamePosition position) noexcept
 {
+   // The look up is based on onboard pieces only.
    uint32_t hi = position.attacker().bitboard();
    uint32_t lo = position.defender().bitboard();
    return (hi << 16u) | lo;
@@ -138,6 +139,7 @@ uint32_t PositionEvaluator::get_key(GamePosition position) noexcept
 // Sorts from most desirable to least desirable.
 bool operator<(const Candidate& lhs, const Candidate& rhs) noexcept
 {
+   // Prefer positions with fewer visits. This avoids draws.
    return (lhs.value < rhs.value) ||
           ((lhs.value == rhs.value) && (lhs.repetitions < rhs.repetitions));
 }

@@ -28,11 +28,12 @@ struct PositionValue {
 };
 using PositionValues = std::vector<PositionValue>;
 
-// Returns the value for a GamePosition
+// Determines the best move for a GamePosition
 class PositionEvaluator
 {
 public:
    PositionEvaluator() noexcept;
+   // Positions are assumed to have been canonized.
    explicit PositionEvaluator(const PositionValues& data);
    
    // Gets the best move for the specified game state.
@@ -56,6 +57,8 @@ private:
    // Computes a key that uniquely identifies the BitBoard combination.
    static uint32_t get_key(GamePosition position) noexcept;
    
+   // vetor is kept sorted by key, so we can use binary search. This is done
+   // to preserve memory on mobile devices (vs. using an unordered_map).
    std::vector<Element> elements_;
 };
 

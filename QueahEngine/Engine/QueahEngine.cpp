@@ -84,7 +84,7 @@ int queah_game_is_over(const QueahGame* game)
       return -1;
    }
    auto model = static_cast<const GameModel*>(game);
-   return model->is_terminal() ? 1 : 0;
+   return model->is_over() ? 1 : 0;
 }
 
 int queah_game_repetitions(const QueahGame* game)
@@ -102,7 +102,7 @@ int queah_game_moves_completed(const QueahGame* game)
       return -1;
    }
    auto model = static_cast<const GameModel*>(game);
-   return model->num_moves();
+   return model->moves_completed();
 }
 
 void queah_game_get_moves(const QueahGame* game, QueahMove* buf, int* buflen)
@@ -191,7 +191,7 @@ int queah_game_encode(const QueahGame* game, char* buf, int* buflen)
    try
    {
       std::ostringstream ostrm;
-      model->save(ostrm);
+      model->encode(ostrm);
       auto len = ostrm.str().copy(buf, *buflen);
       *buflen = static_cast<int>(len);
    }
@@ -213,7 +213,7 @@ int queah_game_decode(QueahGame* game, const char* buf, int buflen)
    {
       std::string sz(buf, buflen);
       std::istringstream istrm(sz);
-      if (!model->load(istrm)) {
+      if (!model->decode(istrm)) {
          return -1;
       }
    }

@@ -24,9 +24,9 @@ public:
    // Resets all counts to start a new game.
    void reset() noexcept;
    
-   // Load/save the data from/to a buffer.
-   bool load(std::istringstream& istrm);
-   void save(std::ostringstream& ostrm) const;
+   // Encode/decode the data to/from a buffer.
+   void encode(std::ostringstream& ostrm) const;
+   bool decode(std::istringstream& istrm);
 
 private:
    static uint64_t get_key(GamePosition position, PlayerIndex to_move) noexcept;

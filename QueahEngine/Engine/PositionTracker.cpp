@@ -29,19 +29,14 @@ void PositionTracker::reset() noexcept
    counts_.clear();
 }
 
-bool PositionTracker::load(std::istringstream& istrm)
-{
-   std::unordered_map<uint64_t, int> tmp;
-   if (!read_pod_map(istrm, tmp)) {
-      return false;
-   }
-   counts_.swap(tmp);
-   return true;
-}
-
-void PositionTracker::save(std::ostringstream& ostrm) const
+void PositionTracker::encode(std::ostringstream& ostrm) const
 {
    write_pod_map(ostrm, counts_);
+}
+
+bool PositionTracker::decode(std::istringstream& istrm)
+{
+   return read_pod_map(istrm, counts_);
 }
 
 uint64_t PositionTracker::get_key(GamePosition position,

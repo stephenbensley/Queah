@@ -12,12 +12,8 @@
 
 GameModel::GameModel() noexcept
 {
+   // Mark the starting position as having been visited.
    tracker_.visit(position_, to_move_);
-}
-
-PlayerIndex GameModel::to_move() const noexcept
-{
-   return to_move_;
 }
 
 GamePosition GameModel::position() const noexcept
@@ -25,14 +21,14 @@ GamePosition GameModel::position() const noexcept
    return position_;
 }
 
-int GameModel::num_moves() const noexcept
+PlayerIndex GameModel::to_move() const noexcept
 {
-   return (num_half_moves_ + 1) / 2;
+   return to_move_;
 }
 
-bool GameModel::is_terminal() const noexcept
+bool GameModel::is_over() const noexcept
 {
-   return position_.is_terminal();
+   return position_.is_over();
 }
 
 int GameModel::repetitions() const noexcept
@@ -45,14 +41,13 @@ int GameModel::repetitions(GamePosition position, PlayerIndex to_move) const noe
    return tracker_.repetitions(position, to_move);
 }
 
-std::string GameModel::to_string() const
+int GameModel::moves_completed() const noexcept
 {
-   return ::to_string(position_, to_move_);
+   return (num_half_moves_ + 1) / 2;
 }
 
 void GameModel::make_move(Move move)
 {
-   assert(position_.is_legal_move(move));
    position_.make_move(move);
    to_move_ = other_player(to_move_);
    tracker_.visit(position_, to_move_);
@@ -62,28 +57,42 @@ void GameModel::make_move(Move move)
 
 void GameModel::reset() noexcept
 {
-   to_move_ = 0;
    position_ = GamePosition::start;
-   num_half_moves_ = 0;
+   to_move_ = 0;
    tracker_.reset();
+   num_half_moves_ = 0;
+   
    tracker_.visit(position_, to_move_);
 }
 
-bool GameModel::load(std::istringstream& istrm)
+std::string GameModel::to_string() const
+{
+   return ::to_string(position_, to_move_);
+}
+
+void GameModel::encode(std::ostringstream& ostrm) const
+{
+   write_pod(ostrm, position_.id());
+   write_pod(ostrm, to_move_);
+   tracker_.encode(ostrm);
+   write_pod(ostrm, num_half_moves_);
+}
+
+bool GameModel::decode(std::istringstream& istrm)
 {
    GameModel tmp;
-   if (!read_pod(istrm, tmp.to_move_)) {
-      return false;
-   }
    uint32_t id;
    if (!read_pod(istrm, id)) {
       return false;
    }
    tmp.position_ = GamePosition(id);
-   if (!read_pod(istrm, num_half_moves_)) {
+   if (!read_pod(istrm, tmp.to_move_)) {
       return false;
    }
-   if (!tracker_.load(istrm)) {
+   if (!tmp.tracker_.decode(istrm)) {
+      return false;
+   }
+   if (!read_pod(istrm, tmp.num_half_moves_)) {
       return false;
    }
    if (!read_complete(istrm)) {
@@ -91,12 +100,4 @@ bool GameModel::load(std::istringstream& istrm)
    }
    std::swap(*this, tmp);
    return true;
-}
-
-void GameModel::save(std::ostringstream& ostrm) const
-{
-   write_pod(ostrm, to_move_);
-   write_pod(ostrm, position_.id());
-   write_pod(ostrm, num_half_moves_);
-   tracker_.save(ostrm);
 }

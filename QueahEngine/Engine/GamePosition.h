@@ -11,8 +11,8 @@
 #include "PlayerPosition.h"
 #include <vector>
 
-// Represents a game move. If from == reserve_index, this is a drop. If
-// capturing is an invalid index, no capture occurs.
+// Represents a game move. If from == invalid_index, this is a drop. If
+// capturing == invalid_index, no capture occurs.
 struct Move {
    int from;
    int to;
@@ -20,9 +20,11 @@ struct Move {
 };
 using Moves = std::vector<Move>;
 
-bool operator==(Move lhs, Move rhs) noexcept;
+bool operator==(const Move& lhs, const Move& rhs) noexcept;
 
-// Represents the state of the game.
+// Represents a position in the game without regard to which player has the
+// next move. Queah is symmetric with regard to player color, so we can analyze
+// a position without knowing which player moves next.
 class GamePosition
 {
 public:
@@ -39,16 +41,16 @@ public:
    by_player(PlayerIndex to_move) const noexcept;
    
    // Returns true if the game is over.
-   bool is_terminal() const;
+   bool is_over() const;
+   
    // Returns all legal moves from the position.
    Moves moves() const;
    // Returns true if the move is allowed from this position.
-   bool is_legal_move(Move move) const;
-
-   // Updates the position according to the move.
-   void make_move(Move move) noexcept;
+   bool is_legal_move(const Move& move) const;
    // Determines the result of a move without actually changing the position.
-   GamePosition try_move(Move move) const noexcept;
+   GamePosition try_move(const Move& move) const noexcept;
+   // Updates the position according to the move.
+   void make_move(const Move& move) noexcept;
    
    // Returns the canonical format of the move. Useful for collapsing game
    // positions that are strategically identical.
@@ -72,7 +74,7 @@ private:
    void reverse() noexcept;
    // Reflects the board horizontally.
    void mirror() noexcept;
-   // Rotates the player's pieces clockwise.
+   // Rotates the players' pieces clockwise.
    void rotate() noexcept;
 
    // Player with the next move.

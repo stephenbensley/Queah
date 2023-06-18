@@ -17,37 +17,39 @@ class GameModel
 {
 public:
    GameModel() noexcept;
-   
-   // Next player to move.
-   PlayerIndex to_move() const noexcept;
+
    // Current game position.
    GamePosition position() const noexcept;
-   // Number of moves completed. Moves are counted like chess.
-   int num_moves() const noexcept;
+   // Next player to move.
+   PlayerIndex to_move() const noexcept;
+   
    // Is the game over?
-   bool is_terminal() const noexcept;
+   bool is_over() const noexcept;
    // Number of times this game position has occurred.
    int repetitions() const noexcept;
    // Number of times an arbitrary game position has occurred.
    int repetitions(GamePosition position, PlayerIndex to_move) const noexcept;
+   // Number of moves completed. Moves are counted like chess.
+   int moves_completed() const noexcept;
+ 
+   // Updates the games making the specified move.
+   void make_move(Move move);
+ 
+   // Reset and begin a new game.
+   void reset() noexcept;
    
    // Returns a string representation of the current game state.
    std::string to_string() const;
    
-   // Updates the games making the specified move.
-   void make_move(Move move);
-   // Reset and begin a new game.
-   void reset() noexcept;
-   
-   // Load/save the model from/to a buffer.
-   bool load(std::istringstream& istrm);
-   void save(std::ostringstream& ostrm) const;
+   // Encode/decode the model to/from a buffer.
+   void encode(std::ostringstream& ostrm) const;
+   bool decode(std::istringstream& istrm);
 
 private:
-   PlayerIndex to_move_ = 0;
    GamePosition position_ = GamePosition::start;
-   int num_half_moves_ = 0;
+   PlayerIndex to_move_ = 0;
    PositionTracker tracker_;
+   int num_half_moves_ = 0;
 };
 
 #endif /* GameModel_h */

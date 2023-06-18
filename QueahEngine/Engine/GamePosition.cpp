@@ -9,7 +9,7 @@
 #include <algorithm>
 #include <cassert>
 
-bool operator==(Move lhs, Move rhs) noexcept
+bool operator==(const Move& lhs, const Move& rhs) noexcept
 {
    return (lhs.to == rhs.to) &&
           (lhs.from == rhs.from) &&
@@ -50,7 +50,7 @@ GamePosition::by_player(PlayerIndex to_move) const noexcept
    }
 }
 
-bool GamePosition::is_terminal() const
+bool GamePosition::is_over() const
 {
    return moves().empty();
 }
@@ -69,26 +69,27 @@ Moves GamePosition::moves() const
    return moves;
 }
 
-bool GamePosition::is_legal_move(Move move) const
+bool GamePosition::is_legal_move(const Move& move) const
 {
    auto legal = moves();
    return std::find(legal.begin(), legal.end(), move) != legal.end();
 }
 
-void GamePosition::make_move(Move move) noexcept
+GamePosition GamePosition::try_move(const Move& move) const noexcept
 {
+   GamePosition result(*this);
+   result.make_move(move);
+   return result;
+}
+
+void GamePosition::make_move(const Move& move) noexcept
+{
+   assert(is_legal_move(move));
    attacker_.move(move.from, move.to);
    if (is_valid_index(move.capturing)) {
       defender_.remove(move.capturing);
    }
    reverse();
-}
-
-GamePosition GamePosition::try_move(Move move) const noexcept
-{
-   GamePosition result(*this);
-   result.make_move(move);
-   return result;
 }
 
 GamePosition GamePosition::canonical() const noexcept

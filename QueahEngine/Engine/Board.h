@@ -70,17 +70,6 @@ struct Neighbor {
 using Neighbors = std::array<Neighbor, num_move_directions>;
 // Neighbors for every space on the board.
 using NeighborsForSpace = std::array<Neighbors, num_spaces_on_board>;
-// Space indices:
-// 12   11   10
-//    9    8
-//  7    6    5
-//    4    3
-//  2    1    0
-
-// Direction  indices:
-//  2   3
-//    X
-//  1   0
 
 constexpr NeighborsForSpace neighbors_for_space =
 {{
