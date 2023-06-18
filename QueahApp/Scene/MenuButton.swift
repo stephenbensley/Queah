@@ -7,6 +7,7 @@
 
 import SpriteKit
 
+// Button that returns user to main menu.
 class MenuButton: SKNode {
     var highlighted: Bool = false {
         didSet {
@@ -17,15 +18,18 @@ class MenuButton: SKNode {
     override init() {
         super.init()
         
-        let bg = SKShapeNode(rectOf: CGSize(width: 150, height: 55), cornerRadius: 20)
-        bg.lineWidth = 5
-        addChild(bg)
+        // Button is a peer of the game board.
+        self.zPosition = Layer.gameBoard.rawValue
+        
+        let shape = SKShapeNode(rectOf: CGSize(width: 150, height: 55), cornerRadius: 20)
+        shape.lineWidth = 5
+        addChild(shape)
         
         let text = SKLabelNode(text: "Main Menu")
         text.fontName = "Helvetica"
         text.fontSize = 20
         text.verticalAlignmentMode = .center
-        bg.addChild(text)
+        shape.addChild(text)
     }
     
     required init?(coder aDecoder: NSCoder) {

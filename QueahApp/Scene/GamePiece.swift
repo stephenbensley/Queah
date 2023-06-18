@@ -5,9 +5,9 @@
 // license at https://github.com/stephenbensley/Queah/blob/main/LICENSE.
 //
 
-import Foundation
 import SpriteKit
 
+// Represents one of the white or black game pieces.
 class GamePiece: SKSpriteNode {
     let player: PlayerColor
     private var loc: BoardLocation
@@ -22,8 +22,9 @@ class GamePiece: SKSpriteNode {
     init(player: PlayerColor, location: BoardLocation) {
         self.player = player
         self.loc = location
-        let texture = GamePiece.getTexture(player: player)
+        let texture = GamePiece.getTexture(for: player)
         super.init(texture: texture, color: .clear, size: texture.size())
+        
         self.position = location.center
         self.zPosition = Layer.gamePiece.rawValue
     }
@@ -38,6 +39,8 @@ class GamePiece: SKSpriteNode {
     
     func makeMove(to: BoardLocation, completion block: @escaping () -> Void) -> Void {
         self.loc = to
+        
+        // Bump the zPosition while moving, so piece moves over any intervening pieces.
         run(SKAction.sequence([
             SKAction.run { [unowned self] in self.zPosition = Layer.gamePieceMoving.rawValue },
             SKAction.move(to: to.center, duration: GamePiece.moveDuration),
@@ -46,6 +49,8 @@ class GamePiece: SKSpriteNode {
     }
     
     func remove() -> Void {
+        // We're being removed because we were captured. Delay the fade, so the capturing piece
+        // has time to reach our space.
         run(SKAction.sequence([
             SKAction.wait(forDuration: (GamePiece.moveDuration / 3.0)),
             SKAction.fadeOut(withDuration: ((2.0 * GamePiece.moveDuration) / 3.0)),
@@ -54,10 +59,10 @@ class GamePiece: SKSpriteNode {
     }
     
     func select(selected: Bool) -> Void {
-        self.texture = GamePiece.getTexture(player: player, selected: selected)
+        self.texture = GamePiece.getTexture(for: player, selected: selected)
     }
     
-    private static func getTexture(player: PlayerColor, selected: Bool = false) -> SKTexture {
+    private static func getTexture(for player: PlayerColor, selected: Bool = false) -> SKTexture {
         switch player {
         case .white:
             return selected ? whiteSelected: whiteUnselected

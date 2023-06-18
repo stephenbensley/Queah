@@ -5,17 +5,18 @@
 // license at https://github.com/stephenbensley/Queah/blob/main/LICENSE.
 //
 
-import Foundation
 import SpriteKit
 
+// Represents the Queah game board.
 class GameBoard: SKSpriteNode {
+    // Index in the array is the same as index used by QueahEngine.h
     private var spaces: [BoardSpace] = []
     
     init() {
         let texture = SKTexture(imageNamed: "game-board")
         super.init(texture: texture, color: .clear, size: texture.size())
+
         self.zPosition = Layer.gameBoard.rawValue
-        
         for index in 0 ..< numSpacesOnBoard {
             let space = BoardSpace(index: index)
             spaces.append(space)
@@ -69,9 +70,5 @@ class GameBoard: SKSpriteNode {
             }
         }
         return nil
-    }
-    
-    private func findSpace(at index: Int) -> BoardSpace {
-        return spaces[index]
     }
 }

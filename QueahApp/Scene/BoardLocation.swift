@@ -19,6 +19,7 @@ enum BoardRegion {
     case blackReserve
 }
 
+// Represents a location on the board and computes the on-screen coordinates.
 struct BoardLocation: Equatable {
     let region: BoardRegion
     let index: Int
@@ -73,8 +74,9 @@ struct BoardLocation: Equatable {
         return BoardLocation.center(region: region, index: index)
     }
     
+    // QueahEngine.h represents all reserve pieces by invalidIndex.
     var engineIndex: Int {
-        return region == .inPlay ? index : -1
+        return region == .inPlay ? index : invalidIndex
     }
     
     static private func center(region: BoardRegion, index: Int) -> CGPoint {
@@ -86,9 +88,5 @@ struct BoardLocation: Equatable {
         case .blackReserve:
             return CGPoint(x: +reserveRowXmax - CGFloat(index) * reserveSpacing, y: +reserveRowY)
        }
-    }
-    
-    static func == (lhs: BoardLocation, rhs: BoardLocation) -> Bool {
-        return (lhs.region == rhs.region) && (lhs.index == rhs.index)
     }
 }
