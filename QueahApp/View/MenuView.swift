@@ -63,7 +63,7 @@ struct MenuView: View {
                     mainView = .rules
                 }
                 MenuItem(text: "Privacy Policy  \(Image(systemName: "link"))") {
-                    if let url = URL(string: "http://www.daddario.com") {
+                    if let url = URL(string: "https://stephenbensley.github.io/Queah/privacy.html") {
                         openURL(url)
                     }
                 }
