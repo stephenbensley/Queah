@@ -12,6 +12,8 @@ enum PlayerType: Int {
     case computer
 }
 
+// Represents the non-visual state of the game -- everything necessary to rebuild the game view
+// from scratch.
 class QueahModel {
     let game = QueahGame()
     let ai = QueahAI()
@@ -33,8 +35,9 @@ class QueahModel {
         
         let model = QueahModel()
         
-        // Ensure the values are valid
-        guard model.game.decode(data: data) && ((type0 != .computer) || (type1 != .computer)) else {
+        // Ensure the values are valid. We don't allow computer vs. computer.
+        guard model.game.decode(data: data) &&
+                ((type0 != .computer) || (type1 != .computer)) else {
             return nil
         }
         

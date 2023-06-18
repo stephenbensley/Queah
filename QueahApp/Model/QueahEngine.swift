@@ -8,11 +8,12 @@
 import Foundation
 import QueahEngine
 
-let numSpacesOnBoard: Int = Int(QUEAH_NUM_SPACES_ON_BOARD)
-let maxPiecesOnBoard: Int = Int(QUEAH_MAX_PIECES_ON_BOARD)
-let maxPiecesInReserve: Int =  Int(QUEAH_MAX_PIECES_IN_RESERVE)
-let invalidIndex: Int = Int(QUEAH_INVALID_INDEX)
+let numSpacesOnBoard = Int(QUEAH_NUM_SPACES_ON_BOARD)
+let maxPiecesOnBoard = Int(QUEAH_MAX_PIECES_ON_BOARD)
+let maxPiecesInReserve =  Int(QUEAH_MAX_PIECES_IN_RESERVE)
+let invalidIndex = Int(QUEAH_INVALID_INDEX)
 
+// Must be in sync with the #defines in QueahEngine.h
 enum PlayerColor: Int {
     case white = 0
     case black = 1
@@ -48,7 +49,7 @@ class QueahGame {
         queah_game_get_pieces(game, Int32(player.rawValue), &buffer, &bufLen)
         
         var result = [Int]()
-        for index in 0..<Int(bufLen) {
+        for index in 0 ..< Int(bufLen) {
             result.append(Int(buffer[index]))
         }
         return result
@@ -77,7 +78,14 @@ class QueahGame {
     }
     
     func getMoves() -> [QueahMove] {
-        var buffer = [QueahMove](repeating: QueahMove(), count: numSpacesOnBoard)
+        // I believe 23 is the theoretical max, but no harm in a safety margin.
+        // W:6* B:0
+        // -   -   -
+        //   O   O
+        // -   -   -
+        //   O   O
+        // -   -   X
+        var buffer = [QueahMove](repeating: QueahMove(), count: 32)
         var bufLen = Int32(buffer.count)
         queah_game_get_moves(game, &buffer, &bufLen)
         buffer.removeLast(buffer.count - Int(bufLen))
@@ -102,7 +110,8 @@ class QueahGame {
     }
     
     func encode() -> Data {
-        var buffer = [CChar](repeating: 0, count: 16384)
+        // Usage is ~ 40 * moves_completed. 16k is plenty.
+        var buffer = [CChar](repeating: 0, count: 0x4000)
         var bufLen = Int32(buffer.count)
         let result = queah_game_encode(game, &buffer, &bufLen)
         assert(result == 0)
