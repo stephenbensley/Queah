@@ -12,7 +12,7 @@ class GameBoard: SKSpriteNode {
     private var spaces: [BoardSpace] = []
     
     init() {
-        let texture = SKTexture(imageNamed: "board")
+        let texture = SKTexture(imageNamed: "game-board")
         super.init(texture: texture, color: .clear, size: texture.size())
         self.zPosition = Layer.gameBoard.rawValue
         

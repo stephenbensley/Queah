@@ -12,10 +12,10 @@ class GamePiece: SKSpriteNode {
     let player: PlayerColor
     private var loc: BoardLocation
     
-    static let whiteUnselected = SKTexture(imageNamed: "white-piece-unselected")
-    static let blackUnselected = SKTexture(imageNamed: "black-piece-unselected")
-    static let whiteSelected = SKTexture(imageNamed: "white-piece-selected")
-    static let blackSelected = SKTexture(imageNamed: "black-piece-selected")
+    static let whiteUnselected = SKTexture(imageNamed: "piece-white-unselected")
+    static let blackUnselected = SKTexture(imageNamed: "piece-black-unselected")
+    static let whiteSelected = SKTexture(imageNamed: "piece-white-selected")
+    static let blackSelected = SKTexture(imageNamed: "piece-black-selected")
 
     static let moveDuration: CGFloat = 0.6
     

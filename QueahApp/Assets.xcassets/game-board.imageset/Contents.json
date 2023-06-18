@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "black-piece-selected.png",
+      "filename" : "game-board.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "black-piece-selected@2x.png",
+      "filename" : "game-board@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "black-piece-selected@3x.png",
+      "filename" : "game-board@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
