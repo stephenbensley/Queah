@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// An item in the main menu
 struct MenuItem: View {
     var text: LocalizedStringKey
     var action: () -> Void
@@ -28,10 +29,11 @@ struct MenuItem: View {
     }
 }
 
+// Presents the main menu of options for the user to choose from.
 struct MenuView: View {
     @Binding var mainView: ViewType
     var model: QueahModel
-    @Environment(\.openURL) var openURL
+    @Environment(\.openURL) private var openURL
     
     var body: some View {
         VStack {

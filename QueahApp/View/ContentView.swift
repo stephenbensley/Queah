@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Common colors used across the app.
 struct QueahColor {
     static let background  = QueahColor.fromHex(0x699DB5)
     static let boardFill   = QueahColor.fromHex(0xE7CB7E)
@@ -20,15 +21,17 @@ struct QueahColor {
     }
 }
 
+// Signals which view to display.
 enum ViewType {
     case menu
     case game
     case rules
 }
 
+// Main view just toggles between the three different subviews.
 struct ContentView: View {
     var model: QueahModel
-    @State var mainView = ViewType.menu
+    @State private var mainView = ViewType.menu
     
     var body: some View {
         ZStack {

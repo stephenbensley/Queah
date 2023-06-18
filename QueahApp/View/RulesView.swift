@@ -7,9 +7,10 @@
 
 import SwiftUI
 
+// Displays the game rules.
 struct RulesView: View {
     @Binding var mainView: ViewType
-    let contents = load()
+    private let contents = load()
     
     var body: some View {
         VStack {

@@ -8,6 +8,7 @@
 import SpriteKit
 import SwiftUI
 
+// Presents the SpriteKit game scene
 struct GameView: View {
     @Binding var mainView: ViewType
     var model: QueahModel
