@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DCEEE99B2A393F4600291AD8"
+               BlueprintIdentifier = "DC84DF592A3F5669009368A3"
                BuildableName = "Queah.app"
                BlueprintName = "Queah"
                ReferencedContainer = "container:Queah.xcodeproj">
@@ -43,7 +43,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DCEEE99B2A393F4600291AD8"
+            BlueprintIdentifier = "DC84DF592A3F5669009368A3"
             BuildableName = "Queah.app"
             BlueprintName = "Queah"
             ReferencedContainer = "container:Queah.xcodeproj">
@@ -60,7 +60,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DCEEE99B2A393F4600291AD8"
+            BlueprintIdentifier = "DC84DF592A3F5669009368A3"
             BuildableName = "Queah.app"
             BlueprintName = "Queah"
             ReferencedContainer = "container:Queah.xcodeproj">

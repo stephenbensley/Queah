@@ -7,99 +7,72 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DC6350B62A3C9FE000364B16 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6350B52A3C9FE000364B16 /* ContentView.swift */; };
-		DC84DEE92A3E47D4009368A3 /* rules.txt in Resources */ = {isa = PBXBuildFile; fileRef = DC84DEE82A3E47D4009368A3 /* rules.txt */; };
-		DC84DEEB2A3E4A0D009368A3 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84DEEA2A3E4A0D009368A3 /* MenuButton.swift */; };
-		DCE634BB2A390A1A0094B03D /* PlayerPosition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634AB2A390A1A0094B03D /* PlayerPosition.cpp */; };
-		DCE634BC2A390A1A0094B03D /* GameModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634AC2A390A1A0094B03D /* GameModel.cpp */; };
-		DCE634BD2A390A1A0094B03D /* ToString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634AD2A390A1A0094B03D /* ToString.cpp */; };
-		DCE634C62A390A1A0094B03D /* PositionTracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634B62A390A1A0094B03D /* PositionTracker.cpp */; };
-		DCE634C72A390A1A0094B03D /* GamePosition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634B72A390A1A0094B03D /* GamePosition.cpp */; };
-		DCE634C92A390A1A0094B03D /* PositionEvaluator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634B92A390A1A0094B03D /* PositionEvaluator.cpp */; };
-		DCE634CE2A390A480094B03D /* QueahEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634CC2A390A480094B03D /* QueahEngine.cpp */; };
-		DCE634DF2A390A910094B03D /* GameNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634DA2A390A910094B03D /* GameNode.cpp */; };
-		DCE634E02A390A910094B03D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634DB2A390A910094B03D /* main.cpp */; };
-		DCE634E12A390A910094B03D /* Solve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634DC2A390A910094B03D /* Solve.cpp */; };
-		DCE634EF2A390BED0094B03D /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = DCE634ED2A390ACA0094B03D /* main.c */; };
-		DCE634F12A390C040094B03D /* libQueahEngine-MacOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE634982A39092B0094B03D /* libQueahEngine-MacOS.a */; };
-		DCE634F42A390C320094B03D /* queah.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCE634AA2A3909D40094B03D /* queah.dat */; };
-		DCE634F52A390CF40094B03D /* libQueahEngine-MacOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE634982A39092B0094B03D /* libQueahEngine-MacOS.a */; };
-		DCEEE99F2A393F4600291AD8 /* QueahApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE99E2A393F4600291AD8 /* QueahApp.swift */; };
-		DCEEE9A32A393F4600291AD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCEEE9A22A393F4600291AD8 /* Assets.xcassets */; };
-		DCEEE9B52A3A274500291AD8 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE9AE2A3A274500291AD8 /* GameScene.swift */; };
-		DCEEE9B62A3A274500291AD8 /* BoardLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE9AF2A3A274500291AD8 /* BoardLocation.swift */; };
-		DCEEE9B72A3A274500291AD8 /* GamePiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE9B02A3A274500291AD8 /* GamePiece.swift */; };
-		DCEEE9B82A3A274500291AD8 /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE9B12A3A274500291AD8 /* GameBoard.swift */; };
-		DCEEE9B92A3A274500291AD8 /* QueahEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE9B22A3A274500291AD8 /* QueahEngine.swift */; };
-		DCEEE9BA2A3A274500291AD8 /* BoardSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEE9B32A3A274500291AD8 /* BoardSpace.swift */; };
-		DCEEE9BD2A3A28AB00291AD8 /* libQueahEngine-MacOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE634982A39092B0094B03D /* libQueahEngine-MacOS.a */; platformFilters = (macos, ); };
-		DCEEE9C02A3A292200291AD8 /* queah.dat in Resources */ = {isa = PBXBuildFile; fileRef = DCE634AA2A3909D40094B03D /* queah.dat */; };
-		DCEEE9CE2A3A298E00291AD8 /* GameModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634AC2A390A1A0094B03D /* GameModel.cpp */; };
-		DCEEE9CF2A3A298E00291AD8 /* QueahEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634CC2A390A480094B03D /* QueahEngine.cpp */; };
-		DCEEE9D02A3A298E00291AD8 /* GamePosition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634B72A390A1A0094B03D /* GamePosition.cpp */; };
-		DCEEE9D12A3A298E00291AD8 /* PositionTracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634B62A390A1A0094B03D /* PositionTracker.cpp */; };
-		DCEEE9D22A3A298F00291AD8 /* ToString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634AD2A390A1A0094B03D /* ToString.cpp */; };
-		DCEEE9D32A3A298F00291AD8 /* PlayerPosition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634AB2A390A1A0094B03D /* PlayerPosition.cpp */; };
-		DCEEE9D42A3A298F00291AD8 /* PositionEvaluator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE634B92A390A1A0094B03D /* PositionEvaluator.cpp */; };
-		DCEEE9D52A3A29B300291AD8 /* libQueahEngine-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCEEE9C52A3A297800291AD8 /* libQueahEngine-iOS.a */; platformFilter = ios; };
-		DCF609C72A3A933800C28BAE /* QueahModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF609C62A3A933800C28BAE /* QueahModel.swift */; };
-		DCF609CB2A3B472200C28BAE /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF609CA2A3B472100C28BAE /* GameView.swift */; };
-		DCF609CD2A3B472E00C28BAE /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF609CC2A3B472E00C28BAE /* RulesView.swift */; };
-		DCF609CF2A3B474600C28BAE /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF609CE2A3B474600C28BAE /* MenuView.swift */; };
+		DC0AC4652A3F57260028B4EE /* PositionEvaluator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0AC4552A3F57250028B4EE /* PositionEvaluator.cpp */; };
+		DC0AC4662A3F57260028B4EE /* QueahEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0AC4582A3F57260028B4EE /* QueahEngine.cpp */; };
+		DC0AC4672A3F57260028B4EE /* PositionTracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0AC4592A3F57260028B4EE /* PositionTracker.cpp */; };
+		DC0AC4682A3F57260028B4EE /* PlayerPosition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0AC45B2A3F57260028B4EE /* PlayerPosition.cpp */; };
+		DC0AC4692A3F57260028B4EE /* ToString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0AC45C2A3F57260028B4EE /* ToString.cpp */; };
+		DC0AC46A2A3F57260028B4EE /* GamePosition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0AC45D2A3F57260028B4EE /* GamePosition.cpp */; };
+		DC0AC46B2A3F57260028B4EE /* GameModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0AC4612A3F57260028B4EE /* GameModel.cpp */; };
+		DC0AC47C2A3F57D90028B4EE /* PositionEvaluator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0AC4552A3F57250028B4EE /* PositionEvaluator.cpp */; };
+		DC0AC47D2A3F57D90028B4EE /* GamePosition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0AC45D2A3F57260028B4EE /* GamePosition.cpp */; };
+		DC0AC47E2A3F57D90028B4EE /* PlayerPosition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0AC45B2A3F57260028B4EE /* PlayerPosition.cpp */; };
+		DC0AC47F2A3F57D90028B4EE /* QueahEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0AC4582A3F57260028B4EE /* QueahEngine.cpp */; };
+		DC0AC4802A3F57D90028B4EE /* GameModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0AC4612A3F57260028B4EE /* GameModel.cpp */; };
+		DC0AC4812A3F57D90028B4EE /* PositionTracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0AC4592A3F57260028B4EE /* PositionTracker.cpp */; };
+		DC0AC4822A3F57D90028B4EE /* ToString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0AC45C2A3F57260028B4EE /* ToString.cpp */; };
+		DC0AC4972A3F581A0028B4EE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0AC4922A3F58120028B4EE /* main.cpp */; };
+		DC0AC4982A3F581A0028B4EE /* GameNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0AC48F2A3F58110028B4EE /* GameNode.cpp */; };
+		DC0AC4992A3F581A0028B4EE /* Solve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0AC4912A3F58110028B4EE /* Solve.cpp */; };
+		DC0AC49B2A3F58350028B4EE /* libQueahEngine-MacOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0AC4712A3F57CB0028B4EE /* libQueahEngine-MacOS.a */; };
+		DC0AC4AC2A3F58910028B4EE /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = DC0AC4AA2A3F58800028B4EE /* main.c */; };
+		DC0AC4AD2A3F58A30028B4EE /* libQueahEngine-MacOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0AC4712A3F57CB0028B4EE /* libQueahEngine-MacOS.a */; };
+		DC0AC4B02A3F58D00028B4EE /* queah.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = DC0AC46C2A3F57730028B4EE /* queah.dat */; };
+		DC4A8ACE2A3F59C60068924C /* QueahModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8ACC2A3F59C60068924C /* QueahModel.swift */; };
+		DC4A8ACF2A3F59C60068924C /* QueahEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8ACD2A3F59C60068924C /* QueahEngine.swift */; };
+		DC4A8AD12A3F59D40068924C /* rules.txt in Resources */ = {isa = PBXBuildFile; fileRef = DC4A8AD02A3F59D40068924C /* rules.txt */; };
+		DC4A8AD82A3F59E20068924C /* GamePiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AD22A3F59E20068924C /* GamePiece.swift */; };
+		DC4A8AD92A3F59E20068924C /* BoardSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AD32A3F59E20068924C /* BoardSpace.swift */; };
+		DC4A8ADA2A3F59E20068924C /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AD42A3F59E20068924C /* GameBoard.swift */; };
+		DC4A8ADB2A3F59E20068924C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AD52A3F59E20068924C /* GameScene.swift */; };
+		DC4A8ADC2A3F59E20068924C /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AD62A3F59E20068924C /* MenuButton.swift */; };
+		DC4A8ADD2A3F59E20068924C /* BoardLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AD72A3F59E20068924C /* BoardLocation.swift */; };
+		DC4A8AE32A3F59F70068924C /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8ADE2A3F59F70068924C /* RulesView.swift */; };
+		DC4A8AE42A3F59F70068924C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8ADF2A3F59F70068924C /* ContentView.swift */; };
+		DC4A8AE52A3F59F70068924C /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AE02A3F59F70068924C /* GameView.swift */; };
+		DC4A8AE62A3F59F70068924C /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AE12A3F59F70068924C /* MenuView.swift */; };
+		DC4A8AE72A3F59F70068924C /* QueahApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AE22A3F59F70068924C /* QueahApp.swift */; };
+		DC4A8AEB2A3F5A6A0068924C /* libQueahEngine-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0AC4492A3F56E40028B4EE /* libQueahEngine-iOS.a */; };
+		DC4A8AEE2A3F5ABF0068924C /* queah.dat in Resources */ = {isa = PBXBuildFile; fileRef = DC0AC46C2A3F57730028B4EE /* queah.dat */; };
+		DC84DF622A3F5669009368A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC84DF612A3F5669009368A3 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DCE634F22A390C040094B03D /* PBXContainerItemProxy */ = {
+		DC0AC49C2A3F58350028B4EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = DCE634902A39092B0094B03D /* Project object */;
+			containerPortal = DC84DF522A3F5669009368A3 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DCE634972A39092B0094B03D;
+			remoteGlobalIDString = DC0AC4702A3F57CB0028B4EE;
 			remoteInfo = "QueahEngine-MacOS";
 		};
-		DCE634F62A390CF40094B03D /* PBXContainerItemProxy */ = {
+		DC0AC4AE2A3F58A30028B4EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = DCE634902A39092B0094B03D /* Project object */;
+			containerPortal = DC84DF522A3F5669009368A3 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DCE634972A39092B0094B03D;
+			remoteGlobalIDString = DC0AC4702A3F57CB0028B4EE;
 			remoteInfo = "QueahEngine-MacOS";
 		};
-		DCEEE9BE2A3A28AB00291AD8 /* PBXContainerItemProxy */ = {
+		DC4A8AEC2A3F5A6A0068924C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = DCE634902A39092B0094B03D /* Project object */;
+			containerPortal = DC84DF522A3F5669009368A3 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DCE634972A39092B0094B03D;
-			remoteInfo = "QueahEngine-MacOS";
-		};
-		DCEEE9D62A3A29B300291AD8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DCE634902A39092B0094B03D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DCEEE9C42A3A297800291AD8;
+			remoteGlobalIDString = DC0AC4482A3F56E40028B4EE;
 			remoteInfo = "QueahEngine-iOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		DCE634D12A390A6C0094B03D /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-		DCE634E42A390AB20094B03D /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
-			dstPath = "";
-			dstSubfolderSpec = 16;
-			files = (
-				DCE634F42A390C320094B03D /* queah.dat in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DCEEE9C32A3A297800291AD8 /* CopyFiles */ = {
+		DC0AC4472A3F56E40028B4EE /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "include/$(PRODUCT_NAME)";
@@ -108,256 +81,274 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DC0AC4852A3F57F90028B4EE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		DC0AC4A02A3F586E0028B4EE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				DC0AC4B02A3F58D00028B4EE /* queah.dat in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		DC6350B52A3C9FE000364B16 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		DC84DEE82A3E47D4009368A3 /* rules.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rules.txt; sourceTree = "<group>"; };
-		DC84DEEA2A3E4A0D009368A3 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
-		DC84DEEC2A3E7EDA009368A3 /* icon.afdesign */ = {isa = PBXFileReference; lastKnownFileType = file; path = icon.afdesign; sourceTree = "<group>"; };
-		DCE634982A39092B0094B03D /* libQueahEngine-MacOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libQueahEngine-MacOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DCE634AA2A3909D40094B03D /* queah.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = queah.dat; sourceTree = "<group>"; };
-		DCE634AB2A390A1A0094B03D /* PlayerPosition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerPosition.cpp; sourceTree = "<group>"; };
-		DCE634AC2A390A1A0094B03D /* GameModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameModel.cpp; sourceTree = "<group>"; };
-		DCE634AD2A390A1A0094B03D /* ToString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ToString.cpp; sourceTree = "<group>"; };
-		DCE634AE2A390A1A0094B03D /* PositionTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositionTracker.h; sourceTree = "<group>"; };
-		DCE634AF2A390A1A0094B03D /* PlayerPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerPosition.h; sourceTree = "<group>"; };
-		DCE634B12A390A1A0094B03D /* GamePosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePosition.h; sourceTree = "<group>"; };
-		DCE634B22A390A1A0094B03D /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
-		DCE634B42A390A1A0094B03D /* ToString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToString.h; sourceTree = "<group>"; };
-		DCE634B62A390A1A0094B03D /* PositionTracker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PositionTracker.cpp; sourceTree = "<group>"; };
-		DCE634B72A390A1A0094B03D /* GamePosition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GamePosition.cpp; sourceTree = "<group>"; };
-		DCE634B82A390A1A0094B03D /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
-		DCE634B92A390A1A0094B03D /* PositionEvaluator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PositionEvaluator.cpp; sourceTree = "<group>"; };
-		DCE634BA2A390A1A0094B03D /* PositionEvaluator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositionEvaluator.h; sourceTree = "<group>"; };
-		DCE634CB2A390A480094B03D /* QueahEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueahEngine.h; sourceTree = "<group>"; };
-		DCE634CC2A390A480094B03D /* QueahEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QueahEngine.cpp; sourceTree = "<group>"; };
-		DCE634D32A390A6C0094B03D /* QueahSolver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = QueahSolver; sourceTree = BUILT_PRODUCTS_DIR; };
-		DCE634DA2A390A910094B03D /* GameNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameNode.cpp; sourceTree = "<group>"; };
-		DCE634DB2A390A910094B03D /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		DCE634DC2A390A910094B03D /* Solve.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Solve.cpp; sourceTree = "<group>"; };
-		DCE634DD2A390A910094B03D /* GameNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameNode.h; sourceTree = "<group>"; };
-		DCE634DE2A390A910094B03D /* Solve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Solve.h; sourceTree = "<group>"; };
-		DCE634E62A390AB20094B03D /* QueahSelfPlay */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = QueahSelfPlay; sourceTree = BUILT_PRODUCTS_DIR; };
-		DCE634ED2A390ACA0094B03D /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		DCE634F82A390F6C0094B03D /* BinaryIo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinaryIo.h; sourceTree = "<group>"; };
-		DCEEE99C2A393F4600291AD8 /* Queah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Queah.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DCEEE99E2A393F4600291AD8 /* QueahApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueahApp.swift; sourceTree = "<group>"; };
-		DCEEE9A22A393F4600291AD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DCEEE9A42A393F4600291AD8 /* Queah.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Queah.entitlements; sourceTree = "<group>"; };
-		DCEEE9AC2A39473900291AD8 /* artwork.afdesign */ = {isa = PBXFileReference; lastKnownFileType = file; path = artwork.afdesign; sourceTree = "<group>"; };
-		DCEEE9AE2A3A274500291AD8 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		DCEEE9AF2A3A274500291AD8 /* BoardLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardLocation.swift; sourceTree = "<group>"; };
-		DCEEE9B02A3A274500291AD8 /* GamePiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePiece.swift; sourceTree = "<group>"; };
-		DCEEE9B12A3A274500291AD8 /* GameBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
-		DCEEE9B22A3A274500291AD8 /* QueahEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueahEngine.swift; sourceTree = "<group>"; };
-		DCEEE9B32A3A274500291AD8 /* BoardSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardSpace.swift; sourceTree = "<group>"; };
-		DCEEE9BC2A3A278E00291AD8 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
-		DCEEE9C52A3A297800291AD8 /* libQueahEngine-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libQueahEngine-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DCF609C62A3A933800C28BAE /* QueahModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueahModel.swift; sourceTree = "<group>"; };
-		DCF609CA2A3B472100C28BAE /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
-		DCF609CC2A3B472E00C28BAE /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
-		DCF609CE2A3B474600C28BAE /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		DC0AC4492A3F56E40028B4EE /* libQueahEngine-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libQueahEngine-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC0AC4552A3F57250028B4EE /* PositionEvaluator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PositionEvaluator.cpp; sourceTree = "<group>"; };
+		DC0AC4562A3F57250028B4EE /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
+		DC0AC4572A3F57260028B4EE /* PositionTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositionTracker.h; sourceTree = "<group>"; };
+		DC0AC4582A3F57260028B4EE /* QueahEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QueahEngine.cpp; sourceTree = "<group>"; };
+		DC0AC4592A3F57260028B4EE /* PositionTracker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PositionTracker.cpp; sourceTree = "<group>"; };
+		DC0AC45A2A3F57260028B4EE /* GamePosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePosition.h; sourceTree = "<group>"; };
+		DC0AC45B2A3F57260028B4EE /* PlayerPosition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerPosition.cpp; sourceTree = "<group>"; };
+		DC0AC45C2A3F57260028B4EE /* ToString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ToString.cpp; sourceTree = "<group>"; };
+		DC0AC45D2A3F57260028B4EE /* GamePosition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GamePosition.cpp; sourceTree = "<group>"; };
+		DC0AC45E2A3F57260028B4EE /* PlayerPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerPosition.h; sourceTree = "<group>"; };
+		DC0AC45F2A3F57260028B4EE /* PositionEvaluator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositionEvaluator.h; sourceTree = "<group>"; };
+		DC0AC4602A3F57260028B4EE /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
+		DC0AC4612A3F57260028B4EE /* GameModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameModel.cpp; sourceTree = "<group>"; };
+		DC0AC4622A3F57260028B4EE /* QueahEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueahEngine.h; sourceTree = "<group>"; };
+		DC0AC4632A3F57260028B4EE /* ToString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToString.h; sourceTree = "<group>"; };
+		DC0AC4642A3F57260028B4EE /* BinaryIo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinaryIo.h; sourceTree = "<group>"; };
+		DC0AC46C2A3F57730028B4EE /* queah.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = queah.dat; sourceTree = "<group>"; };
+		DC0AC4712A3F57CB0028B4EE /* libQueahEngine-MacOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libQueahEngine-MacOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC0AC4872A3F57F90028B4EE /* QueahSolver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = QueahSolver; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC0AC48F2A3F58110028B4EE /* GameNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameNode.cpp; sourceTree = "<group>"; };
+		DC0AC4902A3F58110028B4EE /* GameNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameNode.h; sourceTree = "<group>"; };
+		DC0AC4912A3F58110028B4EE /* Solve.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Solve.cpp; sourceTree = "<group>"; };
+		DC0AC4922A3F58120028B4EE /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		DC0AC4932A3F58120028B4EE /* Solve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Solve.h; sourceTree = "<group>"; };
+		DC0AC4A22A3F586E0028B4EE /* QueahSample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = QueahSample; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC0AC4AA2A3F58800028B4EE /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		DC4A8ACC2A3F59C60068924C /* QueahModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueahModel.swift; sourceTree = "<group>"; };
+		DC4A8ACD2A3F59C60068924C /* QueahEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueahEngine.swift; sourceTree = "<group>"; };
+		DC4A8AD02A3F59D40068924C /* rules.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rules.txt; sourceTree = "<group>"; };
+		DC4A8AD22A3F59E20068924C /* GamePiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePiece.swift; sourceTree = "<group>"; };
+		DC4A8AD32A3F59E20068924C /* BoardSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardSpace.swift; sourceTree = "<group>"; };
+		DC4A8AD42A3F59E20068924C /* GameBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
+		DC4A8AD52A3F59E20068924C /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		DC4A8AD62A3F59E20068924C /* MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		DC4A8AD72A3F59E20068924C /* BoardLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardLocation.swift; sourceTree = "<group>"; };
+		DC4A8ADE2A3F59F70068924C /* RulesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
+		DC4A8ADF2A3F59F70068924C /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DC4A8AE02A3F59F70068924C /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		DC4A8AE12A3F59F70068924C /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		DC4A8AE22A3F59F70068924C /* QueahApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueahApp.swift; sourceTree = "<group>"; };
+		DC4A8AE82A3F5A0C0068924C /* icon.afdesign */ = {isa = PBXFileReference; lastKnownFileType = file; path = icon.afdesign; sourceTree = "<group>"; };
+		DC4A8AE92A3F5A0C0068924C /* artwork.afdesign */ = {isa = PBXFileReference; lastKnownFileType = file; path = artwork.afdesign; sourceTree = "<group>"; };
+		DC4A8AEA2A3F5A0C0068924C /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		DC4A8AEF2A3F5BCE0068924C /* Queah-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Queah-Info.plist"; sourceTree = "<group>"; };
+		DC84DF5A2A3F5669009368A3 /* Queah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Queah.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC84DF612A3F5669009368A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DCE634962A39092B0094B03D /* Frameworks */ = {
+		DC0AC4462A3F56E40028B4EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DCE634D02A390A6C0094B03D /* Frameworks */ = {
+		DC0AC46F2A3F57CB0028B4EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCE634F52A390CF40094B03D /* libQueahEngine-MacOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DCE634E32A390AB20094B03D /* Frameworks */ = {
+		DC0AC4842A3F57F90028B4EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCE634F12A390C040094B03D /* libQueahEngine-MacOS.a in Frameworks */,
+				DC0AC49B2A3F58350028B4EE /* libQueahEngine-MacOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DCEEE9992A393F4600291AD8 /* Frameworks */ = {
+		DC0AC49F2A3F586E0028B4EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCEEE9D52A3A29B300291AD8 /* libQueahEngine-iOS.a in Frameworks */,
-				DCEEE9BD2A3A28AB00291AD8 /* libQueahEngine-MacOS.a in Frameworks */,
+				DC0AC4AD2A3F58A30028B4EE /* libQueahEngine-MacOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DCEEE9C22A3A297800291AD8 /* Frameworks */ = {
+		DC84DF572A3F5669009368A3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC4A8AEB2A3F5A6A0068924C /* libQueahEngine-iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DCE6348F2A39092B0094B03D = {
+		DC0AC44A2A3F56E40028B4EE /* QueahEngine */ = {
 			isa = PBXGroup;
 			children = (
-				DCE634F02A390C040094B03D /* Frameworks */,
-				DCE634992A39092B0094B03D /* Products */,
-				DCEEE99D2A393F4600291AD8 /* QueahApp */,
-				DCE6349A2A39092B0094B03D /* QueahEngine */,
-			);
-			sourceTree = "<group>";
-		};
-		DCE634992A39092B0094B03D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DCE634982A39092B0094B03D /* libQueahEngine-MacOS.a */,
-				DCE634D32A390A6C0094B03D /* QueahSolver */,
-				DCE634E62A390AB20094B03D /* QueahSelfPlay */,
-				DCEEE99C2A393F4600291AD8 /* Queah.app */,
-				DCEEE9C52A3A297800291AD8 /* libQueahEngine-iOS.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		DCE6349A2A39092B0094B03D /* QueahEngine */ = {
-			isa = PBXGroup;
-			children = (
-				DCE634A82A3909510094B03D /* Data */,
-				DCE634A62A3909450094B03D /* Engine */,
-				DCE634A92A3909580094B03D /* Sample */,
-				DCE634A72A39094B0094B03D /* Solver */,
+				DC0AC4522A3F56F90028B4EE /* Data */,
+				DC0AC4532A3F56FF0028B4EE /* Engine */,
+				DC0AC4A92A3F58720028B4EE /* Sample */,
+				DC0AC48E2A3F58050028B4EE /* Solver */,
 			);
 			indentWidth = 3;
 			path = QueahEngine;
 			sourceTree = "<group>";
 			tabWidth = 3;
 		};
-		DCE634A62A3909450094B03D /* Engine */ = {
+		DC0AC4522A3F56F90028B4EE /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				DCE634F82A390F6C0094B03D /* BinaryIo.h */,
-				DCE634B22A390A1A0094B03D /* Board.h */,
-				DCE634AC2A390A1A0094B03D /* GameModel.cpp */,
-				DCE634B82A390A1A0094B03D /* GameModel.h */,
-				DCE634B72A390A1A0094B03D /* GamePosition.cpp */,
-				DCE634B12A390A1A0094B03D /* GamePosition.h */,
-				DCE634AB2A390A1A0094B03D /* PlayerPosition.cpp */,
-				DCE634AF2A390A1A0094B03D /* PlayerPosition.h */,
-				DCE634B92A390A1A0094B03D /* PositionEvaluator.cpp */,
-				DCE634BA2A390A1A0094B03D /* PositionEvaluator.h */,
-				DCE634B62A390A1A0094B03D /* PositionTracker.cpp */,
-				DCE634AE2A390A1A0094B03D /* PositionTracker.h */,
-				DCE634CC2A390A480094B03D /* QueahEngine.cpp */,
-				DCE634CB2A390A480094B03D /* QueahEngine.h */,
-				DCE634AD2A390A1A0094B03D /* ToString.cpp */,
-				DCE634B42A390A1A0094B03D /* ToString.h */,
-			);
-			path = Engine;
-			sourceTree = "<group>";
-		};
-		DCE634A72A39094B0094B03D /* Solver */ = {
-			isa = PBXGroup;
-			children = (
-				DCE634DA2A390A910094B03D /* GameNode.cpp */,
-				DCE634DD2A390A910094B03D /* GameNode.h */,
-				DCE634DB2A390A910094B03D /* main.cpp */,
-				DCE634DC2A390A910094B03D /* Solve.cpp */,
-				DCE634DE2A390A910094B03D /* Solve.h */,
-			);
-			path = Solver;
-			sourceTree = "<group>";
-		};
-		DCE634A82A3909510094B03D /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				DCE634AA2A3909D40094B03D /* queah.dat */,
+				DC0AC46C2A3F57730028B4EE /* queah.dat */,
 			);
 			path = Data;
 			sourceTree = "<group>";
 		};
-		DCE634A92A3909580094B03D /* Sample */ = {
+		DC0AC4532A3F56FF0028B4EE /* Engine */ = {
 			isa = PBXGroup;
 			children = (
-				DCE634ED2A390ACA0094B03D /* main.c */,
+				DC0AC4642A3F57260028B4EE /* BinaryIo.h */,
+				DC0AC4562A3F57250028B4EE /* Board.h */,
+				DC0AC4612A3F57260028B4EE /* GameModel.cpp */,
+				DC0AC4602A3F57260028B4EE /* GameModel.h */,
+				DC0AC45D2A3F57260028B4EE /* GamePosition.cpp */,
+				DC0AC45A2A3F57260028B4EE /* GamePosition.h */,
+				DC0AC45B2A3F57260028B4EE /* PlayerPosition.cpp */,
+				DC0AC45E2A3F57260028B4EE /* PlayerPosition.h */,
+				DC0AC4552A3F57250028B4EE /* PositionEvaluator.cpp */,
+				DC0AC45F2A3F57260028B4EE /* PositionEvaluator.h */,
+				DC0AC4592A3F57260028B4EE /* PositionTracker.cpp */,
+				DC0AC4572A3F57260028B4EE /* PositionTracker.h */,
+				DC0AC4582A3F57260028B4EE /* QueahEngine.cpp */,
+				DC0AC4622A3F57260028B4EE /* QueahEngine.h */,
+				DC0AC45C2A3F57260028B4EE /* ToString.cpp */,
+				DC0AC4632A3F57260028B4EE /* ToString.h */,
 			);
-			path = Sample;
+			path = Engine;
 			sourceTree = "<group>";
 		};
-		DCE634F02A390C040094B03D /* Frameworks */ = {
+		DC0AC48E2A3F58050028B4EE /* Solver */ = {
+			isa = PBXGroup;
+			children = (
+				DC0AC48F2A3F58110028B4EE /* GameNode.cpp */,
+				DC0AC4902A3F58110028B4EE /* GameNode.h */,
+				DC0AC4922A3F58120028B4EE /* main.cpp */,
+				DC0AC4912A3F58110028B4EE /* Solve.cpp */,
+				DC0AC4932A3F58120028B4EE /* Solve.h */,
+			);
+			path = Solver;
+			sourceTree = "<group>";
+		};
+		DC0AC49A2A3F58350028B4EE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DCEEE99D2A393F4600291AD8 /* QueahApp */ = {
+		DC0AC4A92A3F58720028B4EE /* Sample */ = {
 			isa = PBXGroup;
 			children = (
-				DCEEE9AC2A39473900291AD8 /* artwork.afdesign */,
-				DC84DEEC2A3E7EDA009368A3 /* icon.afdesign */,
-				DCEEE9A42A393F4600291AD8 /* Queah.entitlements */,
-				DCEEE9BC2A3A278E00291AD8 /* module.modulemap */,
-				DCEEE9A22A393F4600291AD8 /* Assets.xcassets */,
-				DCF609C82A3B403700C28BAE /* Model */,
-				DCF609D02A3B4C7700C28BAE /* Resources */,
-				DCEEE9AD2A3A271200291AD8 /* Scene */,
-				DCEEE9AB2A3940AA00291AD8 /* View */,
+				DC0AC4AA2A3F58800028B4EE /* main.c */,
 			);
-			path = QueahApp;
+			path = Sample;
 			sourceTree = "<group>";
 		};
-		DCEEE9AB2A3940AA00291AD8 /* View */ = {
+		DC4A8AC82A3F59A20068924C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DC6350B52A3C9FE000364B16 /* ContentView.swift */,
-				DCF609CA2A3B472100C28BAE /* GameView.swift */,
-				DCF609CE2A3B474600C28BAE /* MenuView.swift */,
-				DCEEE99E2A393F4600291AD8 /* QueahApp.swift */,
-				DCF609CC2A3B472E00C28BAE /* RulesView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		DCEEE9AD2A3A271200291AD8 /* Scene */ = {
-			isa = PBXGroup;
-			children = (
-				DCEEE9AF2A3A274500291AD8 /* BoardLocation.swift */,
-				DCEEE9B32A3A274500291AD8 /* BoardSpace.swift */,
-				DCEEE9B12A3A274500291AD8 /* GameBoard.swift */,
-				DCEEE9B02A3A274500291AD8 /* GamePiece.swift */,
-				DCEEE9AE2A3A274500291AD8 /* GameScene.swift */,
-				DC84DEEA2A3E4A0D009368A3 /* MenuButton.swift */,
-			);
-			path = Scene;
-			sourceTree = "<group>";
-		};
-		DCF609C82A3B403700C28BAE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				DCEEE9B22A3A274500291AD8 /* QueahEngine.swift */,
-				DCF609C62A3A933800C28BAE /* QueahModel.swift */,
+				DC4A8ACD2A3F59C60068924C /* QueahEngine.swift */,
+				DC4A8ACC2A3F59C60068924C /* QueahModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		DCF609D02A3B4C7700C28BAE /* Resources */ = {
+		DC4A8AC92A3F59A70068924C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				DC84DEE82A3E47D4009368A3 /* rules.txt */,
+				DC4A8AD02A3F59D40068924C /* rules.txt */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		DC4A8ACA2A3F59AD0068924C /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				DC4A8AD72A3F59E20068924C /* BoardLocation.swift */,
+				DC4A8AD32A3F59E20068924C /* BoardSpace.swift */,
+				DC4A8AD42A3F59E20068924C /* GameBoard.swift */,
+				DC4A8AD22A3F59E20068924C /* GamePiece.swift */,
+				DC4A8AD52A3F59E20068924C /* GameScene.swift */,
+				DC4A8AD62A3F59E20068924C /* MenuButton.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		DC4A8ACB2A3F59B50068924C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DC4A8ADF2A3F59F70068924C /* ContentView.swift */,
+				DC4A8AE02A3F59F70068924C /* GameView.swift */,
+				DC4A8AE12A3F59F70068924C /* MenuView.swift */,
+				DC4A8AE22A3F59F70068924C /* QueahApp.swift */,
+				DC4A8ADE2A3F59F70068924C /* RulesView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DC84DF512A3F5669009368A3 = {
+			isa = PBXGroup;
+			children = (
+				DC4A8AEF2A3F5BCE0068924C /* Queah-Info.plist */,
+				DC0AC49A2A3F58350028B4EE /* Frameworks */,
+				DC84DF5B2A3F5669009368A3 /* Products */,
+				DC84DF5C2A3F5669009368A3 /* QueahApp */,
+				DC0AC44A2A3F56E40028B4EE /* QueahEngine */,
+			);
+			sourceTree = "<group>";
+		};
+		DC84DF5B2A3F5669009368A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC84DF5A2A3F5669009368A3 /* Queah.app */,
+				DC0AC4492A3F56E40028B4EE /* libQueahEngine-iOS.a */,
+				DC0AC4712A3F57CB0028B4EE /* libQueahEngine-MacOS.a */,
+				DC0AC4872A3F57F90028B4EE /* QueahSolver */,
+				DC0AC4A22A3F586E0028B4EE /* QueahSample */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC84DF5C2A3F5669009368A3 /* QueahApp */ = {
+			isa = PBXGroup;
+			children = (
+				DC4A8AE92A3F5A0C0068924C /* artwork.afdesign */,
+				DC84DF612A3F5669009368A3 /* Assets.xcassets */,
+				DC4A8AE82A3F5A0C0068924C /* icon.afdesign */,
+				DC4A8AC82A3F59A20068924C /* Model */,
+				DC4A8AEA2A3F5A0C0068924C /* module.modulemap */,
+				DC4A8AC92A3F59A70068924C /* Resources */,
+				DC4A8ACA2A3F59AD0068924C /* Scene */,
+				DC4A8ACB2A3F59B50068924C /* View */,
+			);
+			path = QueahApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		DCE634942A39092B0094B03D /* Headers */ = {
+		DC0AC46D2A3F57CB0028B4EE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -367,123 +358,122 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		DCE634972A39092B0094B03D /* QueahEngine-MacOS */ = {
+		DC0AC4482A3F56E40028B4EE /* QueahEngine-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DCE634A32A39092B0094B03D /* Build configuration list for PBXNativeTarget "QueahEngine-MacOS" */;
+			buildConfigurationList = DC0AC44F2A3F56E40028B4EE /* Build configuration list for PBXNativeTarget "QueahEngine-iOS" */;
 			buildPhases = (
-				DCE634942A39092B0094B03D /* Headers */,
-				DCE634952A39092B0094B03D /* Sources */,
-				DCE634962A39092B0094B03D /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "QueahEngine-MacOS";
-			productName = Queah;
-			productReference = DCE634982A39092B0094B03D /* libQueahEngine-MacOS.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		DCE634D22A390A6C0094B03D /* QueahSolver */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DCE634D72A390A6C0094B03D /* Build configuration list for PBXNativeTarget "QueahSolver" */;
-			buildPhases = (
-				DCE634CF2A390A6C0094B03D /* Sources */,
-				DCE634D02A390A6C0094B03D /* Frameworks */,
-				DCE634D12A390A6C0094B03D /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DCE634F72A390CF40094B03D /* PBXTargetDependency */,
-			);
-			name = QueahSolver;
-			productName = QueahSolver;
-			productReference = DCE634D32A390A6C0094B03D /* QueahSolver */;
-			productType = "com.apple.product-type.tool";
-		};
-		DCE634E52A390AB20094B03D /* QueahSelfPlay */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DCE634EA2A390AB20094B03D /* Build configuration list for PBXNativeTarget "QueahSelfPlay" */;
-			buildPhases = (
-				DCE634E22A390AB20094B03D /* Sources */,
-				DCE634E32A390AB20094B03D /* Frameworks */,
-				DCE634E42A390AB20094B03D /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DCE634F32A390C040094B03D /* PBXTargetDependency */,
-			);
-			name = QueahSelfPlay;
-			productName = QueahSelfPlay;
-			productReference = DCE634E62A390AB20094B03D /* QueahSelfPlay */;
-			productType = "com.apple.product-type.tool";
-		};
-		DCEEE99B2A393F4600291AD8 /* Queah */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DCEEE9AA2A393F4600291AD8 /* Build configuration list for PBXNativeTarget "Queah" */;
-			buildPhases = (
-				DCEEE9982A393F4600291AD8 /* Sources */,
-				DCEEE9992A393F4600291AD8 /* Frameworks */,
-				DCEEE99A2A393F4600291AD8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DCEEE9BF2A3A28AB00291AD8 /* PBXTargetDependency */,
-				DCEEE9D72A3A29B300291AD8 /* PBXTargetDependency */,
-			);
-			name = Queah;
-			productName = Queah;
-			productReference = DCEEE99C2A393F4600291AD8 /* Queah.app */;
-			productType = "com.apple.product-type.application";
-		};
-		DCEEE9C42A3A297800291AD8 /* QueahEngine-iOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DCEEE9CB2A3A297800291AD8 /* Build configuration list for PBXNativeTarget "QueahEngine-iOS" */;
-			buildPhases = (
-				DCEEE9C12A3A297800291AD8 /* Sources */,
-				DCEEE9C22A3A297800291AD8 /* Frameworks */,
-				DCEEE9C32A3A297800291AD8 /* CopyFiles */,
+				DC0AC4452A3F56E40028B4EE /* Sources */,
+				DC0AC4462A3F56E40028B4EE /* Frameworks */,
+				DC0AC4472A3F56E40028B4EE /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "QueahEngine-iOS";
-			productName = "QueahEngine-iOS";
-			productReference = DCEEE9C52A3A297800291AD8 /* libQueahEngine-iOS.a */;
+			productName = QueahEngine;
+			productReference = DC0AC4492A3F56E40028B4EE /* libQueahEngine-iOS.a */;
 			productType = "com.apple.product-type.library.static";
+		};
+		DC0AC4702A3F57CB0028B4EE /* QueahEngine-MacOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC0AC4792A3F57CB0028B4EE /* Build configuration list for PBXNativeTarget "QueahEngine-MacOS" */;
+			buildPhases = (
+				DC0AC46D2A3F57CB0028B4EE /* Headers */,
+				DC0AC46E2A3F57CB0028B4EE /* Sources */,
+				DC0AC46F2A3F57CB0028B4EE /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "QueahEngine-MacOS";
+			productName = "QueahEngine-MacOS";
+			productReference = DC0AC4712A3F57CB0028B4EE /* libQueahEngine-MacOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		DC0AC4862A3F57F90028B4EE /* QueahSolver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC0AC48B2A3F57F90028B4EE /* Build configuration list for PBXNativeTarget "QueahSolver" */;
+			buildPhases = (
+				DC0AC4832A3F57F90028B4EE /* Sources */,
+				DC0AC4842A3F57F90028B4EE /* Frameworks */,
+				DC0AC4852A3F57F90028B4EE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC0AC49D2A3F58350028B4EE /* PBXTargetDependency */,
+			);
+			name = QueahSolver;
+			productName = QueahSolver;
+			productReference = DC0AC4872A3F57F90028B4EE /* QueahSolver */;
+			productType = "com.apple.product-type.tool";
+		};
+		DC0AC4A12A3F586E0028B4EE /* QueahSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC0AC4A62A3F586E0028B4EE /* Build configuration list for PBXNativeTarget "QueahSample" */;
+			buildPhases = (
+				DC0AC49E2A3F586E0028B4EE /* Sources */,
+				DC0AC49F2A3F586E0028B4EE /* Frameworks */,
+				DC0AC4A02A3F586E0028B4EE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC0AC4AF2A3F58A30028B4EE /* PBXTargetDependency */,
+			);
+			name = QueahSample;
+			productName = QueahSample;
+			productReference = DC0AC4A22A3F586E0028B4EE /* QueahSample */;
+			productType = "com.apple.product-type.tool";
+		};
+		DC84DF592A3F5669009368A3 /* Queah */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC84DF682A3F5669009368A3 /* Build configuration list for PBXNativeTarget "Queah" */;
+			buildPhases = (
+				DC84DF562A3F5669009368A3 /* Sources */,
+				DC84DF572A3F5669009368A3 /* Frameworks */,
+				DC84DF582A3F5669009368A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC4A8AED2A3F5A6A0068924C /* PBXTargetDependency */,
+			);
+			name = Queah;
+			productName = Queah;
+			productReference = DC84DF5A2A3F5669009368A3 /* Queah.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		DCE634902A39092B0094B03D /* Project object */ = {
+		DC84DF522A3F5669009368A3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					DCE634972A39092B0094B03D = {
+					DC0AC4482A3F56E40028B4EE = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
-					DCE634D22A390A6C0094B03D = {
+					DC0AC4702A3F57CB0028B4EE = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
-					DCE634E52A390AB20094B03D = {
+					DC0AC4862A3F57F90028B4EE = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
-					DCEEE99B2A393F4600291AD8 = {
+					DC0AC4A12A3F586E0028B4EE = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
-					DCEEE9C42A3A297800291AD8 = {
+					DC84DF592A3F5669009368A3 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
 				};
 			};
-			buildConfigurationList = DCE634932A39092B0094B03D /* Build configuration list for PBXProject "Queah" */;
+			buildConfigurationList = DC84DF552A3F5669009368A3 /* Build configuration list for PBXProject "Queah" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -491,131 +481,227 @@
 				en,
 				Base,
 			);
-			mainGroup = DCE6348F2A39092B0094B03D;
-			productRefGroup = DCE634992A39092B0094B03D /* Products */;
+			mainGroup = DC84DF512A3F5669009368A3;
+			productRefGroup = DC84DF5B2A3F5669009368A3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DCEEE99B2A393F4600291AD8 /* Queah */,
-				DCEEE9C42A3A297800291AD8 /* QueahEngine-iOS */,
-				DCE634972A39092B0094B03D /* QueahEngine-MacOS */,
-				DCE634E52A390AB20094B03D /* QueahSelfPlay */,
-				DCE634D22A390A6C0094B03D /* QueahSolver */,
+				DC84DF592A3F5669009368A3 /* Queah */,
+				DC0AC4482A3F56E40028B4EE /* QueahEngine-iOS */,
+				DC0AC4702A3F57CB0028B4EE /* QueahEngine-MacOS */,
+				DC0AC4A12A3F586E0028B4EE /* QueahSample */,
+				DC0AC4862A3F57F90028B4EE /* QueahSolver */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DCEEE99A2A393F4600291AD8 /* Resources */ = {
+		DC84DF582A3F5669009368A3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC84DEE92A3E47D4009368A3 /* rules.txt in Resources */,
-				DCEEE9C02A3A292200291AD8 /* queah.dat in Resources */,
-				DCEEE9A32A393F4600291AD8 /* Assets.xcassets in Resources */,
+				DC4A8AEE2A3F5ABF0068924C /* queah.dat in Resources */,
+				DC4A8AD12A3F59D40068924C /* rules.txt in Resources */,
+				DC84DF622A3F5669009368A3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DCE634952A39092B0094B03D /* Sources */ = {
+		DC0AC4452A3F56E40028B4EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCE634BB2A390A1A0094B03D /* PlayerPosition.cpp in Sources */,
-				DCE634CE2A390A480094B03D /* QueahEngine.cpp in Sources */,
-				DCE634C62A390A1A0094B03D /* PositionTracker.cpp in Sources */,
-				DCE634C72A390A1A0094B03D /* GamePosition.cpp in Sources */,
-				DCE634BD2A390A1A0094B03D /* ToString.cpp in Sources */,
-				DCE634C92A390A1A0094B03D /* PositionEvaluator.cpp in Sources */,
-				DCE634BC2A390A1A0094B03D /* GameModel.cpp in Sources */,
+				DC0AC4692A3F57260028B4EE /* ToString.cpp in Sources */,
+				DC0AC4672A3F57260028B4EE /* PositionTracker.cpp in Sources */,
+				DC0AC46A2A3F57260028B4EE /* GamePosition.cpp in Sources */,
+				DC0AC46B2A3F57260028B4EE /* GameModel.cpp in Sources */,
+				DC0AC4682A3F57260028B4EE /* PlayerPosition.cpp in Sources */,
+				DC0AC4662A3F57260028B4EE /* QueahEngine.cpp in Sources */,
+				DC0AC4652A3F57260028B4EE /* PositionEvaluator.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DCE634CF2A390A6C0094B03D /* Sources */ = {
+		DC0AC46E2A3F57CB0028B4EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCE634E02A390A910094B03D /* main.cpp in Sources */,
-				DCE634DF2A390A910094B03D /* GameNode.cpp in Sources */,
-				DCE634E12A390A910094B03D /* Solve.cpp in Sources */,
+				DC0AC4822A3F57D90028B4EE /* ToString.cpp in Sources */,
+				DC0AC47D2A3F57D90028B4EE /* GamePosition.cpp in Sources */,
+				DC0AC47E2A3F57D90028B4EE /* PlayerPosition.cpp in Sources */,
+				DC0AC47F2A3F57D90028B4EE /* QueahEngine.cpp in Sources */,
+				DC0AC4812A3F57D90028B4EE /* PositionTracker.cpp in Sources */,
+				DC0AC47C2A3F57D90028B4EE /* PositionEvaluator.cpp in Sources */,
+				DC0AC4802A3F57D90028B4EE /* GameModel.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DCE634E22A390AB20094B03D /* Sources */ = {
+		DC0AC4832A3F57F90028B4EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCE634EF2A390BED0094B03D /* main.c in Sources */,
+				DC0AC4972A3F581A0028B4EE /* main.cpp in Sources */,
+				DC0AC4982A3F581A0028B4EE /* GameNode.cpp in Sources */,
+				DC0AC4992A3F581A0028B4EE /* Solve.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DCEEE9982A393F4600291AD8 /* Sources */ = {
+		DC0AC49E2A3F586E0028B4EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCF609CF2A3B474600C28BAE /* MenuView.swift in Sources */,
-				DCEEE9B52A3A274500291AD8 /* GameScene.swift in Sources */,
-				DC6350B62A3C9FE000364B16 /* ContentView.swift in Sources */,
-				DCEEE9B92A3A274500291AD8 /* QueahEngine.swift in Sources */,
-				DCEEE9B72A3A274500291AD8 /* GamePiece.swift in Sources */,
-				DCF609CB2A3B472200C28BAE /* GameView.swift in Sources */,
-				DCF609CD2A3B472E00C28BAE /* RulesView.swift in Sources */,
-				DCEEE99F2A393F4600291AD8 /* QueahApp.swift in Sources */,
-				DCEEE9B82A3A274500291AD8 /* GameBoard.swift in Sources */,
-				DCEEE9B62A3A274500291AD8 /* BoardLocation.swift in Sources */,
-				DCEEE9BA2A3A274500291AD8 /* BoardSpace.swift in Sources */,
-				DC84DEEB2A3E4A0D009368A3 /* MenuButton.swift in Sources */,
-				DCF609C72A3A933800C28BAE /* QueahModel.swift in Sources */,
+				DC0AC4AC2A3F58910028B4EE /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DCEEE9C12A3A297800291AD8 /* Sources */ = {
+		DC84DF562A3F5669009368A3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCEEE9D22A3A298F00291AD8 /* ToString.cpp in Sources */,
-				DCEEE9D32A3A298F00291AD8 /* PlayerPosition.cpp in Sources */,
-				DCEEE9CF2A3A298E00291AD8 /* QueahEngine.cpp in Sources */,
-				DCEEE9D12A3A298E00291AD8 /* PositionTracker.cpp in Sources */,
-				DCEEE9CE2A3A298E00291AD8 /* GameModel.cpp in Sources */,
-				DCEEE9D42A3A298F00291AD8 /* PositionEvaluator.cpp in Sources */,
-				DCEEE9D02A3A298E00291AD8 /* GamePosition.cpp in Sources */,
+				DC4A8AD92A3F59E20068924C /* BoardSpace.swift in Sources */,
+				DC4A8AE42A3F59F70068924C /* ContentView.swift in Sources */,
+				DC4A8ADB2A3F59E20068924C /* GameScene.swift in Sources */,
+				DC4A8AE72A3F59F70068924C /* QueahApp.swift in Sources */,
+				DC4A8ADD2A3F59E20068924C /* BoardLocation.swift in Sources */,
+				DC4A8AE32A3F59F70068924C /* RulesView.swift in Sources */,
+				DC4A8AE62A3F59F70068924C /* MenuView.swift in Sources */,
+				DC4A8ADA2A3F59E20068924C /* GameBoard.swift in Sources */,
+				DC4A8ADC2A3F59E20068924C /* MenuButton.swift in Sources */,
+				DC4A8AD82A3F59E20068924C /* GamePiece.swift in Sources */,
+				DC4A8ACF2A3F59C60068924C /* QueahEngine.swift in Sources */,
+				DC4A8AE52A3F59F70068924C /* GameView.swift in Sources */,
+				DC4A8ACE2A3F59C60068924C /* QueahModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DCE634F32A390C040094B03D /* PBXTargetDependency */ = {
+		DC0AC49D2A3F58350028B4EE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DCE634972A39092B0094B03D /* QueahEngine-MacOS */;
-			targetProxy = DCE634F22A390C040094B03D /* PBXContainerItemProxy */;
+			target = DC0AC4702A3F57CB0028B4EE /* QueahEngine-MacOS */;
+			targetProxy = DC0AC49C2A3F58350028B4EE /* PBXContainerItemProxy */;
 		};
-		DCE634F72A390CF40094B03D /* PBXTargetDependency */ = {
+		DC0AC4AF2A3F58A30028B4EE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DCE634972A39092B0094B03D /* QueahEngine-MacOS */;
-			targetProxy = DCE634F62A390CF40094B03D /* PBXContainerItemProxy */;
+			target = DC0AC4702A3F57CB0028B4EE /* QueahEngine-MacOS */;
+			targetProxy = DC0AC4AE2A3F58A30028B4EE /* PBXContainerItemProxy */;
 		};
-		DCEEE9BF2A3A28AB00291AD8 /* PBXTargetDependency */ = {
+		DC4A8AED2A3F5A6A0068924C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			platformFilters = (
-				macos,
-			);
-			target = DCE634972A39092B0094B03D /* QueahEngine-MacOS */;
-			targetProxy = DCEEE9BE2A3A28AB00291AD8 /* PBXContainerItemProxy */;
-		};
-		DCEEE9D72A3A29B300291AD8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			platformFilter = ios;
-			target = DCEEE9C42A3A297800291AD8 /* QueahEngine-iOS */;
-			targetProxy = DCEEE9D62A3A29B300291AD8 /* PBXContainerItemProxy */;
+			target = DC0AC4482A3F56E40028B4EE /* QueahEngine-iOS */;
+			targetProxy = DC4A8AEC2A3F5A6A0068924C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		DCE634A12A39092B0094B03D /* Debug */ = {
+		DC0AC4502A3F56E40028B4EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X2P4HJBQW;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DC0AC4512A3F56E40028B4EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X2P4HJBQW;
+				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DC0AC47A2A3F57CB0028B4EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X2P4HJBQW;
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DC0AC47B2A3F57CB0028B4EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X2P4HJBQW;
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		DC0AC48C2A3F57F90028B4EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X2P4HJBQW;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DC0AC48D2A3F57F90028B4EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X2P4HJBQW;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DC0AC4A72A3F586E0028B4EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X2P4HJBQW;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DC0AC4A82A3F586E0028B4EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X2P4HJBQW;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DC84DF662A3F5669009368A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -665,16 +751,18 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-lc++";
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		DCE634A22A39092B0094B03D /* Release */ = {
+		DC84DF672A3F5669009368A3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -718,262 +806,135 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_LDFLAGS = "-lc++";
-				SDKROOT = macosx;
-			};
-			name = Release;
-		};
-		DCE634A42A39092B0094B03D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6X2P4HJBQW;
-				EXECUTABLE_PREFIX = lib;
-				GCC_ENABLE_CPP_EXCEPTIONS = YES;
-				GCC_ENABLE_CPP_RTTI = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		DCE634A52A39092B0094B03D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6X2P4HJBQW;
-				EXECUTABLE_PREFIX = lib;
-				GCC_ENABLE_CPP_EXCEPTIONS = YES;
-				GCC_ENABLE_CPP_RTTI = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		DCE634D82A390A6C0094B03D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6X2P4HJBQW;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		DCE634D92A390A6C0094B03D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6X2P4HJBQW;
-				ENABLE_HARDENED_RUNTIME = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		DCE634EB2A390AB20094B03D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6X2P4HJBQW;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		DCE634EC2A390AB20094B03D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6X2P4HJBQW;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		DCEEE9A82A393F4600291AD8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = QueahApp/Queah.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 6X2P4HJBQW;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.stephenbensley.Queah;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_INCLUDE_PATHS = ./QueahApp;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		DCEEE9A92A393F4600291AD8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = QueahApp/Queah.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 6X2P4HJBQW;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.stephenbensley.Queah;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_INCLUDE_PATHS = ./QueahApp;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		DCEEE9CC2A3A297800291AD8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6X2P4HJBQW;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		DCEEE9CD2A3A297800291AD8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6X2P4HJBQW;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DC84DF692A3F5669009368A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 6X2P4HJBQW;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Queah-Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stephenbensley.Queah;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INCLUDE_PATHS = ./QueahApp;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DC84DF6A2A3F5669009368A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 6X2P4HJBQW;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Queah-Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stephenbensley.Queah;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INCLUDE_PATHS = ./QueahApp;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DCE634932A39092B0094B03D /* Build configuration list for PBXProject "Queah" */ = {
+		DC0AC44F2A3F56E40028B4EE /* Build configuration list for PBXNativeTarget "QueahEngine-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DCE634A12A39092B0094B03D /* Debug */,
-				DCE634A22A39092B0094B03D /* Release */,
+				DC0AC4502A3F56E40028B4EE /* Debug */,
+				DC0AC4512A3F56E40028B4EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DCE634A32A39092B0094B03D /* Build configuration list for PBXNativeTarget "QueahEngine-MacOS" */ = {
+		DC0AC4792A3F57CB0028B4EE /* Build configuration list for PBXNativeTarget "QueahEngine-MacOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DCE634A42A39092B0094B03D /* Debug */,
-				DCE634A52A39092B0094B03D /* Release */,
+				DC0AC47A2A3F57CB0028B4EE /* Debug */,
+				DC0AC47B2A3F57CB0028B4EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DCE634D72A390A6C0094B03D /* Build configuration list for PBXNativeTarget "QueahSolver" */ = {
+		DC0AC48B2A3F57F90028B4EE /* Build configuration list for PBXNativeTarget "QueahSolver" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DCE634D82A390A6C0094B03D /* Debug */,
-				DCE634D92A390A6C0094B03D /* Release */,
+				DC0AC48C2A3F57F90028B4EE /* Debug */,
+				DC0AC48D2A3F57F90028B4EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DCE634EA2A390AB20094B03D /* Build configuration list for PBXNativeTarget "QueahSelfPlay" */ = {
+		DC0AC4A62A3F586E0028B4EE /* Build configuration list for PBXNativeTarget "QueahSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DCE634EB2A390AB20094B03D /* Debug */,
-				DCE634EC2A390AB20094B03D /* Release */,
+				DC0AC4A72A3F586E0028B4EE /* Debug */,
+				DC0AC4A82A3F586E0028B4EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DCEEE9AA2A393F4600291AD8 /* Build configuration list for PBXNativeTarget "Queah" */ = {
+		DC84DF552A3F5669009368A3 /* Build configuration list for PBXProject "Queah" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DCEEE9A82A393F4600291AD8 /* Debug */,
-				DCEEE9A92A393F4600291AD8 /* Release */,
+				DC84DF662A3F5669009368A3 /* Debug */,
+				DC84DF672A3F5669009368A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DCEEE9CB2A3A297800291AD8 /* Build configuration list for PBXNativeTarget "QueahEngine-iOS" */ = {
+		DC84DF682A3F5669009368A3 /* Build configuration list for PBXNativeTarget "Queah" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DCEEE9CC2A3A297800291AD8 /* Debug */,
-				DCEEE9CD2A3A297800291AD8 /* Release */,
+				DC84DF692A3F5669009368A3 /* Debug */,
+				DC84DF6A2A3F5669009368A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = DCE634902A39092B0094B03D /* Project object */;
+	rootObject = DC84DF522A3F5669009368A3 /* Project object */;
 }
