@@ -15,7 +15,7 @@ int main(int argc, const char * argv[])
    int result = EXIT_SUCCESS;
    QueahGame* game = NULL;
    QueahAI* ai = NULL;
-   char buf[1024];
+   char buf[256];
    int buflen = sizeof(buf);
    QueahMove move;
    int num_moves;
@@ -27,12 +27,7 @@ int main(int argc, const char * argv[])
       result = EXIT_FAILURE;
       goto cleanup;
    }
-   
-   memset(buf, 0, sizeof(buf));
-   result = queah_game_encode(game, buf, &buflen);
-   result = queah_game_decode(game, buf, buflen);
-   buflen = sizeof(buf);
-   
+
    ai = queah_ai_create("queah.dat");
    if (ai == NULL) {
       printf("Failed to create AI object.");

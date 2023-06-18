@@ -24,9 +24,7 @@
 		DC0AC4972A3F581A0028B4EE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0AC4922A3F58120028B4EE /* main.cpp */; };
 		DC0AC4982A3F581A0028B4EE /* GameNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0AC48F2A3F58110028B4EE /* GameNode.cpp */; };
 		DC0AC4992A3F581A0028B4EE /* Solve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0AC4912A3F58110028B4EE /* Solve.cpp */; };
-		DC0AC49B2A3F58350028B4EE /* libQueahEngine-MacOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0AC4712A3F57CB0028B4EE /* libQueahEngine-MacOS.a */; };
 		DC0AC4AC2A3F58910028B4EE /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = DC0AC4AA2A3F58800028B4EE /* main.c */; };
-		DC0AC4AD2A3F58A30028B4EE /* libQueahEngine-MacOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0AC4712A3F57CB0028B4EE /* libQueahEngine-MacOS.a */; };
 		DC0AC4B02A3F58D00028B4EE /* queah.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = DC0AC46C2A3F57730028B4EE /* queah.dat */; };
 		DC4A8ACE2A3F59C60068924C /* QueahModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8ACC2A3F59C60068924C /* QueahModel.swift */; };
 		DC4A8ACF2A3F59C60068924C /* QueahEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8ACD2A3F59C60068924C /* QueahEngine.swift */; };
@@ -44,30 +42,32 @@
 		DC4A8AE72A3F59F70068924C /* QueahApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AE22A3F59F70068924C /* QueahApp.swift */; };
 		DC4A8AEB2A3F5A6A0068924C /* libQueahEngine-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0AC4492A3F56E40028B4EE /* libQueahEngine-iOS.a */; };
 		DC4A8AEE2A3F5ABF0068924C /* queah.dat in Resources */ = {isa = PBXBuildFile; fileRef = DC0AC46C2A3F57730028B4EE /* queah.dat */; };
+		DC4A8AF32A3F869F0068924C /* libQueahEngine-MacOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0AC4712A3F57CB0028B4EE /* libQueahEngine-MacOS.a */; };
+		DC4A8AF62A3F86CC0068924C /* libQueahEngine-MacOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0AC4712A3F57CB0028B4EE /* libQueahEngine-MacOS.a */; };
 		DC84DF622A3F5669009368A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC84DF612A3F5669009368A3 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DC0AC49C2A3F58350028B4EE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DC84DF522A3F5669009368A3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DC0AC4702A3F57CB0028B4EE;
-			remoteInfo = "QueahEngine-MacOS";
-		};
-		DC0AC4AE2A3F58A30028B4EE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DC84DF522A3F5669009368A3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DC0AC4702A3F57CB0028B4EE;
-			remoteInfo = "QueahEngine-MacOS";
-		};
 		DC4A8AEC2A3F5A6A0068924C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DC84DF522A3F5669009368A3 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DC0AC4482A3F56E40028B4EE;
 			remoteInfo = "QueahEngine-iOS";
+		};
+		DC4A8AF42A3F869F0068924C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC84DF522A3F5669009368A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC0AC4702A3F57CB0028B4EE;
+			remoteInfo = "QueahEngine-MacOS";
+		};
+		DC4A8AF72A3F86CC0068924C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC84DF522A3F5669009368A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC0AC4702A3F57CB0028B4EE;
+			remoteInfo = "QueahEngine-MacOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -171,7 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC0AC49B2A3F58350028B4EE /* libQueahEngine-MacOS.a in Frameworks */,
+				DC4A8AF32A3F869F0068924C /* libQueahEngine-MacOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,7 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC0AC4AD2A3F58A30028B4EE /* libQueahEngine-MacOS.a in Frameworks */,
+				DC4A8AF62A3F86CC0068924C /* libQueahEngine-MacOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,7 +403,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				DC0AC49D2A3F58350028B4EE /* PBXTargetDependency */,
+				DC4A8AF52A3F869F0068924C /* PBXTargetDependency */,
 			);
 			name = QueahSolver;
 			productName = QueahSolver;
@@ -421,7 +421,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				DC0AC4AF2A3F58A30028B4EE /* PBXTargetDependency */,
+				DC4A8AF82A3F86CC0068924C /* PBXTargetDependency */,
 			);
 			name = QueahSample;
 			productName = QueahSample;
@@ -578,20 +578,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DC0AC49D2A3F58350028B4EE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DC0AC4702A3F57CB0028B4EE /* QueahEngine-MacOS */;
-			targetProxy = DC0AC49C2A3F58350028B4EE /* PBXContainerItemProxy */;
-		};
-		DC0AC4AF2A3F58A30028B4EE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DC0AC4702A3F57CB0028B4EE /* QueahEngine-MacOS */;
-			targetProxy = DC0AC4AE2A3F58A30028B4EE /* PBXContainerItemProxy */;
-		};
 		DC4A8AED2A3F5A6A0068924C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DC0AC4482A3F56E40028B4EE /* QueahEngine-iOS */;
 			targetProxy = DC4A8AEC2A3F5A6A0068924C /* PBXContainerItemProxy */;
+		};
+		DC4A8AF52A3F869F0068924C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC0AC4702A3F57CB0028B4EE /* QueahEngine-MacOS */;
+			targetProxy = DC4A8AF42A3F869F0068924C /* PBXContainerItemProxy */;
+		};
+		DC4A8AF82A3F86CC0068924C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC0AC4702A3F57CB0028B4EE /* QueahEngine-MacOS */;
+			targetProxy = DC4A8AF72A3F86CC0068924C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -682,7 +682,6 @@
 				DEVELOPMENT_TEAM = 6X2P4HJBQW;
 				ENABLE_HARDENED_RUNTIME = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
-				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
@@ -695,7 +694,6 @@
 				DEVELOPMENT_TEAM = 6X2P4HJBQW;
 				ENABLE_HARDENED_RUNTIME = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
-				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
