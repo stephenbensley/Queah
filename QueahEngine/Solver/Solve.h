@@ -9,7 +9,6 @@
 #define Solve_h
 
 #include "GameNode.h"
-#include "PositionEvaluator.h"
 #include <memory>
 #include <vector>
 
@@ -19,10 +18,10 @@ using GameNodePtrs = std::vector<GameNodePtr>;
 // Constructs all the nodes in the game tree.
 GameNodePtrs build_nodes();
 
-// Compute the value of all the game positions.
+// Computes the values of all the game positions.
 void compute_values(const GameNodePtrs& nodes) noexcept;
 
-// Convert GameNodePtrs to PositionValues.
+// Converts GameNodePtrs to PositionValues.
 PositionValues to_position_values(const GameNodePtrs& nodes);
 
 #endif /* Solve_h */

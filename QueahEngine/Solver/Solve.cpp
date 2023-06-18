@@ -76,8 +76,8 @@ GameNode* find_or_create(NodeMap& nodes, GamePosition pos)
    
    // Recursively find and insert the children. Note: We must insert the parent
    // node before creating the children since there may be loops in the graph.
-   for (auto m : key.moves()) {
-      node->insert_child(find_or_create(nodes, key.try_move(m)));
+   for (auto move : key.moves()) {
+      node->insert_child(find_or_create(nodes, key.try_move(move)));
    }
    
    // Return a pointer to the newly inserted node.

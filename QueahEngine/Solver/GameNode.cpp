@@ -12,11 +12,6 @@ GameNode::GameNode(GamePosition pos) noexcept
 : pos_(pos)
 { }
 
-bool GameNode::terminal() const noexcept
-{
-   return children_.empty();
-}
-
 GamePosition GameNode::position() const noexcept
 {
    return pos_;
@@ -25,6 +20,11 @@ GamePosition GameNode::position() const noexcept
 ValueType GameNode::value() const noexcept
 {
    return value_;
+}
+
+bool GameNode::terminal() const noexcept
+{
+   return children_.empty();
 }
 
 ValueType GameNode::min_child_value() const noexcept

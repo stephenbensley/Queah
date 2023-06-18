@@ -11,7 +11,7 @@
 
 int main(int argc, const char * argv[])
 {
-   const char datafile[] = "queah.solution";
+   const char datafile[] = "queah.dat";
    
    std::cout << "Building nodes ..." << std::endl;
    auto nodes = build_nodes();
@@ -38,7 +38,7 @@ int main(int argc, const char * argv[])
    std::cout << "Done." << std::endl;
    
    if (!eval.load(datafile)) {
-      std::cout << "Verification failed." << std::endl;
+      std::cout << "Data file verification failed." << std::endl;
    }
    
    return 0;
