@@ -63,7 +63,7 @@ class GameScene: SKScene {
         // This is the minimal window into the game. We want this portion of the graphics to
         // fill as much of the screen as possible without being clipped.
         var width = CGFloat(390)
-        var height = CGFloat(700)
+        var height = CGFloat(750)
         let idealAspect = height / width
         
         let actualAspect = frame.height / frame.width
