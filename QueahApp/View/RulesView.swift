@@ -10,8 +10,12 @@ import SwiftUI
 // Displays the game rules.
 struct RulesView: View {
     @Binding var mainView: ViewType
-    var scale: CGFloat
+    @Environment(\.horizontalSizeClass) var sizeClass
     private let contents = load()
+    
+    var scale: CGFloat {
+        return sizeClass == .compact ? 1.0 : 1.5
+    }
     
     // ScrollView doesn't play well with .scaleEffect, so we scale everything individually
     var body: some View {

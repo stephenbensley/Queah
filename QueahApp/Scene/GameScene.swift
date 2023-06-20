@@ -68,14 +68,17 @@ class GameScene: SKScene {
     private static func adjustAspect(frame: CGSize) -> CGSize {
         // This is the minimal window into the game. We want this portion of the graphics to
         // fill as much of the screen as possible without being clipped.
-        var size = QueahScale.safeArea
+        var size = CGSize(width: 390, height: 750)
 
-        let actualAspect = frame.aspectRatio
+        // Aspect ratio of the GameView
+        let viewAspectRatio = frame.aspectRatio
         
-        if actualAspect > size.aspectRatio {
-            size.height = size.width * actualAspect
+        if viewAspectRatio > size.aspectRatio {
+            // View is skinnier, so stretch the height
+            size.height = size.width * viewAspectRatio
         } else {
-            size.width = size.height / actualAspect
+            // View is fatter, so stretch the width
+            size.width = size.height / viewAspectRatio
         }
         
         return size

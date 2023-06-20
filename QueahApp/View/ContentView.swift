@@ -21,27 +21,6 @@ struct QueahColor {
     }
 }
 
-// Common scaling used across the app.
-struct QueahScale {
-    // Area of the screen that must be preserved
-    static let safeArea = CGSize(width: 390, height: 750)
-    // Ignore scale factors less than this amount.
-    static let minAdjustment = 1.1
-    // Never use a scale factor greater than this amount.
-    static let maxScaleFactor = 1.5
-
-    static func scaleFactor(frame: CGSize) -> CGFloat {
-        let scaleX = frame.width / safeArea.width
-        let scaleY = frame.height / safeArea.height
-        let scale = min(scaleX, scaleY)
-        if (scale < minAdjustment) {
-            return 1.0
-        } else {
-            return min(scale, maxScaleFactor)
-        }
-     }
-}
-
 // Signals which view to display.
 enum ViewType {
     case menu
@@ -55,22 +34,16 @@ struct ContentView: View {
     @State private var mainView = ViewType.menu
     
     var body: some View {
-        GeometryReader { geo in
-            ZStack {
-                QueahColor.background
-                    .edgesIgnoringSafeArea(.all)
-                switch mainView {
-                case .menu:
-                    MenuView(mainView: $mainView.animation(),
-                             scale: QueahScale.scaleFactor(frame: geo.size),
-                             model: model)
-                case .game:
-                    GameView(mainView: $mainView.animation(),
-                             model: model)
-                case .rules:
-                    RulesView(mainView: $mainView.animation(),
-                              scale: QueahScale.scaleFactor(frame: geo.size))
-                }
+        ZStack {
+            QueahColor.background
+                .edgesIgnoringSafeArea(.all)
+            switch mainView {
+            case .menu:
+                MenuView(mainView: $mainView.animation(), model: model)
+            case .game:
+                GameView(mainView: $mainView.animation(), model: model)
+            case .rules:
+                RulesView(mainView: $mainView.animation())
             }
         }
     }
