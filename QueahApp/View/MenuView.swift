@@ -32,20 +32,21 @@ struct MenuItem: View {
 // Presents the main menu of options for the user to choose from.
 struct MenuView: View {
     @Binding var mainView: ViewType
+    var scale: CGFloat
     var model: QueahModel
     @Environment(\.openURL) private var openURL
     
     var body: some View {
         VStack {
             Spacer()
-            Text("Queah")
-                .font(.custom("Helvetica-Bold", fixedSize: 40))
-                .foregroundStyle(.white)
-            Text("A strategy game from Liberia")
-                .font(.custom("Helvetica", fixedSize: 18))
-                .foregroundStyle(.white)
-                .padding(.bottom)
-            Group {
+            VStack {
+                Text("Queah")
+                    .font(.custom("Helvetica-Bold", fixedSize: 40))
+                    .foregroundStyle(.white)
+                Text("A strategy game from Liberia")
+                    .font(.custom("Helvetica", fixedSize: 18))
+                    .foregroundStyle(.white)
+                    .padding(.bottom)
                 MenuItem(text: "White vs. Computer") {
                     model.newGame(white: .human, black: .computer)
                     mainView = .game
@@ -69,7 +70,9 @@ struct MenuView: View {
                         openURL(url)
                     }
                 }
+                
             }
+            .scaleEffect(scale, anchor: .center)
             Spacer()
             Spacer()
         }

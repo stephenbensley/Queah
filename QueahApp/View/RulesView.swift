@@ -10,32 +10,35 @@ import SwiftUI
 // Displays the game rules.
 struct RulesView: View {
     @Binding var mainView: ViewType
+    var scale: CGFloat
     private let contents = load()
     
+    // ScrollView doesn't play well with .scaleEffect, so we scale everything individually
     var body: some View {
         VStack {
-            HStack(spacing: 15) {
+            HStack {
                 Spacer()
-                Button("Done") {
-                    mainView = .menu
+                Button(action: { mainView = .menu }) {
+                    Text("Done")
+                        .font(.custom("Helvetica", fixedSize: 18 * scale))
                 }
-                .padding(5)
+                .padding(5 * scale)
             }
             HStack {
                 Text("Rules of Queah")
-                    .font(.custom("Helvetica-Bold", fixedSize: 28))
-                    .padding(.bottom, 20)
+                    .font(.custom("Helvetica-Bold", fixedSize: 28 * scale))
+                    .padding(.bottom, 20 * scale)
                 Spacer()
             }
             ScrollView {
                 Text(contents)
-                    .font(.custom("Helvetica", fixedSize: 18))
+                    .font(.custom("Helvetica", fixedSize: 18 * scale))
             }
         }
         .foregroundStyle(.white)
-        .padding(.horizontal, 20)
-        
-    }
+        .padding(.horizontal, 20 * scale)
+        .frame(maxWidth: 500 * scale)
+     }
     
     static func load() -> String {
         guard let path = Bundle.main.path(forResource: "rules", ofType: "txt") else {

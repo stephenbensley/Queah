@@ -9,6 +9,12 @@ import SpriteKit
 import SwiftUI
 import QueahEngine
 
+extension CGSize {
+    var aspectRatio: CGFloat {
+        return height / width
+    }
+}
+
 enum Layer: CGFloat {
     case gameBoard
     case boardSpace
@@ -62,19 +68,17 @@ class GameScene: SKScene {
     private static func adjustAspect(frame: CGSize) -> CGSize {
         // This is the minimal window into the game. We want this portion of the graphics to
         // fill as much of the screen as possible without being clipped.
-        var width = CGFloat(390)
-        var height = CGFloat(750)
-        let idealAspect = height / width
+        var size = QueahScale.safeArea
+
+        let actualAspect = frame.aspectRatio
         
-        let actualAspect = frame.height / frame.width
-        
-        if actualAspect > idealAspect {
-            height = width * actualAspect
+        if actualAspect > size.aspectRatio {
+            size.height = size.width * actualAspect
         } else {
-            width = height / actualAspect
+            size.width = size.height / actualAspect
         }
         
-        return CGSize(width: width, height: height)
+        return size
     }
     
     override func didMove(to view: SKView) {
