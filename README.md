@@ -18,4 +18,4 @@ The AI relies on a precomputed solution file [queah.dat](QueahEngine/Data/queah.
 
 ## QueahApp
 
-The Queah iOS app is implemented in Swift using SwiftUI and SpriteKit.
+The Queah iOS app is implemented in Swift using SwiftUI and SpriteKit. For more information about the app, see the [app store listing](https://apps.apple.com/us/app/queah/id6450433350/).
