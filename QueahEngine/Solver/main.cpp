@@ -37,6 +37,17 @@ int main(int argc, const char * argv[])
    eval.save(datafile);
    std::cout << "Done." << std::endl;
    
+   auto value = eval.evaluate(GamePosition::start);
+   if (value == 0) {
+      std::cout << "Game is a draw." << std::endl;
+   } else if (value > 0) {
+      int moves = (max_value - value + 1) / 2;
+      std::cout << "White wins in " << moves << " moves." << std::endl;
+   } else {
+      int moves = (max_value + value + 1) / 2;
+      std::cout << "Black wins in " << moves << " moves." << std::endl;
+   }
+   
    if (!eval.load(datafile)) {
       std::cout << "Data file verification failed." << std::endl;
    }

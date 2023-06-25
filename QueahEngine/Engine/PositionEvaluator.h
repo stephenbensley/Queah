@@ -36,6 +36,9 @@ public:
    // Positions are assumed to have been canonized.
    explicit PositionEvaluator(const PositionValues& data);
    
+   // Evaluate the specified position.
+   ValueType evaluate(GamePosition position) const noexcept;
+
    // Gets the best move for the specified game state.
    Move get_best_move(const GameModel& model) const noexcept;
 
@@ -51,9 +54,6 @@ private:
                      [max_pieces_in_reserve + 1] = { 0 };
    };
    
-   // Evaluate the specified position.
-   ValueType evaluate(GamePosition position) const noexcept;
-
    // Computes a key that uniquely identifies the BitBoard combination.
    static uint32_t get_key(GamePosition position) noexcept;
    

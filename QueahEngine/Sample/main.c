@@ -10,6 +10,17 @@
 #include <stdlib.h>
 #include <string.h>
 
+const char* get_outcome(const QueahGame* game)
+{
+   if (queah_game_repetitions(game) >= 3) {
+      return "Draw";
+   }
+   if (queah_game_is_over(game)) {
+      return queah_game_player_to_move(game) ? "White wins" : "Black wins";
+   }
+   return NULL;
+}
+
 int main(int argc, const char * argv[])
 {
    int result = EXIT_SUCCESS;
@@ -18,8 +29,8 @@ int main(int argc, const char * argv[])
    char buf[256];
    int buflen = sizeof(buf);
    QueahMove move;
+   const char* outcome;
    int num_moves;
-   const char* winner;
    
    game = queah_game_create();
    if (game == NULL) {
@@ -38,16 +49,16 @@ int main(int argc, const char * argv[])
    queah_game_to_string(game, buf, buflen);
    puts(buf);
    
-   while (!queah_game_is_over(game)) {
+   do {
       queah_ai_get_move(ai, game, &move);
       queah_game_make_move(game, move, NULL);
       queah_game_to_string(game, buf, buflen);
       puts(buf);
-   }
+      outcome = get_outcome(game);
+   } while (!outcome);
    
-   winner = queah_game_player_to_move(game) ? "White" : "Black";
    num_moves = queah_game_moves_completed(game);
-   printf("%s wins in %d moves.\n", winner, num_moves);
+   printf("%s in %d moves.\n", outcome, num_moves);
 
 cleanup:
    queah_ai_destroy(ai);

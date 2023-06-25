@@ -55,6 +55,26 @@ PositionEvaluator::PositionEvaluator(const PositionValues& data)
    });
 }
 
+ValueType PositionEvaluator::evaluate(GamePosition position) const noexcept
+{
+   auto key = get_key(position.canonical());
+   auto idx1 = position.attacker().reserve_count();
+   auto idx2 = position.defender().reserve_count();
+   
+   // Find the matching entry.
+   auto i = std::lower_bound(elements_.begin(),
+                             elements_.end(),
+                             key,
+                             [](const auto& lhs, auto key) {
+      return lhs.key < key;
+   });
+   
+   // All reachable game positions are in the table, so we should always have
+   // an exact match.
+   assert((i != elements_.end()) && (i->key == key));
+   return i->value[idx1][idx2];
+}
+
 Move PositionEvaluator::get_best_move(const GameModel& model) const noexcept
 {
    auto other = other_player(model.to_move());
@@ -106,26 +126,6 @@ void PositionEvaluator::save(const char* datafile) const noexcept
 {
    std::ofstream ostrm(datafile, std::ios::binary | std::ios::trunc);
    write_pod_vector(ostrm, elements_);
-}
-
-ValueType PositionEvaluator::evaluate(GamePosition position) const noexcept
-{
-   auto key = get_key(position.canonical());
-   auto idx1 = position.attacker().reserve_count();
-   auto idx2 = position.defender().reserve_count();
-   
-   // Find the matching entry.
-   auto i = std::lower_bound(elements_.begin(),
-                             elements_.end(),
-                             key,
-                             [](const auto& lhs, auto key) {
-      return lhs.key < key;
-   });
-   
-   // All reachable game positions are in the table, so we should always have
-   // an exact match.
-   assert((i != elements_.end()) && (i->key == key));
-   return i->value[idx1][idx2];
 }
 
 uint32_t PositionEvaluator::get_key(GamePosition position) noexcept
