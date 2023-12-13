@@ -8,6 +8,7 @@
 #include "PositionEvaluator.h"
 #include "BinaryIo.h"
 #include <algorithm>
+#include <cassert>
 #include <fstream>
 #include <unordered_map>
 
