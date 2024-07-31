@@ -10,15 +10,15 @@ import SwiftUI
 @main
 struct QueahApp: App {
     // We don't care if this doesn't load; we'll just fall back to defaults.
-    private let model = QueahModel.load() ?? QueahModel()
+    private let model = QueahModel.create()
     @Environment(\.scenePhase) private var scenePhase
 
     var body: some Scene {
         WindowGroup {
             ContentView(model: model)
         }
-        .onChange(of: scenePhase) { phase in
-            if phase == .inactive {
+        .onChange(of: scenePhase) { _, newPhase in
+            if newPhase == .inactive {
                 model.save()
             }
         }

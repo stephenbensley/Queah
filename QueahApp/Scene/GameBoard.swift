@@ -17,7 +17,7 @@ class GameBoard: SKSpriteNode {
         super.init(texture: texture, color: .clear, size: texture.size())
 
         self.zPosition = Layer.gameBoard.rawValue
-        for index in 0 ..< numSpacesOnBoard {
+        for index in 0 ..< Queah.spaceCount {
             let space = BoardSpace(index: index)
             spaces.append(space)
             addChild(space)
@@ -28,17 +28,17 @@ class GameBoard: SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupPieces(model: QueahGame) -> Void {
-        for index in model.getPieces(player: .white) {
+    func setupPieces(model: GameModel) -> Void {
+        for index in model.pieces(for: .white) {
             addChild(GamePiece(player: .white, location: BoardLocation(.inPlay, index)))
         }
-        for index in model.getPieces(player: .black) {
+        for index in model.pieces(for: .black) {
             addChild(GamePiece(player: .black, location: BoardLocation(.inPlay, index)))
         }
-        for index in 0 ..< model.reserveCount(player: .white) {
+        for index in 0 ..< model.reserveCount(for: .white) {
             addChild(GamePiece(player: .white, location: BoardLocation(.whiteReserve, index)))
         }
-        for index in 0 ..< model.reserveCount(player: .black) {
+        for index in 0 ..< model.reserveCount(for: .black) {
             addChild(GamePiece(player: .black, location: BoardLocation(.blackReserve, index)))
         }
     }

@@ -59,7 +59,7 @@ struct BoardLocation: Equatable {
     private static let reserveRowXmax: CGFloat = 140
     // Distribute the reserve pieces evenly between -reserveRowXmax and reserveRowXmax
     private static let reserveSpacing: CGFloat =
-        reserveRowXmax * 2 / CGFloat(maxPiecesInReserve - 1)
+    reserveRowXmax * 2 / CGFloat(Queah.maxReserveCount - 1)
 
     init(_ region: BoardRegion, _ index: Int) {
         self.region = region
@@ -76,7 +76,7 @@ struct BoardLocation: Equatable {
     
     // QueahEngine.h represents all reserve pieces by invalidIndex.
     var engineIndex: Int {
-        return region == .inPlay ? index : invalidIndex
+        return region == .inPlay ? index : Queah.invalidSpace
     }
     
     static private func center(region: BoardRegion, index: Int) -> CGPoint {
