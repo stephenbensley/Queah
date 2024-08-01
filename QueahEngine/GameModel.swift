@@ -7,6 +7,7 @@
 
 import Foundation
 
+// White goes plays first.
 enum PlayerColor: Int, Codable {
     case white
     case black
@@ -21,18 +22,32 @@ enum PlayerColor: Int, Codable {
     }
 }
 
-class GameModel {
-    var evaluator: PositionEvaluator
-    var position: GamePosition = GamePosition.start
+// Main entry point into the Queah game engine.
+final class GameModel {
+    // Used for determining bestMove
+    private var evaluator: PositionEvaluator
+    // Current game position without regard to who moves next
+    private var position: GamePosition = GamePosition.start
+    // Player to move next
     private(set) var toMove: PlayerColor = .white
-    var halfMoveCount = 0
-    var positionCounts = [UInt64: Int]()
+    // Number of half moves played in the current game -- used only for reporting
+    private var halfMoveCount = 0
+    // Tracks how many times each position has occurred -- used to detect three-fold repetition
+    private var positionCounts = [UInt64: Int]()
     
+    // Returns true if the game is over.
     var isOver: Bool { position.gameOver }
+    
+    // Returns the number of times the current position has occurred.
     var repetitions: Int { repetitions(position: position, toMove: toMove) }
+    
+    // Returns the number of full moves completed. Moves are counted chess style.
     var movesCompleted: Int { (halfMoveCount + 1) / 2 }
+    
+    // Returns all possible moves from the current position.
     var moves: [Move] { position.moves }
     
+    // Returns the best move from the current position.
     var bestMove: Move {
         // Stores the needed info for each candidate for best move.
         struct Candidate: Comparable {
@@ -41,7 +56,7 @@ class GameModel {
             let repetitions: Int
             
             static func == (lhs: Candidate, rhs: Candidate) -> Bool {
-                // Ignore move: we're only comparing desirability.
+                // Ignore move -- we're only comparing desirability
                 (lhs.value == rhs.value) && (lhs.repetitions == rhs.repetitions)
             }
 
@@ -60,28 +75,23 @@ class GameModel {
             return Candidate(move: move, value: value, repetitions: repetitions)
         }).sorted()
         
-        // Count how many moves are tied for first.
+        // Count how many moves are tied for first. We know there's at least one.
         let index = candidates.lastIndex(where: { candidates.first! == $0 })!
         // Select randomly from the equally desirable moves.
         return candidates[0...index].randomElement()!.move
     }
     
-    init(evaluator: PositionEvaluator) {
-        self.evaluator = evaluator
-    }
-    
+    // Returns an array of indices indicating which spaces the player occupies.
     func pieces(for player: PlayerColor) -> [Int] {
         playerPosition(for: player).indices
     }
     
+    // Returns the number of pieces the player has in reserve.
     func reserveCount(for player: PlayerColor) -> Int {
         playerPosition(for: player).reserveCount
     }
     
-    func playerPosition(for player: PlayerColor) -> PlayerPosition {
-        player == toMove ? position.attacker : position.defender
-    }
-    
+    // Updates game state based on the specified move.
     func makeMove(move: Move) {
         position.makeMove(move: move)
         toMove = toMove.other
@@ -89,6 +99,7 @@ class GameModel {
         visit()
     }
     
+    // Start a new game.
     func newGame() {
         position = GamePosition.start
         toMove = .white
@@ -97,29 +108,12 @@ class GameModel {
         visit()
     }
     
-    func index(position: GamePosition, toMove: PlayerColor) -> UInt64 {
-        var id = UInt64(position.id) << 1
-        if toMove == .black {
-            id += 1
-        }
-        return id
-    }
-    
-    func repetitions(position: GamePosition, toMove: PlayerColor) -> Int {
-        positionCounts[index(position: position, toMove: toMove)] ?? 0
-    }
-    
-    func visit() {
-        let index = index(position: position, toMove: toMove)
-        let count = (positionCounts[index] ?? 0) + 1
-        positionCounts[index] = count
-    }
-    
+    // Subset of the object's state that needs to be persisted.
     struct CodableState: Codable {
-        var position: GamePosition = GamePosition.start
-        private(set) var toMove: PlayerColor = .white
-        var halfMoveCount = 0
-        var positionCounts = [UInt64: Int]()
+        let position: GamePosition
+        let toMove: PlayerColor
+        let halfMoveCount: Int
+        let positionCounts: [UInt64: Int]
     }
     
     func encode() -> Data {
@@ -131,6 +125,10 @@ class GameModel {
         )
         return try! JSONEncoder().encode(state)
     }
+  
+    init(evaluator: PositionEvaluator) {
+        self.evaluator = evaluator
+    }
     
     init?(evaluator: PositionEvaluator, data: Data) {
         guard let state = try? JSONDecoder().decode(CodableState.self, from: data) else {
@@ -141,5 +139,32 @@ class GameModel {
         self.toMove = state.toMove
         self.halfMoveCount = state.halfMoveCount
         self.positionCounts = state.positionCounts
+    }
+
+    // Returns the index used for tracking repetitions
+    private func index(position: GamePosition, toMove: PlayerColor) -> UInt64 {
+        // Stick color into the low order bit.
+        var id = UInt64(position.id) << 1
+        if toMove == .black {
+            id += 1
+        }
+        return id
+    }
+    
+    // Returns player position based on color.
+    private func playerPosition(for player: PlayerColor) -> PlayerPosition {
+        player == toMove ? position.attacker : position.defender
+    }
+
+    // Returns repetition count for any position, not just the current one.
+    private func repetitions(position: GamePosition, toMove: PlayerColor) -> Int {
+        positionCounts[index(position: position, toMove: toMove)] ?? 0
+    }
+    
+    // Increment the repetition count for the current state.
+    private func visit() {
+        let index = index(position: position, toMove: toMove)
+        let count = (positionCounts[index] ?? 0) + 1
+        positionCounts[index] = count
     }
 }

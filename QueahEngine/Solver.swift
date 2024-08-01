@@ -13,9 +13,7 @@ final class Solver {
     // Private since public entry point is the static solve function.
     private init() { }
     
-    static func solve() -> PositionEvaluator {
-        Solver().solve()
-    }
+    static func solve() -> PositionEvaluator { Solver().solve() }
     
     private func solve() -> PositionEvaluator {
         // Creating the root node will recursively create all reachable nodes.
@@ -35,9 +33,10 @@ final class Solver {
         return PositionEvaluator(nodes: Array(nodes.values))
     }
     
+    // Retrieves the node if it already exists, otherwise creates a new node.
     private func findOrCreate(position: GamePosition) -> GameNode {
         // The canonical id is used to index nodes.
-        let canonical = position.canonical()
+        let canonical = position.canonical
         let id = canonical.id
         
         // If it's already in the dictionary, we're done.
