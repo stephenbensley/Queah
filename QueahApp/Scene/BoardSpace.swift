@@ -8,11 +8,17 @@
 import SpriteKit
 
 // Represents a space on the board.
-class BoardSpace: SKSpriteNode {
+final class BoardSpace: SKSpriteNode {
     // Spaces never move, so location is immutable.
     let location: BoardLocation
     // Indicates whether the space is displayed in the selected state.
-    private var selected: Bool = false
+    var selected: Bool = false {
+        willSet {
+            if newValue != selected {
+                texture = newValue ? BoardSpace.spaceSelected : nil
+            }
+        }
+    }
     
     static let spaceSelected = SKTexture(imageNamed: "space-selected")
     
@@ -32,11 +38,5 @@ class BoardSpace: SKSpriteNode {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    func select(selected newValue: Bool) -> Void {
-        if selected != newValue {
-            selected = newValue
-            texture = selected ? BoardSpace.spaceSelected : nil
-        }
     }
 }

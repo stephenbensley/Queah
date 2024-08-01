@@ -1,3 +1,0 @@
-module QueahEngine {
-    header "../QueahEngine/Engine/QueahEngine.h"
-}

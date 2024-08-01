@@ -7,7 +7,6 @@
 
 import SpriteKit
 import SwiftUI
-import QueahEngine
 
 extension CGSize {
     var aspectRatio: CGFloat {
@@ -25,13 +24,12 @@ enum Layer: CGFloat {
 }
 
 // Renders the game for the user.
-class GameScene: SKScene {
+final class GameScene: SKScene {
     // Used to return the app to the main menu
     @Binding var mainView: ViewType
-    // Next three members are copied from the model. They are referenced so frequently, that
+    // Next two members are copied from the model. They are referenced so frequently, that
     // it's convenient to copy them out of the QueahModel struct.
-    private let game: QueahGame
-    private let ai: QueahAI
+    private let game: GameModel
     private var playerType: [PlayerType]
     // Sprites that make up the game.
     private let board = GameBoard()
@@ -41,12 +39,11 @@ class GameScene: SKScene {
     // Tracks the currently selected game piece -- if any
     private var selected: GamePiece? = nil
     // The legal moves for the current game position when a human is playing.
-    private var legalMoves: [QueahMove] = []
+    private var legalMoves: [Move] = []
     
     init(viewType: Binding<ViewType>, size: CGSize, model: QueahModel) {
         self._mainView = viewType
         self.game = model.game
-        self.ai = model.ai
         self.playerType = model.playerType
         super.init(size: GameScene.adjustAspect(frame: size))
         
@@ -69,7 +66,7 @@ class GameScene: SKScene {
         // This is the minimal window into the game. We want this portion of the graphics to
         // fill as much of the screen as possible without being clipped.
         var size = CGSize(width: 390, height: 750)
-
+        
         // Aspect ratio of the GameView
         let viewAspectRatio = frame.aspectRatio
         
@@ -88,12 +85,12 @@ class GameScene: SKScene {
         nextMove()
     }
     
-    private func nextMove() -> Void {
-        if game.isOver() || (game.repetitions() == 3) {
+    private func nextMove() {
+        if game.isOver || (game.repetitions == 3) {
             return gameOver()
         }
         
-        switch playerType[game.playertoMove().rawValue] {
+        switch playerType[game.toMove.rawValue] {
         case .human:
             nextHumanMove()
         case .computer:
@@ -104,19 +101,18 @@ class GameScene: SKScene {
         }
     }
     
-    private func gameOver() -> Void {
-        let text = {
-            if game.isOver() {
-                switch game.playertoMove() {
-                case .white:
-                    return "Black wins!"
-                case .black:
-                    return "White wins!"
-                }
-            } else {
-                return "Draw by repetition."
+    private func gameOver() {
+        let text: String
+        if game.isOver {
+            switch game.toMove {
+            case .white:
+                text = "Black wins!"
+            case .black:
+                text = "White wins!"
             }
-        }()
+        } else {
+            text = "Draw by repetition."
+        }
         
         let background = SKShapeNode(rectOf: CGSize(width: 300, height: 100), cornerRadius: 20)
         background.alpha = 0.0
@@ -155,12 +151,12 @@ class GameScene: SKScene {
         ]))
     }
     
-    private func nextHumanMove() -> Void {
+    private func nextHumanMove() {
         acceptInput = true
-        legalMoves = game.getMoves()
+        legalMoves = game.moves
         assert(!legalMoves.isEmpty)
         let from = legalMoves[0].from
-        if from != invalidIndex {
+        if from.isValidSpace {
             // If the user can only move one piece, select it for them.
             if legalMoves.allSatisfy({ $0.from == from }) {
                 onPieceTouched(piece: board.findPiece(at: BoardLocation(.inPlay, from))!)
@@ -168,37 +164,37 @@ class GameScene: SKScene {
         }
     }
     
-    private func nextComputerMove() -> Void {
-        let move = ai.getMove(game: game)
-        let from = {
-            // If the computer is dropping a piece, pick the actual reserve piece to drop.
-            if move.from == invalidIndex {
-                switch game.playertoMove() {
-                case .white:
-                    return BoardLocation(.whiteReserve, game.reserveCount(player: .white) - 1)
-                case .black:
-                    return BoardLocation(.blackReserve, game.reserveCount(player: .black) - 1)
-                }
-            } else {
-                return BoardLocation(.inPlay, move.from)
+    private func nextComputerMove() {
+        let move = game.bestMove
+        let from: BoardLocation
+        // If the computer is dropping a piece, pick the actual reserve piece to drop.
+        if !move.from.isValidSpace {
+            switch game.toMove {
+            case .white:
+                from = BoardLocation(.whiteReserve, game.reserveCount(for: .white) - 1)
+            case .black:
+                from = BoardLocation(.blackReserve, game.reserveCount(for: .black) - 1)
             }
-        }()
-        makeMove(from: from, to: BoardLocation(.inPlay, move.to))
+        } else {
+            from = BoardLocation(.inPlay, move.from)
+        }
+        
+        makeMove(from: from, to: BoardLocation(.inPlay, move.to), capturing: move.capturing)
     }
     
-    private func makeMove(from: BoardLocation, to: BoardLocation) -> Void {
-        let captured = game.makeMove(move: QueahMove(from: from.engineIndex, to: to.engineIndex))
+    private func makeMove(from: BoardLocation, to: BoardLocation, capturing: Int) {
+        game.makeMove(move: Move(from: from.engineIndex, to: to.engineIndex, capturing: capturing))
         board.makeMove(from: from, to: to) { [unowned self] in
             self.nextMove()
         }
-        if captured != invalidIndex {
-            board.removePiece(from: BoardLocation(.inPlay, captured))
+        if capturing.isValidSpace {
+            board.removePiece(from: BoardLocation(.inPlay, capturing))
         }
     }
     
-    private func onPieceTouched(piece: GamePiece) -> Void {
+    private func onPieceTouched(piece: GamePiece) {
         // If the player touched his opponent's piece, ignore.
-        guard piece.player == game.playertoMove() else {
+        guard piece.player == game.toMove else {
             return
         }
         // If he touched the the piece that's already selected, it's a no-op.
@@ -224,16 +220,15 @@ class GameScene: SKScene {
         }
     }
     
-    private func onSpaceTouched(space: BoardSpace) -> Void {
+    private func onSpaceTouched(space: BoardSpace) {
         // Touching an empty space does nothing unless a piece has been selected.
         guard let from = selected else {
             return
         }
         
         // Check if this is a legal move.
-        guard legalMoves.contains(where: {
-            $0.from == from.location.engineIndex &&
-            $0.to == space.location.engineIndex
+        guard let move = legalMoves.first(where: {
+            $0.from == from.location.engineIndex && $0.to == space.location.engineIndex
         }) else {
             return
         }
@@ -248,7 +243,7 @@ class GameScene: SKScene {
         acceptInput = false
         
         // Execute the selected move.
-        makeMove(from: from.location, to: space.location)
+        makeMove(from: from.location, to: space.location, capturing: move.capturing)
         
     }
     
