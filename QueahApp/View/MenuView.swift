@@ -9,8 +9,8 @@ import SwiftUI
 
 // An item in the main menu
 struct MenuItem: View {
-    var text: LocalizedStringKey
-    var action: () -> Void
+    let text: LocalizedStringKey
+    let action: () -> Void
     
     var body: some View {
         Button(action: action) {
@@ -32,8 +32,8 @@ struct MenuItem: View {
 // Presents the main menu of options for the user to choose from.
 struct MenuView: View {
     @Binding var mainView: ViewType
-    var model: QueahModel
-    @Environment(\.horizontalSizeClass) var sizeClass
+    let model: QueahModel
+    @Environment(\.horizontalSizeClass) private var sizeClass
     @Environment(\.openURL) private var openURL
 
     var scale: CGFloat {

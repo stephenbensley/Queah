@@ -48,8 +48,6 @@ struct ContentView: View {
     @State private var writeError = ""
     @State private var showingWriteError = false
     
-    var myDoc = SolutionFile()
-    
     var outcome: String {
         if gameValue == 0 {
             return "Game is a draw."

@@ -14,14 +14,9 @@ enum PlayerType: Int {
 
 // Represents the non-visual state of the game -- everything necessary to rebuild the game view
 // from scratch.
-class QueahModel {
+final class QueahModel {
     let game: GameModel
-    var playerType: [PlayerType] = [ .human, .computer]
-    
-    init(game: GameModel, playerType: [PlayerType]) {
-        self.game = game
-        self.playerType = playerType
-    }
+    var playerType: [PlayerType] = [ .human, .computer ]
     
     func newGame(white: PlayerType, black: PlayerType) {
         game.newGame()
@@ -61,7 +56,12 @@ class QueahModel {
         to.set(playerType[1].rawValue, forKey: "Player1")
     }
     
-    static func loadPlayerType(from: UserDefaults) -> [PlayerType] {
+    private init(game: GameModel, playerType: [PlayerType]) {
+        self.game = game
+        self.playerType = playerType
+    }
+    
+    private static func loadPlayerType(from: UserDefaults) -> [PlayerType] {
         if let type0 = loadPlayerType(from: from, forKey: "Player0"),
            let type1 = loadPlayerType(from: from, forKey: "Player1") {
             // We don't allow computer vs. computer
@@ -73,10 +73,10 @@ class QueahModel {
         return [.human, .human]
     }
     
-    static func loadPlayerType(from: UserDefaults, forKey key: String) -> PlayerType? {
-        guard from.object(forKey: key) != nil else {
+    private static func loadPlayerType(from: UserDefaults, forKey key: String) -> PlayerType? {
+        guard let rawValue = from.value(forKey: key) as? Int else {
             return nil
         }
-        return PlayerType(rawValue: from.integer(forKey: key))
+        return PlayerType(rawValue: rawValue)
     }
 }

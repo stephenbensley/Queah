@@ -50,7 +50,7 @@ struct RulesView: View {
         }
         
         guard let contents = try? String(contentsOfFile: path) else {
-            fatalError("Failed to load rules.rtf from bundle.")
+            fatalError("Failed to load rules.txt from bundle.")
         }
         
         return contents

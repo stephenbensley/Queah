@@ -9,7 +9,6 @@ import SwiftUI
 
 @main
 struct QueahApp: App {
-    // We don't care if this doesn't load; we'll just fall back to defaults.
     private let model = QueahModel.create()
     @Environment(\.scenePhase) private var scenePhase
 
