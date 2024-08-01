@@ -6,7 +6,7 @@
 //
 
 // Common definitions
-class Queah {
+final class Queah {
     // Number of directions a piece can move
     static let directionCount = 4
     // Number of spaces on the board

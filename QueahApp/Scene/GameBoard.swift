@@ -8,27 +8,25 @@
 import SpriteKit
 
 // Represents the Queah game board.
-class GameBoard: SKSpriteNode {
-    // Index in the array is the same as index used by QueahEngine.h
-    private var spaces: [BoardSpace] = []
+final class GameBoard: SKSpriteNode {
+    // Index in the array is the same as index used by the engine
+    private let spaces: [BoardSpace]
     
     init() {
+        self.spaces = (0..<Queah.spaceCount).map { BoardSpace(index: $0) }
+        
         let texture = SKTexture(imageNamed: "game-board")
         super.init(texture: texture, color: .clear, size: texture.size())
 
         self.zPosition = Layer.gameBoard.rawValue
-        for index in 0 ..< Queah.spaceCount {
-            let space = BoardSpace(index: index)
-            spaces.append(space)
-            addChild(space)
-        }
+        spaces.forEach { addChild($0) }
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupPieces(model: GameModel) -> Void {
+    func setupPieces(model: GameModel) {
         for index in model.pieces(for: .white) {
             addChild(GamePiece(player: .white, location: BoardLocation(.inPlay, index)))
         }
@@ -43,32 +41,25 @@ class GameBoard: SKSpriteNode {
         }
     }
     
-    func deselectAllSpaces() -> Void {
-        spaces.forEach { $0.select(selected: false) }
+    func deselectAllSpaces() {
+        spaces.forEach { $0.selected = false }
     }
     
-    func selectSpace(index: Int) -> Void {
-        spaces[index].select(selected: true)
+    func selectSpace(index: Int) {
+        spaces[index].selected = true
     }
     
     func makeMove(from: BoardLocation,
                   to: BoardLocation,
-                  completion block: @escaping () -> Void) -> Void {
+                  completion block: @escaping () -> Void) {
         findPiece(at: from)!.makeMove(to: to, completion: block);
     }
     
-    func removePiece(from: BoardLocation) -> Void {
+    func removePiece(from: BoardLocation) {
         findPiece(at: from)!.remove()
     }
     
     func findPiece(at location: BoardLocation) -> GamePiece? {
-        for child in children {
-            if let piece = child as? GamePiece {
-                if piece.location == location {
-                    return piece
-                }
-            }
-        }
-        return nil
+        children.compactMap({ $0 as? GamePiece }).first(where: { $0.location == location })
     }
 }

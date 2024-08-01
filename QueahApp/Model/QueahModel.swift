@@ -49,7 +49,7 @@ final class QueahModel {
         return QueahModel(game: GameModel(evaluator: evaluator), playerType: playerType)
     }
     
-    func save() -> Void {
+    func save() {
         let to = UserDefaults.standard
         to.set(game.encode(), forKey: "Game")
         to.set(playerType[0].rawValue, forKey: "Player0")

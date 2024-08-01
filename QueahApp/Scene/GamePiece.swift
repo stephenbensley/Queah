@@ -8,7 +8,7 @@
 import SpriteKit
 
 // Represents one of the white or black game pieces.
-class GamePiece: SKSpriteNode {
+final class GamePiece: SKSpriteNode {
     let player: PlayerColor
     private var loc: BoardLocation
     
@@ -37,7 +37,7 @@ class GamePiece: SKSpriteNode {
         return loc
     }
     
-    func makeMove(to: BoardLocation, completion block: @escaping () -> Void) -> Void {
+    func makeMove(to: BoardLocation, completion block: @escaping () -> Void) {
         self.loc = to
         
         // Bump the zPosition while moving, so piece moves over any intervening pieces.
@@ -48,7 +48,7 @@ class GamePiece: SKSpriteNode {
         ]),  completion: block)
     }
     
-    func remove() -> Void {
+    func remove() {
         // We're being removed because we were captured. Delay the fade, so the capturing piece
         // has time to reach our space.
         run(SKAction.sequence([
@@ -58,7 +58,7 @@ class GamePiece: SKSpriteNode {
         ]))
     }
     
-    func select(selected: Bool) -> Void {
+    func select(selected: Bool) {
         self.texture = GamePiece.getTexture(for: player, selected: selected)
     }
     

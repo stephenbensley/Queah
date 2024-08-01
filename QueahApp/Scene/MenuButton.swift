@@ -8,7 +8,7 @@
 import SpriteKit
 
 // Button that returns user to main menu.
-class MenuButton: SKNode {
+final class MenuButton: SKNode {
     var highlighted: Bool = false {
         didSet {
             alpha = highlighted ? 0.6 : 1.0

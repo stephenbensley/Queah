@@ -30,8 +30,6 @@ final class GameModel {
     private var position: GamePosition = GamePosition.start
     // Player to move next
     private(set) var toMove: PlayerColor = .white
-    // Number of half moves played in the current game -- used only for reporting
-    private var halfMoveCount = 0
     // Tracks how many times each position has occurred -- used to detect three-fold repetition
     private var positionCounts = [UInt64: Int]()
     
@@ -40,9 +38,6 @@ final class GameModel {
     
     // Returns the number of times the current position has occurred.
     var repetitions: Int { repetitions(position: position, toMove: toMove) }
-    
-    // Returns the number of full moves completed. Moves are counted chess style.
-    var movesCompleted: Int { (halfMoveCount + 1) / 2 }
     
     // Returns all possible moves from the current position.
     var moves: [Move] { position.moves }
@@ -95,7 +90,6 @@ final class GameModel {
     func makeMove(move: Move) {
         position.makeMove(move: move)
         toMove = toMove.other
-        halfMoveCount += 1
         visit()
     }
     
@@ -104,7 +98,6 @@ final class GameModel {
         position = GamePosition.start
         toMove = .white
         positionCounts.removeAll()
-        halfMoveCount = 0
         visit()
     }
     
@@ -112,7 +105,6 @@ final class GameModel {
     struct CodableState: Codable {
         let position: GamePosition
         let toMove: PlayerColor
-        let halfMoveCount: Int
         let positionCounts: [UInt64: Int]
     }
     
@@ -120,7 +112,6 @@ final class GameModel {
         let state = CodableState(
             position: position,
             toMove: toMove,
-            halfMoveCount: halfMoveCount,
             positionCounts: positionCounts
         )
         return try! JSONEncoder().encode(state)
@@ -137,7 +128,6 @@ final class GameModel {
         self.evaluator = evaluator
         self.position = state.position
         self.toMove = state.toMove
-        self.halfMoveCount = state.halfMoveCount
         self.positionCounts = state.positionCounts
     }
 
