@@ -1,0 +1,15 @@
+{
+  "originHash" : "9904166925030d438115cf3427cde4d59a2e94263ad3f7cb6cc541da2d8f7430",
+  "pins" : [
+    {
+      "identity" : "utilikit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/stephenbensley/UtiliKit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "c1bdbc229b4b774a6331e733f64172aa9e6386f7"
+      }
+    }
+  ],
+  "version" : 3
+}

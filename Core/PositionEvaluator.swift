@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UtiliKit
 
 // Type used for storing game values. A game never takes more than 91 half-moves, so 8 bits is
 // plenty. Using an Int8 reduces both disk and memory footprint.
@@ -16,27 +17,6 @@ extension Array where Element: Hashable {
     func deduplicated() -> [Element] {
         var seen = Set<Element>()
         return filter { seen.insert($0).inserted }
-    }
-}
-
-extension Array where Element: Comparable {
-    // Binary search a sorted array. Returns the index of the matching element or nil if no
-    // match is found.
-    func bsearch(_ key: Element) -> Self.Index? {
-        var lo: Self.Index = 0
-        var hi: Self.Index = self.count - 1
-        
-        while lo <= hi {
-            let mid: Self.Index = (lo + hi) / 2
-            if self[mid] == key {
-                return mid
-            } else if self[mid] < key {
-                lo = mid + 1
-            } else {
-                hi = mid - 1
-            }
-        }
-        return nil
     }
 }
 
@@ -109,7 +89,7 @@ final class PositionEvaluator {
     
     private func index(_ position: GamePosition) -> Int {
         // Compute the indices into the 3D array
-        let idx1 = ids.bsearch(position.boardId)!
+        let idx1 = ids.bsearch(for: position.boardId)!
         let idx2 = position.attacker.reserveCount
         let idx3 = position.defender.reserveCount
         // Now compute the final offset

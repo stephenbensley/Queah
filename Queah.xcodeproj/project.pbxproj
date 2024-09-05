@@ -20,6 +20,8 @@
 		DC4A8AE62A3F59F70068924C /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AE12A3F59F70068924C /* MenuView.swift */; };
 		DC4A8AE72A3F59F70068924C /* QueahApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AE22A3F59F70068924C /* QueahApp.swift */; };
 		DC73A5742C5AFD39008BBD55 /* queahSolution.data in Resources */ = {isa = PBXBuildFile; fileRef = DC73A5732C5AFD1C008BBD55 /* queahSolution.data */; };
+		DC77B7B62C8A5F8600D9DF28 /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC77B7B52C8A5F8600D9DF28 /* UtiliKit */; };
+		DC77B7B82C8A608C00D9DF28 /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC77B7B72C8A608C00D9DF28 /* UtiliKit */; };
 		DC84DF622A3F5669009368A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC84DF612A3F5669009368A3 /* Assets.xcassets */; };
 		DCA32CCC2C596FB8009DF4A5 /* SolverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA32CCB2C596FB8009DF4A5 /* SolverApp.swift */; };
 		DCA32CCE2C596FB8009DF4A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA32CCD2C596FB8009DF4A5 /* ContentView.swift */; };
@@ -78,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC77B7B82C8A608C00D9DF28 /* UtiliKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC77B7B62C8A5F8600D9DF28 /* UtiliKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +196,9 @@
 			dependencies = (
 			);
 			name = Queah;
+			packageProductDependencies = (
+				DC77B7B72C8A608C00D9DF28 /* UtiliKit */,
+			);
 			productName = Queah;
 			productReference = DC84DF5A2A3F5669009368A3 /* Queah.app */;
 			productType = "com.apple.product-type.application";
@@ -209,6 +216,9 @@
 			dependencies = (
 			);
 			name = QueahSolver;
+			packageProductDependencies = (
+				DC77B7B52C8A5F8600D9DF28 /* UtiliKit */,
+			);
 			productName = Solver;
 			productReference = DCA32CC92C596FB8009DF4A5 /* Queah Solver.app */;
 			productType = "com.apple.product-type.application";
@@ -240,6 +250,9 @@
 				Base,
 			);
 			mainGroup = DC84DF512A3F5669009368A3;
+			packageReferences = (
+				DC77B7B42C8A5F8600D9DF28 /* XCRemoteSwiftPackageReference "UtiliKit" */,
+			);
 			productRefGroup = DC84DF5B2A3F5669009368A3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -595,6 +608,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DC77B7B42C8A5F8600D9DF28 /* XCRemoteSwiftPackageReference "UtiliKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephenbensley/UtiliKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DC77B7B52C8A5F8600D9DF28 /* UtiliKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC77B7B42C8A5F8600D9DF28 /* XCRemoteSwiftPackageReference "UtiliKit" */;
+			productName = UtiliKit;
+		};
+		DC77B7B72C8A608C00D9DF28 /* UtiliKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC77B7B42C8A5F8600D9DF28 /* XCRemoteSwiftPackageReference "UtiliKit" */;
+			productName = UtiliKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DC84DF522A3F5669009368A3 /* Project object */;
 }
