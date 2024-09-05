@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DCA32CC82C596FB8009DF4A5"
-               BuildableName = "Solver.app"
-               BlueprintName = "Solver"
+               BuildableName = "QueahSolver.app"
+               BlueprintName = "QueahSolver"
                ReferencedContainer = "container:Queah.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DCA32CC82C596FB8009DF4A5"
-            BuildableName = "Solver.app"
-            BlueprintName = "Solver"
+            BuildableName = "QueahSolver.app"
+            BlueprintName = "QueahSolver"
             ReferencedContainer = "container:Queah.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DCA32CC82C596FB8009DF4A5"
-            BuildableName = "Solver.app"
-            BlueprintName = "Solver"
+            BuildableName = "QueahSolver.app"
+            BlueprintName = "QueahSolver"
             ReferencedContainer = "container:Queah.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
