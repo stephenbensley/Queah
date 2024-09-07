@@ -160,7 +160,7 @@ final class GameScene: SKScene {
     }
     
     func displayOutcome() {
-        let text = game.isOver ? "\(game.toMove.other) Wins!" : "Draw by Repetition"
+        let text = game.isOver ? "\(game.toMove.other) wins!" : "Draw by repetition"
         board.displayOutcome(text: text)
      }
     
