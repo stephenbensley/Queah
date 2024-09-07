@@ -160,11 +160,9 @@ final class GameScene: SKScene {
     }
     
     func displayOutcome() {
-        let text = game.isOver ? "\(game.toMove.other) wins!" : "Draw by repetition."
-        let alert = AutoAlert(text)
-        addChild(alert)
-        alert.display(forDuration: 5.0, completion: { })
-    }
+        let text = game.isOver ? "\(game.toMove.other) Wins!" : "Draw by Repetition"
+        board.displayOutcome(text: text)
+     }
     
     func displayHint() {
         let viewMove = convertMove(game.bestMove)
