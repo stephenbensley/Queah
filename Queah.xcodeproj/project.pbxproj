@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DC4A8AD12A3F59D40068924C /* rules.txt in Resources */ = {isa = PBXBuildFile; fileRef = DC4A8AD02A3F59D40068924C /* rules.txt */; };
+		DC4A8AD12A3F59D40068924C /* Help.md in Resources */ = {isa = PBXBuildFile; fileRef = DC4A8AD02A3F59D40068924C /* Help.md */; };
 		DC4A8ADB2A3F59E20068924C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AD52A3F59E20068924C /* GameScene.swift */; };
 		DC4A8AE72A3F59F70068924C /* QueahApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AE22A3F59F70068924C /* QueahApp.swift */; };
 		DC61BC7F2C8B4CC90078130F /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC61BC7E2C8B4CC90078130F /* UtiliKit */; };
@@ -35,7 +35,7 @@
 
 /* Begin PBXFileReference section */
 		DC4A8ACC2A3F59C60068924C /* QueahModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueahModel.swift; sourceTree = "<group>"; };
-		DC4A8AD02A3F59D40068924C /* rules.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rules.txt; sourceTree = "<group>"; };
+		DC4A8AD02A3F59D40068924C /* Help.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Help.md; sourceTree = "<group>"; };
 		DC4A8AD52A3F59E20068924C /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		DC4A8AD72A3F59E20068924C /* BoardPositions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardPositions.swift; sourceTree = "<group>"; };
 		DC4A8AE22A3F59F70068924C /* QueahApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueahApp.swift; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 				DC4A8AE92A3F5A0C0068924C /* artwork.afdesign */,
 				DC4A8AE82A3F5A0C0068924C /* icon.afdesign */,
 				DC73A5732C5AFD1C008BBD55 /* queahSolution.data */,
-				DC4A8AD02A3F59D40068924C /* rules.txt */,
+				DC4A8AD02A3F59D40068924C /* Help.md */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -246,7 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC73A5742C5AFD39008BBD55 /* queahSolution.data in Resources */,
-				DC4A8AD12A3F59D40068924C /* rules.txt in Resources */,
+				DC4A8AD12A3F59D40068924C /* Help.md in Resources */,
 				DC84DF622A3F5669009368A3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

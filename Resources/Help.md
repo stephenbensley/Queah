@@ -11,4 +11,3 @@ If a player has fewer than four pieces on the board, the player may choose to dr
 A player wins by capturing all of their opponent’s pieces or by blockading their opponent so that they have no moves available.
 
 If the same board position repeats three times, the game is declared a draw by repetition.
-

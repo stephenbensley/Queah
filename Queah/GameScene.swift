@@ -119,7 +119,7 @@ final class GameScene: SKScene {
     // MARK: FSM entry points
     
     private func pickMove() {
-        if game.isOver || (game.repetitions == 3) {
+        if game.isOver || (game.repetitions >= 3) {
             return displayOutcome()
         }
         
