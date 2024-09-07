@@ -6,26 +6,25 @@
 //
 
 import Foundation
+import CheckersKit
 
-// White goes plays first.
-enum PlayerColor: Int, Codable {
-    case white
-    case black
-    
-    var other: PlayerColor {
-        switch self {
-        case .white:
-            return .black
-        case .black:
-            return .white
+extension PositionEvaluator {
+    static func create() -> PositionEvaluator {
+        guard let evaluator = PositionEvaluator(
+            forResource: "queahSolution",
+            withExtension: "data"
+        ) else {
+            // There's no possible recovery if the app bundle is corrupt.
+            fatalError("Unable to load solution file.")
         }
+        return evaluator
     }
 }
 
 // Main entry point into the Queah game engine.
-final class GameModel {
+final class GameModel: Codable {
     // Used for determining bestMove
-    private var evaluator: PositionEvaluator
+    private let evaluator: PositionEvaluator = .create()
     // Current game position without regard to who moves next
     private var position: GamePosition = GamePosition.start
     // Player to move next
@@ -101,34 +100,10 @@ final class GameModel {
         visit()
     }
     
-    // Subset of the object's state that needs to be persisted.
-    struct CodableState: Codable {
-        let position: GamePosition
-        let toMove: PlayerColor
-        let positionCounts: [UInt64: Int]
-    }
-    
-    func encode() -> Data {
-        let state = CodableState(
-            position: position,
-            toMove: toMove,
-            positionCounts: positionCounts
-        )
-        return try! JSONEncoder().encode(state)
-    }
-  
-    init(evaluator: PositionEvaluator) {
-        self.evaluator = evaluator
-    }
-    
-    init?(evaluator: PositionEvaluator, data: Data) {
-        guard let state = try? JSONDecoder().decode(CodableState.self, from: data) else {
-            return nil
-        }
-        self.evaluator = evaluator
-        self.position = state.position
-        self.toMove = state.toMove
-        self.positionCounts = state.positionCounts
+    enum CodingKeys: String, CodingKey {
+        case position
+        case toMove
+        case positionCounts
     }
 
     // Returns the index used for tracking repetitions

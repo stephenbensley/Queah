@@ -3,25 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		DC4A8AD12A3F59D40068924C /* rules.txt in Resources */ = {isa = PBXBuildFile; fileRef = DC4A8AD02A3F59D40068924C /* rules.txt */; };
-		DC4A8AD82A3F59E20068924C /* GamePiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AD22A3F59E20068924C /* GamePiece.swift */; };
-		DC4A8AD92A3F59E20068924C /* BoardSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AD32A3F59E20068924C /* BoardSpace.swift */; };
-		DC4A8ADA2A3F59E20068924C /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AD42A3F59E20068924C /* GameBoard.swift */; };
 		DC4A8ADB2A3F59E20068924C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AD52A3F59E20068924C /* GameScene.swift */; };
-		DC4A8ADC2A3F59E20068924C /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AD62A3F59E20068924C /* MenuButton.swift */; };
-		DC4A8ADD2A3F59E20068924C /* BoardLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AD72A3F59E20068924C /* BoardLocation.swift */; };
-		DC4A8AE32A3F59F70068924C /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8ADE2A3F59F70068924C /* RulesView.swift */; };
-		DC4A8AE42A3F59F70068924C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8ADF2A3F59F70068924C /* ContentView.swift */; };
-		DC4A8AE52A3F59F70068924C /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AE02A3F59F70068924C /* GameView.swift */; };
-		DC4A8AE62A3F59F70068924C /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AE12A3F59F70068924C /* MenuView.swift */; };
 		DC4A8AE72A3F59F70068924C /* QueahApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AE22A3F59F70068924C /* QueahApp.swift */; };
+		DC61BC7F2C8B4CC90078130F /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC61BC7E2C8B4CC90078130F /* UtiliKit */; };
+		DC61BC822C8B4CDC0078130F /* CheckersKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC61BC812C8B4CDC0078130F /* CheckersKit */; };
 		DC73A5742C5AFD39008BBD55 /* queahSolution.data in Resources */ = {isa = PBXBuildFile; fileRef = DC73A5732C5AFD1C008BBD55 /* queahSolution.data */; };
-		DC77B7B62C8A5F8600D9DF28 /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC77B7B52C8A5F8600D9DF28 /* UtiliKit */; };
-		DC77B7B82C8A608C00D9DF28 /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC77B7B72C8A608C00D9DF28 /* UtiliKit */; };
+		DC77B7BC2C8A620900D9DF28 /* BoardPositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AD72A3F59E20068924C /* BoardPositions.swift */; };
 		DC84DF622A3F5669009368A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC84DF612A3F5669009368A3 /* Assets.xcassets */; };
 		DCA32CCC2C596FB8009DF4A5 /* SolverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA32CCB2C596FB8009DF4A5 /* SolverApp.swift */; };
 		DCA32CCE2C596FB8009DF4A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA32CCD2C596FB8009DF4A5 /* ContentView.swift */; };
@@ -44,16 +36,8 @@
 /* Begin PBXFileReference section */
 		DC4A8ACC2A3F59C60068924C /* QueahModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueahModel.swift; sourceTree = "<group>"; };
 		DC4A8AD02A3F59D40068924C /* rules.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rules.txt; sourceTree = "<group>"; };
-		DC4A8AD22A3F59E20068924C /* GamePiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePiece.swift; sourceTree = "<group>"; };
-		DC4A8AD32A3F59E20068924C /* BoardSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardSpace.swift; sourceTree = "<group>"; };
-		DC4A8AD42A3F59E20068924C /* GameBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
 		DC4A8AD52A3F59E20068924C /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		DC4A8AD62A3F59E20068924C /* MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
-		DC4A8AD72A3F59E20068924C /* BoardLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardLocation.swift; sourceTree = "<group>"; };
-		DC4A8ADE2A3F59F70068924C /* RulesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
-		DC4A8ADF2A3F59F70068924C /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		DC4A8AE02A3F59F70068924C /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
-		DC4A8AE12A3F59F70068924C /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		DC4A8AD72A3F59E20068924C /* BoardPositions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardPositions.swift; sourceTree = "<group>"; };
 		DC4A8AE22A3F59F70068924C /* QueahApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueahApp.swift; sourceTree = "<group>"; };
 		DC4A8AE82A3F5A0C0068924C /* icon.afdesign */ = {isa = PBXFileReference; lastKnownFileType = file; path = icon.afdesign; sourceTree = "<group>"; };
 		DC4A8AE92A3F5A0C0068924C /* artwork.afdesign */ = {isa = PBXFileReference; lastKnownFileType = file; path = artwork.afdesign; sourceTree = "<group>"; };
@@ -80,7 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC77B7B82C8A608C00D9DF28 /* UtiliKit in Frameworks */,
+				DC61BC7F2C8B4CC90078130F /* UtiliKit in Frameworks */,
+				DC61BC822C8B4CDC0078130F /* CheckersKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +73,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC77B7B62C8A5F8600D9DF28 /* UtiliKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,19 +122,11 @@
 			isa = PBXGroup;
 			children = (
 				DC84DF612A3F5669009368A3 /* Assets.xcassets */,
-				DC4A8AD72A3F59E20068924C /* BoardLocation.swift */,
-				DC4A8AD32A3F59E20068924C /* BoardSpace.swift */,
-				DC4A8ADF2A3F59F70068924C /* ContentView.swift */,
-				DC4A8AD42A3F59E20068924C /* GameBoard.swift */,
-				DC4A8AD22A3F59E20068924C /* GamePiece.swift */,
+				DC4A8AD72A3F59E20068924C /* BoardPositions.swift */,
 				DC4A8AD52A3F59E20068924C /* GameScene.swift */,
-				DC4A8AE02A3F59F70068924C /* GameView.swift */,
 				DC4A8AEF2A3F5BCE0068924C /* Info.plist */,
-				DC4A8AD62A3F59E20068924C /* MenuButton.swift */,
-				DC4A8AE12A3F59F70068924C /* MenuView.swift */,
 				DC4A8AE22A3F59F70068924C /* QueahApp.swift */,
 				DC4A8ACC2A3F59C60068924C /* QueahModel.swift */,
-				DC4A8ADE2A3F59F70068924C /* RulesView.swift */,
 			);
 			path = Queah;
 			sourceTree = "<group>";
@@ -197,7 +173,8 @@
 			);
 			name = Queah;
 			packageProductDependencies = (
-				DC77B7B72C8A608C00D9DF28 /* UtiliKit */,
+				DC61BC7E2C8B4CC90078130F /* UtiliKit */,
+				DC61BC812C8B4CDC0078130F /* CheckersKit */,
 			);
 			productName = Queah;
 			productReference = DC84DF5A2A3F5669009368A3 /* Queah.app */;
@@ -217,7 +194,6 @@
 			);
 			name = QueahSolver;
 			packageProductDependencies = (
-				DC77B7B52C8A5F8600D9DF28 /* UtiliKit */,
 			);
 			productName = Solver;
 			productReference = DCA32CC92C596FB8009DF4A5 /* Queah Solver.app */;
@@ -251,7 +227,8 @@
 			);
 			mainGroup = DC84DF512A3F5669009368A3;
 			packageReferences = (
-				DC77B7B42C8A5F8600D9DF28 /* XCRemoteSwiftPackageReference "UtiliKit" */,
+				DC61BC7D2C8B4CC90078130F /* XCLocalSwiftPackageReference "../UtiliKit" */,
+				DC61BC802C8B4CDC0078130F /* XCLocalSwiftPackageReference "../CheckersKit" */,
 			);
 			productRefGroup = DC84DF5B2A3F5669009368A3 /* Products */;
 			projectDirPath = "";
@@ -289,24 +266,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC4A8AD92A3F59E20068924C /* BoardSpace.swift in Sources */,
-				DC4A8AE42A3F59F70068924C /* ContentView.swift in Sources */,
 				DC4A8ADB2A3F59E20068924C /* GameScene.swift in Sources */,
 				DC4A8AE72A3F59F70068924C /* QueahApp.swift in Sources */,
-				DC4A8ADD2A3F59E20068924C /* BoardLocation.swift in Sources */,
-				DC4A8AE32A3F59F70068924C /* RulesView.swift in Sources */,
-				DC4A8AE62A3F59F70068924C /* MenuView.swift in Sources */,
-				DC4A8ADA2A3F59E20068924C /* GameBoard.swift in Sources */,
 				DCA32CF42C5AE44B009DF4A5 /* QueahModel.swift in Sources */,
-				DC4A8ADC2A3F59E20068924C /* MenuButton.swift in Sources */,
-				DC4A8AD82A3F59E20068924C /* GamePiece.swift in Sources */,
 				DCA32CF52C5AE478009DF4A5 /* GamePosition.swift in Sources */,
 				DCA32CF62C5AE478009DF4A5 /* Queah.swift in Sources */,
 				DCA32CF72C5AE478009DF4A5 /* PlayerPosition.swift in Sources */,
 				DCA32CF82C5AE478009DF4A5 /* PositionEvaluator.swift in Sources */,
 				DCA32CF92C5AE478009DF4A5 /* GameNode.swift in Sources */,
 				DCA32CFA2C5AE478009DF4A5 /* GameModel.swift in Sources */,
-				DC4A8AE52A3F59F70068924C /* GameView.swift in Sources */,
+				DC77B7BC2C8A620900D9DF28 /* BoardPositions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,7 +419,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 6X2P4HJBQW;
 				ENABLE_PREVIEWS = YES;
@@ -466,7 +435,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stephenbensley.Queah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -482,7 +451,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 6X2P4HJBQW;
 				ENABLE_PREVIEWS = YES;
@@ -498,7 +467,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stephenbensley.Queah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -609,27 +578,25 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		DC77B7B42C8A5F8600D9DF28 /* XCRemoteSwiftPackageReference "UtiliKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/stephenbensley/UtiliKit";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		DC61BC7D2C8B4CC90078130F /* XCLocalSwiftPackageReference "../UtiliKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../UtiliKit;
 		};
-/* End XCRemoteSwiftPackageReference section */
+		DC61BC802C8B4CDC0078130F /* XCLocalSwiftPackageReference "../CheckersKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../CheckersKit;
+		};
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DC77B7B52C8A5F8600D9DF28 /* UtiliKit */ = {
+		DC61BC7E2C8B4CC90078130F /* UtiliKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DC77B7B42C8A5F8600D9DF28 /* XCRemoteSwiftPackageReference "UtiliKit" */;
 			productName = UtiliKit;
 		};
-		DC77B7B72C8A608C00D9DF28 /* UtiliKit */ = {
+		DC61BC812C8B4CDC0078130F /* CheckersKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DC77B7B42C8A5F8600D9DF28 /* XCRemoteSwiftPackageReference "UtiliKit" */;
-			productName = UtiliKit;
+			productName = CheckersKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -5,78 +5,109 @@
 // license at https://github.com/stephenbensley/Queah/blob/main/LICENSE.
 //
 
+import CheckersKit
 import Foundation
 
-enum PlayerType: Int {
-    case human = 0
-    case computer
+extension Array where Element: Equatable {
+    mutating func removeFirstMatch(_ value: Array.Element) {
+        if let index = firstIndex(of: value) {
+            remove(at: index)
+        }
+    }
+}
+
+extension Move {
+    // Simple helper to reindex a Move. Useful when swizzling from internal to external indices.
+    func reindex(from: Int) -> Move {
+        .init(from: from, to: self.to, capturing: self.capturing)
+    }
 }
 
 // Represents the non-visual state of the game -- everything necessary to rebuild the game view
 // from scratch.
-final class QueahModel {
-    let game: GameModel
-    var playerType: [PlayerType] = [ .human, .computer ]
+final class QueahModel: Codable {
+    private let game: GameModel
+    private(set) var playerType: [PlayerType] = [ .human, .computer ]
+    private var reserve = QueahModel.initializeReserve()
     
-    func newGame(white: PlayerType, black: PlayerType) {
-        game.newGame()
-        playerType[PlayerColor.white.rawValue] = white
-        playerType[PlayerColor.black.rawValue] = black
+    // Type of the current player.
+    var currentType: PlayerType { playerType[toMove.rawValue] }
+    // Returns true if the game is over.
+    var isOver: Bool { game.isOver }
+    // Returns the number of times the current position has occurred.
+    var repetitions: Int { game.repetitions }
+    // Returns the next player to move.
+    var toMove: PlayerColor { game.toMove }
+    
+    // Returns the best move from the current position.
+    var bestMove: Move {
+        let move = game.bestMove
+        if move.from.isValidSpace {
+            // 'from' is valid, so use as is.
+            return move
+        } else {
+            // Prefer the far right piece in reserve.
+            return move.reindex(from: reserve[toMove.rawValue].last ?? Queah.invalidSpace)
+        }
+    }
+    
+    // Returns all valid moves from the current position.
+    var moves: [Move] {
+        var result = [Move]()
+        for move in game.moves {
+            if move.from.isValidSpace {
+                result.append(move)
+            } else {
+                // Player can move any of their reserve pieces.
+                result += reserve[toMove.rawValue].map { move.reindex(from: $0) }
+            }
+        }
+        return result
     }
     
     static func create() -> QueahModel {
-        // Load the solution
-        guard let evaluator = PositionEvaluator(
-            forResource: "queahSolution",
-            withExtension: "data"
-        ) else {
-            // There's no possible recovery if the app bundle is corrupt.
-            fatalError("Unable to load solution file.")
+        if let data = UserDefaults.standard.data(forKey: "AppModel"),
+           let model = try? JSONDecoder().decode(QueahModel.self, from: data) {
+            return model
+        }
+        // If we can't restore the app model, just create a new default one.
+        return QueahModel()
+    }
+    
+    func newGame(white: PlayerType, black: PlayerType) {
+        game.newGame()
+        playerType = [ white, black ]
+        reserve = Self.initializeReserve()
+    }
+    
+    func makeMove(move: Move) {
+        // If move.from is non-negative, we simply forward the move to GameModel.
+        guard move.from < 0 else {
+            game.makeMove(move: move)
+            return
         }
         
-        let from = UserDefaults.standard
+        // Remove the piece from the reserve.
+        reserve[toMove.rawValue].removeFirstMatch(move.from)
         
-        // Load player types
-        let playerType = loadPlayerType(from: from)
-        
-        // Load the game model
-        if let data = UserDefaults.standard.data(forKey: "Game"),
-           let game = GameModel(evaluator: evaluator, data: data) {
-            return QueahModel(game: game, playerType: playerType)
-        }
-        
-        // Use a default game model.
-        return QueahModel(game: GameModel(evaluator: evaluator), playerType: playerType)
+        // Map all reserve indices to Queah.invalidSpace
+        game.makeMove(move: move.reindex(from: Queah.invalidSpace))
+    }
+    
+    func pieces(for player: PlayerColor) -> [Int] {
+        reserve[player.rawValue] + game.pieces(for: player)
     }
     
     func save() {
-        let to = UserDefaults.standard
-        to.set(game.encode(), forKey: "Game")
-        to.set(playerType[0].rawValue, forKey: "Player0")
-        to.set(playerType[1].rawValue, forKey: "Player1")
+        let data = try! JSONEncoder().encode(self)
+        UserDefaults.standard.set(data, forKey: "AppModel")
     }
     
-    private init(game: GameModel, playerType: [PlayerType]) {
-        self.game = game
-        self.playerType = playerType
+    private init() {
+        self.game = GameModel()
     }
     
-    private static func loadPlayerType(from: UserDefaults) -> [PlayerType] {
-        if let type0 = loadPlayerType(from: from, forKey: "Player0"),
-           let type1 = loadPlayerType(from: from, forKey: "Player1") {
-            // We don't allow computer vs. computer
-            if type0 != .computer || type1 != .computer {
-                return [type0, type1]
-            }
-        }
-        // Something went wrong, so default to human vs. human
-        return [.human, .human]
-    }
-    
-    private static func loadPlayerType(from: UserDefaults, forKey key: String) -> PlayerType? {
-        guard let rawValue = from.value(forKey: key) as? Int else {
-            return nil
-        }
-        return PlayerType(rawValue: rawValue)
+    private static func initializeReserve() -> [[Int]] {
+        (0..<2).map { _ in ((-Queah.maxReserveCount)...(-1)).map { $0 } }
     }
 }
