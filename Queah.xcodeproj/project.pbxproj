@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,8 @@
 		DC4A8AE72A3F59F70068924C /* QueahApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AE22A3F59F70068924C /* QueahApp.swift */; };
 		DC61BC7F2C8B4CC90078130F /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC61BC7E2C8B4CC90078130F /* UtiliKit */; };
 		DC61BC822C8B4CDC0078130F /* CheckersKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC61BC812C8B4CDC0078130F /* CheckersKit */; };
+		DC61BC852C8C909B0078130F /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC61BC842C8C909B0078130F /* UtiliKit */; };
+		DC61BC882C8C90C10078130F /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC61BC872C8C90C10078130F /* UtiliKit */; };
 		DC73A5742C5AFD39008BBD55 /* queahSolution.data in Resources */ = {isa = PBXBuildFile; fileRef = DC73A5732C5AFD1C008BBD55 /* queahSolution.data */; };
 		DC77B7BC2C8A620900D9DF28 /* BoardPositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AD72A3F59E20068924C /* BoardPositions.swift */; };
 		DC84DF622A3F5669009368A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC84DF612A3F5669009368A3 /* Assets.xcassets */; };
@@ -64,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC61BC852C8C909B0078130F /* UtiliKit in Frameworks */,
 				DC61BC7F2C8B4CC90078130F /* UtiliKit in Frameworks */,
 				DC61BC822C8B4CDC0078130F /* CheckersKit in Frameworks */,
 			);
@@ -73,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC61BC882C8C90C10078130F /* UtiliKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +179,7 @@
 			packageProductDependencies = (
 				DC61BC7E2C8B4CC90078130F /* UtiliKit */,
 				DC61BC812C8B4CDC0078130F /* CheckersKit */,
+				DC61BC842C8C909B0078130F /* UtiliKit */,
 			);
 			productName = Queah;
 			productReference = DC84DF5A2A3F5669009368A3 /* Queah.app */;
@@ -194,6 +199,7 @@
 			);
 			name = QueahSolver;
 			packageProductDependencies = (
+				DC61BC872C8C90C10078130F /* UtiliKit */,
 			);
 			productName = Solver;
 			productReference = DCA32CC92C596FB8009DF4A5 /* Queah Solver.app */;
@@ -227,8 +233,8 @@
 			);
 			mainGroup = DC84DF512A3F5669009368A3;
 			packageReferences = (
-				DC61BC7D2C8B4CC90078130F /* XCLocalSwiftPackageReference "../UtiliKit" */,
-				DC61BC802C8B4CDC0078130F /* XCLocalSwiftPackageReference "../CheckersKit" */,
+				DC61BC832C8C909B0078130F /* XCRemoteSwiftPackageReference "UtiliKit" */,
+				DC61BC862C8C90A30078130F /* XCRemoteSwiftPackageReference "CheckersKit" */,
 			);
 			productRefGroup = DC84DF5B2A3F5669009368A3 /* Products */;
 			projectDirPath = "";
@@ -578,16 +584,24 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		DC61BC7D2C8B4CC90078130F /* XCLocalSwiftPackageReference "../UtiliKit" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../UtiliKit;
+/* Begin XCRemoteSwiftPackageReference section */
+		DC61BC832C8C909B0078130F /* XCRemoteSwiftPackageReference "UtiliKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephenbensley/UtiliKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
 		};
-		DC61BC802C8B4CDC0078130F /* XCLocalSwiftPackageReference "../CheckersKit" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../CheckersKit;
+		DC61BC862C8C90A30078130F /* XCRemoteSwiftPackageReference "CheckersKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephenbensley/CheckersKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
 		};
-/* End XCLocalSwiftPackageReference section */
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		DC61BC7E2C8B4CC90078130F /* UtiliKit */ = {
@@ -597,6 +611,16 @@
 		DC61BC812C8B4CDC0078130F /* CheckersKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CheckersKit;
+		};
+		DC61BC842C8C909B0078130F /* UtiliKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC61BC832C8C909B0078130F /* XCRemoteSwiftPackageReference "UtiliKit" */;
+			productName = UtiliKit;
+		};
+		DC61BC872C8C90C10078130F /* UtiliKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC61BC832C8C909B0078130F /* XCRemoteSwiftPackageReference "UtiliKit" */;
+			productName = UtiliKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

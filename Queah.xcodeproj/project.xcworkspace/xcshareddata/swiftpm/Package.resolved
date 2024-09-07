@@ -1,0 +1,24 @@
+{
+  "originHash" : "5a760f854b48e8d909a7748016d4c32d34420e8b47ec59b93e3957f59b60008e",
+  "pins" : [
+    {
+      "identity" : "checkerskit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/stephenbensley/CheckersKit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "fc0486998ab2627b52f2363891e21c55f5abf39c"
+      }
+    },
+    {
+      "identity" : "utilikit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/stephenbensley/UtiliKit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "ab173e9bd7891ad91e04af2a17a8c1198739433f"
+      }
+    }
+  ],
+  "version" : 3
+}
