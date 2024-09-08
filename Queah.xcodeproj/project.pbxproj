@@ -234,7 +234,6 @@
 			mainGroup = DC84DF512A3F5669009368A3;
 			packageReferences = (
 				DC61BC832C8C909B0078130F /* XCRemoteSwiftPackageReference "UtiliKit" */,
-				DC61BC862C8C90A30078130F /* XCRemoteSwiftPackageReference "CheckersKit" */,
 			);
 			productRefGroup = DC84DF5B2A3F5669009368A3 /* Products */;
 			projectDirPath = "";
@@ -588,14 +587,6 @@
 		DC61BC832C8C909B0078130F /* XCRemoteSwiftPackageReference "UtiliKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/stephenbensley/UtiliKit";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-		DC61BC862C8C90A30078130F /* XCRemoteSwiftPackageReference "CheckersKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/stephenbensley/CheckersKit";
 			requirement = {
 				branch = main;
 				kind = branch;
