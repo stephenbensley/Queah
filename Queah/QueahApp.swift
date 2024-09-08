@@ -12,7 +12,7 @@ import SwiftUI
 // Provides the app-specific properties and methods consumed by the CheckersKit framework.
 class QueahGame: CheckersGame {
     private let model: QueahModel
-    private let scene: GameScene
+    private var scene: GameScene!
 
     init() {
         let model = QueahModel.create()
@@ -21,14 +21,18 @@ class QueahGame: CheckersGame {
     }
 
     // AppInfo protocol
-    var appStoreId: Int = 6450433350
-    var copyright: String = "© 2024 Stephen E. Bensley"
-    var description: String = "A strategy game from Liberia"
-    var gitHubAccount: String = "stephenbensley"
-    var gitHubRepo: String = "Queah"
+    let appStoreId: Int = 6450433350
+    let copyright: String = "© 2024 Stephen E. Bensley"
+    let description: String = "A strategy game from Liberia"
+    let gitHubAccount: String = "stephenbensley"
+    let gitHubRepo: String = "Queah"
     
     // CheckersGame protocol
     func getScene(size: CGSize, exitGame: @escaping () -> Void) -> SKScene {
+        // We defer initialization since SKScene must be initialized from MainActor
+        if scene == nil {
+            scene = GameScene(appModel: model)
+        }
         scene.addedToView(size: size, exitGame: exitGame)
         return scene
     }
