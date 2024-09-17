@@ -12,8 +12,6 @@
 		DC4A8AE72A3F59F70068924C /* QueahApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AE22A3F59F70068924C /* QueahApp.swift */; };
 		DC61BC7F2C8B4CC90078130F /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC61BC7E2C8B4CC90078130F /* UtiliKit */; };
 		DC61BC822C8B4CDC0078130F /* CheckersKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC61BC812C8B4CDC0078130F /* CheckersKit */; };
-		DC61BC852C8C909B0078130F /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC61BC842C8C909B0078130F /* UtiliKit */; };
-		DC61BC882C8C90C10078130F /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC61BC872C8C90C10078130F /* UtiliKit */; };
 		DC73A5742C5AFD39008BBD55 /* queahSolution.data in Resources */ = {isa = PBXBuildFile; fileRef = DC73A5732C5AFD1C008BBD55 /* queahSolution.data */; };
 		DC77B7BC2C8A620900D9DF28 /* BoardPositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A8AD72A3F59E20068924C /* BoardPositions.swift */; };
 		DC84DF622A3F5669009368A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC84DF612A3F5669009368A3 /* Assets.xcassets */; };
@@ -33,6 +31,7 @@
 		DCA32CF82C5AE478009DF4A5 /* PositionEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA32CC32C595FC2009DF4A5 /* PositionEvaluator.swift */; };
 		DCA32CF92C5AE478009DF4A5 /* GameNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA32CBF2C594637009DF4A5 /* GameNode.swift */; };
 		DCA32CFA2C5AE478009DF4A5 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA32CE02C5A9000009DF4A5 /* GameModel.swift */; };
+		DCF8E6032C9A1F4A00111CDF /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DCF8E6022C9A1F4A00111CDF /* UtiliKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,7 +65,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC61BC852C8C909B0078130F /* UtiliKit in Frameworks */,
 				DC61BC7F2C8B4CC90078130F /* UtiliKit in Frameworks */,
 				DC61BC822C8B4CDC0078130F /* CheckersKit in Frameworks */,
 			);
@@ -76,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC61BC882C8C90C10078130F /* UtiliKit in Frameworks */,
+				DCF8E6032C9A1F4A00111CDF /* UtiliKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,7 +177,6 @@
 			packageProductDependencies = (
 				DC61BC7E2C8B4CC90078130F /* UtiliKit */,
 				DC61BC812C8B4CDC0078130F /* CheckersKit */,
-				DC61BC842C8C909B0078130F /* UtiliKit */,
 			);
 			productName = Queah;
 			productReference = DC84DF5A2A3F5669009368A3 /* Queah.app */;
@@ -199,7 +196,7 @@
 			);
 			name = QueahSolver;
 			packageProductDependencies = (
-				DC61BC872C8C90C10078130F /* UtiliKit */,
+				DCF8E6022C9A1F4A00111CDF /* UtiliKit */,
 			);
 			productName = Solver;
 			productReference = DCA32CC92C596FB8009DF4A5 /* Queah Solver.app */;
@@ -213,7 +210,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					DC84DF592A3F5669009368A3 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -233,7 +230,7 @@
 			);
 			mainGroup = DC84DF512A3F5669009368A3;
 			packageReferences = (
-				DC61BC832C8C909B0078130F /* XCRemoteSwiftPackageReference "UtiliKit" */,
+				DCF8E6012C9A1F2400111CDF /* XCRemoteSwiftPackageReference "UtiliKit" */,
 			);
 			productRefGroup = DC84DF5B2A3F5669009368A3 /* Products */;
 			projectDirPath = "";
@@ -306,6 +303,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -360,6 +358,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -367,6 +366,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -414,6 +414,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -436,16 +437,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
 				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stephenbensley.Queah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INCLUDE_PATHS = ./QueahApp;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -468,16 +463,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
 				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stephenbensley.Queah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INCLUDE_PATHS = ./QueahApp;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -492,28 +481,20 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 6X2P4HJBQW;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stephenbensley.QueahSolver;
 				PRODUCT_NAME = "Queah Solver";
 				SDKROOT = macosx;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -527,27 +508,20 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 6X2P4HJBQW;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stephenbensley.QueahSolver;
 				PRODUCT_NAME = "Queah Solver";
 				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -584,7 +558,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		DC61BC832C8C909B0078130F /* XCRemoteSwiftPackageReference "UtiliKit" */ = {
+		DCF8E6012C9A1F2400111CDF /* XCRemoteSwiftPackageReference "UtiliKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/stephenbensley/UtiliKit";
 			requirement = {
@@ -603,14 +577,9 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = CheckersKit;
 		};
-		DC61BC842C8C909B0078130F /* UtiliKit */ = {
+		DCF8E6022C9A1F4A00111CDF /* UtiliKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DC61BC832C8C909B0078130F /* XCRemoteSwiftPackageReference "UtiliKit" */;
-			productName = UtiliKit;
-		};
-		DC61BC872C8C90C10078130F /* UtiliKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DC61BC832C8C909B0078130F /* XCRemoteSwiftPackageReference "UtiliKit" */;
+			package = DCF8E6012C9A1F2400111CDF /* XCRemoteSwiftPackageReference "UtiliKit" */;
 			productName = UtiliKit;
 		};
 /* End XCSwiftPackageProductDependency section */

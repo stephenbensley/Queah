@@ -11,14 +11,8 @@ import SwiftUI
 
 // Provides the app-specific properties and methods consumed by the CheckersKit framework.
 class QueahGame: CheckersGame {
-    private let model: QueahModel
+    private let model = QueahModel.create()
     private var scene: GameScene!
-
-    init() {
-        let model = QueahModel.create()
-        self.model = model
-        self.scene = GameScene(appModel: model)
-    }
 
     // AppInfo protocol
     let appStoreId: Int = 6450433350
@@ -42,15 +36,15 @@ class QueahGame: CheckersGame {
     func save() {
         model.save()
     }
-    
-    static let shared = QueahGame()
 }
 
 @main
 struct QueahApp: App {
+    private let game = QueahGame()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView(game: QueahGame.shared)
+            ContentView(game: game)
         }
     }
 }

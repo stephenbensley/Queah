@@ -24,13 +24,13 @@ struct SolutionFile: FileDocument {
         self.data = initialData
     }
     
-    static var readableContentTypes = [UTType.data]
+    static let readableContentTypes = [UTType.data]
     
     func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
         return FileWrapper(regularFileWithContents: data)
     }
     
-    static var writableContentTypes = [UTType.data]
+    static let writableContentTypes = [UTType.data]
 }
 
 struct ContentView: View {
@@ -69,9 +69,11 @@ struct ContentView: View {
                     solverState = .solving
                     task = Task.detached(priority: .low) {
                         let eval = Solver.solve()
-                        gameValue = eval.evaluate(position: GamePosition.start)
-                        solution = SolutionFile(initialData: eval.encode())
-                        solverState = .solutionReady
+                        await MainActor.run {
+                            gameValue = eval.evaluate(position: GamePosition.start)
+                            solution = SolutionFile(initialData: eval.encode())
+                            solverState = .solutionReady
+                        }
                     }
                 }
             case .solving:
