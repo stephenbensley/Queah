@@ -67,12 +67,17 @@ struct ContentView: View {
                 Text("Ready to solve")
                 Button("Solve") {
                     solverState = .solving
+                    // Solver.solve is synchronous, so we have to run it in a detached task to
+                    // avoid starving the UI.
                     task = Task.detached(priority: .low) {
                         let eval = Solver.solve()
+                        let gameValue = eval.evaluate(position: GamePosition.start)
+                        let solution = SolutionFile(initialData: eval.encode())
+                        // Update the UI from the MainActor
                         await MainActor.run {
-                            gameValue = eval.evaluate(position: GamePosition.start)
-                            solution = SolutionFile(initialData: eval.encode())
-                            solverState = .solutionReady
+                            self.gameValue = gameValue
+                            self.solution = solution
+                            self.solverState = .solutionReady
                         }
                     }
                 }
