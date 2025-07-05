@@ -2,6 +2,9 @@
 
 # Queah
 
+> [!WARNING]  
+> All my apps have been removed from Apple's App Store. Only the source code is available.
+
 Queah is an iOS app for the the [Liberian game of Queah](https://en.wikipedia.org/wiki/Liberian_Queah). The app lets you play against the computer or another human player (by pass-and-play). The computer implements a mathematically optimal strategy. You can learn a lot about the game by watching how the computer AI plays. When playing against the computer, you also have the option of displaying a hint showing your best available move.
 
 ### Installation
